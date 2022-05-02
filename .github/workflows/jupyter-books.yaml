@@ -1,0 +1,21 @@
+name: Update Jupyter Books
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: shopjupyterhubacr.azurecr.io/shop/linux/python3.9/vlab:latest
+      credentials:
+        username: ${{ secrets.ACR_USERNAME }}
+        password: ${{ secrets.ACR_PASSWORD }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Build documentation
+        run: |
+          jupyter book build book/
+      - name: Upload to portal
+        
