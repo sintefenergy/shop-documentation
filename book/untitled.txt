@@ -1,0 +1,72 @@
+show(
+    pd.DataFrame([[-1, 2, -3, 4, -5], [6, -7, 8, -9, 10]], columns=list("abcde")),
+    columnDefs=[
+        {
+            "targets": "_all",
+            "column().search": """
+function () {
+    var table = $('#example').DataTable();
+    $('#column3_search').on( 'keyup', function () {
+    table
+        .columns( 3 )
+        .search( this.value )
+        .draw();
+}
+""",
+        }
+    ],
+    eval_functions=True,
+)
+
+var table = $('#example').DataTable();
+ 
+table.columns( '.select-filter' ).every( function () {
+    var that = this;
+ 
+    // Create the select list and search operation
+    var select = $('<select />')
+        .appendTo(
+            this.footer()
+        )
+        .on( 'change', function () {
+            that
+                .search( $(this).val() )
+                .draw();
+        } );
+ 
+    // Get the search data for the first column and add to the select list
+    this
+        .cache( 'search' )
+        .sort()
+        .unique()
+        .each( function ( d ) {
+            select.append( $('<option value="'+d+'">'+d+'</option>') );
+        } );
+} );
+
+
+
+
+var table = $('#example').DataTable();
+
+// #column3_search is a <input type="text"> element
+$('#column3_search').on( 'keyup', function () {
+    table
+        .columns( 3 )
+        .search( this.value )
+        .draw();
+} );
+
+
+function column().search( input [, regex[ , smart[ , caseInsen ]]] )
+
+$('#example').dataTable( {
+  "columnDefs": [ {
+    "targets": 3,
+    "createdCell": function (td, cellData, rowData, row, col) {
+      if ( cellData < 1 ) {
+        $(td).css('color', 'red')
+      }
+    }
+  } ]
+} );

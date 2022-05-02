@@ -1,0 +1,500 @@
+INFORMATION: 1032
+14.3.5.1 Cplex 20.1.0 Gurobi 7.5 OSI/CBC 2.9 2022-04-26
+
+INFORMATION: 1047
+Current time: Wed Apr 27 08:23:38 2022
+
+
+Overview over input data:
+
+Max number of main iterations       : 3
+Switch to incremental formulation   : 1000
+Convergence criteria                : 1.000000
+Plant head optimization             : Yes
+Load penalty variables added        : Yes 
+Load penalty cost                   : 5000.00 
+Power input limit penalty variables added        : Yes 
+Reservoir penalty variables added        : Yes 
+Reservoir penalty cost                   : 10000000.00 
+
+If ramping constraints are activated 
+Reservoir ramping penalty variables added?       : Yes 
+Reservoir ramping penalty cost                   : 100.00 
+
+If ramping constraints are activated 
+Discharge ramping penalty variables added?       : Yes 
+Discharge_ramping penalty cost                   : 100.00 
+
+Number of bypass segments applied   : 1  
+Penalty bypass cost                 : 0.01  
+Bypass max. capacity (m3/s)         : 30.00  
+
+Number of gate segments applied     : 3  
+Penalty gate cost                   : 0.00  
+Gate max. capacity (m3/s)           : 100.00  
+
+Number of overflow segments applied : 3  
+Penalty overflow cost               : 50000.00  
+Penalty overflow cost time adjust   : -0.00  
+Overflow max. capacity (m3/s)       : 200.00  
+
+Reserve penalty cost                   : 1000.00  
+Gate ramping cost (<currency>/(m3/s))      : 0.00  
+--------------*----------------*------------
+Topology of the system
+
+
+Reservoir name: Reservoir1
+  Connected upstream  :
+  Connected downstream  :
+     Tunnel1 in position 0
+
+Reservoir name: Reservoir2
+  Connected upstream  :
+     Tunnel1 in position 0
+  Connected downstream  :
+     Tunnel2 in position 0
+
+Reservoir name: Reservoir3
+  Connected upstream  :
+     Tunnel2 in position 0
+  Connected downstream  :
+     Tunnel3 in position 0
+--------------*----------------*------------
+
+
+Summary of market exchange prices:
+
+ Area 1 
+	Maximum purchase price 	 40.010 	Minimum purchase price 	 40.010 
+	Maximum sale price 	 39.990 	Minimum sale price 	 39.990
+
+ Load penalty cost:  5000.00 
+
+--------------*----------------*------------
+Topology of the plants
+
+
+Plant name: Plant1
+      No downstream reservoir, outlet line :  0.0
+--------------*----------------*------------
+
+Range of reservoir endpoint descriptions:
+
+
+Range of water value references 
+	Average:   31.70, 	Minimum:   31.70, 	Maximum:   31.70
+INFORMATION: 1051
+Overview SHOP environment variables (on), see shop.log:
+SHOP_COMMON_OUTLET                                expires 2120-13-31 
+SHOP_PRESIM                                       expires 2120-13-31 
+SHOP_DYNAMIC_DELAY                                expires 2120-13-31 
+SHOP_BEP_COST_CURVE                               expires 2120-13-31 
+SHOP_RESIDUAL_RESERVOIR                           expires 2120-13-31 
+SHOP_JUNCTION_BELOW_PLANT                         expires 2120-13-31 
+SHOP_XML_FORMAT                                   expires 2120-13-31 
+SHOP_FLEX_MIP                                     expires 2120-13-31 
+SHOP_RAMPING_UPGRADED                             expires 2120-13-31 
+SHOP_TACTICAL_LIMIT                               expires 2120-13-31 
+SHOP_VOW_IN_TRANS                                 expires 2120-13-31 
+SHOP_SUM_P_TIME_PERIOD                            expires 2120-13-31 
+SHOP_SUM_Q_TIME_STEP                              expires 2120-13-31 
+SHOP_INITIAL_STATE                                expires 2120-13-31 
+SHOP_RESOLVE_MC                                   expires 2120-13-31 
+SHOP_FEEDING_FEE                                  expires 2120-13-31 
+SHOP_TIME_VARIANT_GEN_MAX_PROD                    expires 2120-13-31 
+SHOP_CREEK_INTAKE                                 expires 2120-13-31 
+SHOP_CUT_CORRECTION                               expires 2120-13-31 
+SHOP_BLOCK_GENERATION                             expires 2120-13-31 
+SHOP_SCHEDULE_M3S                                 expires 2120-13-31 
+SHOP_SOFT_CONSTRAINTS                             expires 2120-13-31 
+SHOP_LP_HTML                                      expires 2120-13-31 
+SHOP_ACTIVE_CONSTRAINTS                           expires 2120-13-31 
+SHOP_GATE_RAMPING                                 expires 2120-13-31 
+SHOP_TIME_STARTCOST                               expires 2120-13-31 
+SHOP_CONTRACT                                     expires 2120-13-31 
+SHOP_RELTIME                                      expires 2120-13-31 
+SHOP_PELTON                                       expires 2120-13-31 
+SHOP_EBL_PLANT                                    expires 2120-13-31 
+SHOP_AFFINITY                                     expires 2120-13-31 
+SHOP_JUNCG_SERIES                                 expires 2120-13-31 
+SHOP_JUNC_GATE                                    expires 2120-13-31 
+SHOP_JUNCG_TWOWAY                                 expires 2120-13-31 
+SHOP_OVERFLOW_MIP                                 expires 2120-13-31 
+SHOP_RSV_HEAD_OPT                                 expires 2120-13-31 
+SHOP_OWNERSHIP                                    expires 2120-13-31 
+SHOP_LOSE_SPILL                                   expires 2120-13-31 
+SHOP_OVERFLOW_COST                                expires 2120-13-31 
+SHOP_MULTI_OBJECT                                 expires 2120-13-31 
+SHOP_MULTIPLE_LOAD_MARKETS                        expires 2120-13-31 
+SHOP_EXTRA_DATA                                   expires 2120-13-31 
+SHOP_STREAMING                                    expires 2120-13-31 
+SHOP_BUILD_PLANT_COMB                             expires 2120-13-31 
+SHOP_TIDES                                        expires 2120-13-31 
+SHOP_SCHED_MIN_MAX_BEST                           expires 2120-13-31 
+SHOP_RAMP_STEP                                    expires 2120-13-31 
+SHOP_DYN_FLEX                                     expires 2120-13-31 
+SHOP_MC                                           expires 2120-13-31 
+SHOP_GATE_FLOW_LIN_REL                            expires 2120-13-31 
+SHOP_SUM_P_TIME_STEP                              expires 2120-13-31 
+SHOP_AVERAGE_Q                                    expires 2120-13-31 
+SHOP_TIME_VARIANT_GEN_MIN_PROD                    expires 2120-13-31 
+SHOP_MULTI_STEP_WV                                expires 2120-13-31 
+SHOP_FREQ_RES_MARKET                              expires 2120-13-31 
+SHOP_PUMPING_CONSTRAINT                           expires 2120-13-31 
+SHOP_NONSEQ_AMPLITUDE_RSV_RAMP                    expires 2120-13-31 
+SHOP_ROT_RES_SCHED                                expires 2120-13-31 
+SHOP_POL_EFF_CURVE                                expires 2120-13-31 
+SHOP_BLOCK_MERGE                                  expires 2120-13-31 
+SHOP_RESERVE_GROUP                                expires 2120-13-31 
+SHOP_SOLVER_GUROBI                                expires 2120-13-31 
+SHOP_SIMULATION                                   expires 2120-13-31 
+SHOP_SOLVER_OSI                                   expires 2120-13-31 
+SHOP_MIP_TUNING                                   expires 2120-13-31 
+SHOP_PRESSURE_POINT                               expires 2120-13-31 
+SHOP_MIX_CUT_VV_PROTOTYPE                         expires 2120-13-31 
+SHOP_EXTENDED_CUT_FUNCTIONALITY                   expires 2120-13-31 
+SHOP_EXTENDED_PUMP_FUNCTIONALITY                  expires 2120-13-31 
+SHOP_SCENARIO_FUNCTIONALITY                       expires 2120-13-31 
+SHOP_RESERVE_CLUSTERING_FUNCTIONALITY             expires 2120-13-31 
+SHOP_DISCHARGE_GROUP_FUNCTIONALITY                expires 2120-13-31 
+SHOP_POWER_HEAD_OPTIMIZATION                      expires 2120-13-31 
+SHOP_ELEVATION_ADJUSTMENT                         expires 2120-13-31 
+SHOP_CONSUMPTION_FEE                              expires 2120-13-31 
+SHOP_BEST_PROFIT                                  expires 2120-13-31 
+SHOP_PRESSURE_LINK                                expires 2120-13-31 
+SHOP_SINTEF_INTERNAL                              expires 2120-13-31 
+SHOP_OPEN                                         expires 2120-13-31 
+SHOP_TUNNEL                                       expires 2120-13-31 
+SHOP_DISCRETE_DROOP                               expires 2120-13-31 
+SHOP_FLOOD_SUPPORT                                expires 2120-13-31 
+SHOP_LP_MODEL                                     expires 2120-13-31 
+SHOP_RIVER                                        expires 2120-13-31 
+
+End overview over input data:
+
+--------------*----------------*------------
+INFORMATION: 1002
+Parameter settings: (1. iteration).
+INFORMATION: 1003
+Full description. No curve fitting.
+INFORMATION: 1007
+Ramping on request (if ramping exceeded). 
+INFORMATION: 1009
+Head optimization on.
+INFORMATION: 1011
+1. iteration.
+--------------*----------------*------------
+INFORMATION: 1078
+Solver license opened at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1013
+LP/MIP-model size: 333 variables. 327 constraints. 1059 elements. 0 binaries
+--------------*----------------*------------
+INFORMATION: 1016
+Start optimizing.
+INFORMATION: 1018
+CPLEX message. Code 1. Optimal solution is available
+INFORMATION: 1079
+Solver license closed at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1017
+Start updating results.
+INFORMATION: 1033
+Objective (excluding penalties) = -83610.25
+INFORMATION: 1034
+Objective (including penalties) = -83610.25
+INFORMATION: 1035
+Sum buy and sale cost =           -18100.06
+INFORMATION: 1052
+Sum contract costs =              0.00
+INFORMATION: 1036
+Sum startup costs =               0.00
+INFORMATION: 1037
+End reservoir value =             -65510.19
+INFORMATION: 1077
+Change in end reservoir value =   -17536.30
+INFORMATION: 1038
+Sum penalties =                   0.00
+INFORMATION: 1039
+Sum minor penalties =             0.00
+INFORMATION: 1040
+Sum major penalties =             0.00
+INFORMATION: 1064
+Network load value = -0.000000
+--------------*----------------*------------
+INFORMATION: 1031
+Maximum unbalance       2.91 MW.
+INFORMATION: 1046
+Time used in CPLEX    0.00 s.
+--------------*----------------*------------
+INFORMATION: 1002
+Parameter settings: (2. iteration).
+INFORMATION: 1003
+Full description. No curve fitting.
+INFORMATION: 1007
+Ramping on request (if ramping exceeded). 
+INFORMATION: 1009
+Head optimization on.
+INFORMATION: 1011
+2. iteration.
+--------------*----------------*------------
+INFORMATION: 1078
+Solver license opened at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1013
+LP/MIP-model size: 333 variables. 327 constraints. 1059 elements. 0 binaries
+--------------*----------------*------------
+INFORMATION: 1016
+Start optimizing.
+INFORMATION: 1018
+CPLEX message. Code 1. Optimal solution is available
+INFORMATION: 1079
+Solver license closed at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1017
+Start updating results.
+INFORMATION: 1033
+Objective (excluding penalties) = -84324.32
+INFORMATION: 1034
+Objective (including penalties) = -84324.32
+INFORMATION: 1035
+Sum buy and sale cost =           -18814.13
+INFORMATION: 1052
+Sum contract costs =              0.00
+INFORMATION: 1036
+Sum startup costs =               0.00
+INFORMATION: 1037
+End reservoir value =             -65510.19
+INFORMATION: 1077
+Change in end reservoir value =   -17536.30
+INFORMATION: 1038
+Sum penalties =                   0.00
+INFORMATION: 1039
+Sum minor penalties =             0.00
+INFORMATION: 1040
+Sum major penalties =             0.00
+INFORMATION: 1064
+Network load value = -0.000000
+--------------*----------------*------------
+INFORMATION: 1031
+Maximum unbalance       0.55 MW.
+INFORMATION: 1046
+Time used in CPLEX    0.00 s.
+--------------*----------------*------------
+INFORMATION: 1002
+Parameter settings: (3. iteration).
+INFORMATION: 1003
+Full description. No curve fitting.
+INFORMATION: 1007
+Ramping on request (if ramping exceeded). 
+INFORMATION: 1009
+Head optimization on.
+INFORMATION: 1011
+3. iteration.
+--------------*----------------*------------
+INFORMATION: 1078
+Solver license opened at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1013
+LP/MIP-model size: 333 variables. 327 constraints. 1059 elements. 0 binaries
+--------------*----------------*------------
+INFORMATION: 1016
+Start optimizing.
+INFORMATION: 1018
+CPLEX message. Code 1. Optimal solution is available
+INFORMATION: 1079
+Solver license closed at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1017
+Start updating results.
+INFORMATION: 1033
+Objective (excluding penalties) = -84255.00
+INFORMATION: 1034
+Objective (including penalties) = -84255.00
+INFORMATION: 1035
+Sum buy and sale cost =           -18744.81
+INFORMATION: 1052
+Sum contract costs =              0.00
+INFORMATION: 1036
+Sum startup costs =               0.00
+INFORMATION: 1037
+End reservoir value =             -65510.19
+INFORMATION: 1077
+Change in end reservoir value =   -17536.30
+INFORMATION: 1038
+Sum penalties =                   0.00
+INFORMATION: 1039
+Sum minor penalties =             0.00
+INFORMATION: 1040
+Sum major penalties =             0.00
+INFORMATION: 1064
+Network load value = -0.000000
+--------------*----------------*------------
+INFORMATION: 1031
+Maximum unbalance       0.46 MW.
+INFORMATION: 1046
+Time used in CPLEX    0.00 s.
+--------------*----------------*------------
+INFORMATION: 1002
+Parameter settings: (1. iteration).
+INFORMATION: 1005
+Incremental description.
+INFORMATION: 1007
+Ramping on request (if ramping exceeded). 
+INFORMATION: 1009
+Head optimization on.
+INFORMATION: 1011
+1. iteration.
+--------------*----------------*------------
+INFORMATION: 1078
+Solver license opened at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1013
+LP/MIP-model size: 327 variables. 315 constraints. 1005 elements. 0 binaries
+--------------*----------------*------------
+INFORMATION: 1016
+Start optimizing.
+INFORMATION: 1018
+CPLEX message. Code 1. Optimal solution is available
+INFORMATION: 1079
+Solver license closed at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1017
+Start updating results.
+INFORMATION: 1033
+Objective (excluding penalties) = -84255.94
+INFORMATION: 1034
+Objective (including penalties) = -84255.94
+INFORMATION: 1035
+Sum buy and sale cost =           -18745.75
+INFORMATION: 1052
+Sum contract costs =              0.00
+INFORMATION: 1036
+Sum startup costs =               0.00
+INFORMATION: 1037
+End reservoir value =             -65510.19
+INFORMATION: 1077
+Change in end reservoir value =   -17536.30
+INFORMATION: 1038
+Sum penalties =                   0.00
+INFORMATION: 1039
+Sum minor penalties =             0.00
+INFORMATION: 1040
+Sum major penalties =             0.00
+INFORMATION: 1064
+Network load value = -0.000000
+--------------*----------------*------------
+INFORMATION: 1031
+Maximum unbalance       0.56 MW.
+INFORMATION: 1046
+Time used in CPLEX    0.00 s.
+--------------*----------------*------------
+INFORMATION: 1002
+Parameter settings: (2. iteration).
+INFORMATION: 1005
+Incremental description.
+INFORMATION: 1007
+Ramping on request (if ramping exceeded). 
+INFORMATION: 1009
+Head optimization on.
+INFORMATION: 1011
+2. iteration.
+--------------*----------------*------------
+INFORMATION: 1078
+Solver license opened at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1013
+LP/MIP-model size: 327 variables. 315 constraints. 1005 elements. 0 binaries
+--------------*----------------*------------
+INFORMATION: 1016
+Start optimizing.
+INFORMATION: 1018
+CPLEX message. Code 1. Optimal solution is available
+INFORMATION: 1079
+Solver license closed at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1017
+Start updating results.
+INFORMATION: 1033
+Objective (excluding penalties) = -84253.58
+INFORMATION: 1034
+Objective (including penalties) = -84253.58
+INFORMATION: 1035
+Sum buy and sale cost =           -18743.39
+INFORMATION: 1052
+Sum contract costs =              0.00
+INFORMATION: 1036
+Sum startup costs =               0.00
+INFORMATION: 1037
+End reservoir value =             -65510.19
+INFORMATION: 1077
+Change in end reservoir value =   -17536.30
+INFORMATION: 1038
+Sum penalties =                   0.00
+INFORMATION: 1039
+Sum minor penalties =             0.00
+INFORMATION: 1040
+Sum major penalties =             0.00
+INFORMATION: 1064
+Network load value = -0.000000
+--------------*----------------*------------
+INFORMATION: 1031
+Maximum unbalance       0.06 MW.
+INFORMATION: 1046
+Time used in CPLEX    0.00 s.
+--------------*----------------*------------
+INFORMATION: 1002
+Parameter settings: (3. iteration).
+INFORMATION: 1005
+Incremental description.
+INFORMATION: 1007
+Ramping on request (if ramping exceeded). 
+INFORMATION: 1009
+Head optimization on.
+INFORMATION: 1011
+3. iteration.
+--------------*----------------*------------
+INFORMATION: 1078
+Solver license opened at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1013
+LP/MIP-model size: 327 variables. 315 constraints. 1005 elements. 0 binaries
+--------------*----------------*------------
+INFORMATION: 1016
+Start optimizing.
+INFORMATION: 1018
+CPLEX message. Code 1. Optimal solution is available
+INFORMATION: 1079
+Solver license closed at 2022-04-27T08:23:38.
+--------------*----------------*------------
+INFORMATION: 1017
+Start updating results.
+INFORMATION: 1033
+Objective (excluding penalties) = -84257.21
+INFORMATION: 1034
+Objective (including penalties) = -84257.21
+INFORMATION: 1035
+Sum buy and sale cost =           -18747.02
+INFORMATION: 1052
+Sum contract costs =              0.00
+INFORMATION: 1036
+Sum startup costs =               0.00
+INFORMATION: 1037
+End reservoir value =             -65510.19
+INFORMATION: 1077
+Change in end reservoir value =   -17536.30
+INFORMATION: 1038
+Sum penalties =                   0.00
+INFORMATION: 1039
+Sum minor penalties =             0.00
+INFORMATION: 1040
+Sum major penalties =             0.00
+INFORMATION: 1064
+Network load value = -0.000000
+--------------*----------------*------------
+INFORMATION: 1031
+Maximum unbalance       0.06 MW.
+INFORMATION: 1046
+Time used in CPLEX    0.00 s.
+--------------*----------------*------------

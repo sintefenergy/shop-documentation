@@ -1,0 +1,140 @@
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Tried aggregator 1 time.
+LP Presolve eliminated 186 rows and 138 columns.
+Aggregator did 96 substitutions.
+Reduced LP has 45 rows, 99 columns, and 363 nonzeros.
+Presolve time = 0.00 sec. (0.33 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =       -129445.411991
+
+Optimal solution is available
+Solution value = 0.000000
+
+Simplex iterations = 19
+
+
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Problem is feasible; no conflict available.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Tried aggregator 1 time.
+LP Presolve eliminated 168 rows and 114 columns.
+Aggregator did 108 substitutions.
+Reduced LP has 51 rows, 111 columns, and 417 nonzeros.
+Presolve time = 0.00 sec. (0.34 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =      -2113277.601666
+Iteration:    22   Scaled dual infeas =             0.000223
+Iteration:    30   Dual objective     =        -84324.315593
+
+Optimal solution is available
+Solution value = 0.000000
+
+Simplex iterations = 58
+
+
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Problem is feasible; no conflict available.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Tried aggregator 1 time.
+LP Presolve eliminated 170 rows and 116 columns.
+Aggregator did 106 substitutions.
+Reduced LP has 51 rows, 111 columns, and 415 nonzeros.
+Presolve time = 0.00 sec. (0.34 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =      -2113316.595180
+
+Optimal solution is available
+Solution value = 0.000000
+
+Simplex iterations = 24
+
+
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Problem is feasible; no conflict available.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Tried aggregator 1 time.
+LP Presolve eliminated 182 rows and 110 columns.
+Aggregator did 94 substitutions.
+Reduced LP has 39 rows, 123 columns, and 295 nonzeros.
+Presolve time = 0.00 sec. (0.29 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =      -2113297.122935
+
+Optimal solution is available
+Solution value = 0.000000
+
+Simplex iterations = 31
+
+
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Problem is feasible; no conflict available.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Tried aggregator 1 time.
+LP Presolve eliminated 180 rows and 108 columns.
+Aggregator did 96 substitutions.
+Reduced LP has 39 rows, 123 columns, and 297 nonzeros.
+Presolve time = 0.00 sec. (0.30 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =      -2113252.166910
+
+Optimal solution is available
+Solution value = 0.000000
+
+Simplex iterations = 29
+
+
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Problem is feasible; no conflict available.
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Tried aggregator 1 time.
+LP Presolve eliminated 180 rows and 108 columns.
+Aggregator did 96 substitutions.
+Reduced LP has 39 rows, 123 columns, and 297 nonzeros.
+Presolve time = 0.00 sec. (0.30 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =      -2113280.493539
+
+Optimal solution is available
+Solution value = 0.000000
+
+Simplex iterations = 30
+
+
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Simplex_Limits_Iterations               10000000
+CPXPARAM_TimeLimit                               900
+Problem is feasible; no conflict available.
