@@ -1,1 +1,4 @@
 .vscode
+book/_build/
+*.log
+*.xml
