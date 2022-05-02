@@ -2,3 +2,5 @@
 book/_build/
 *.log
 *.xml
+*.json
+__pycache__
