@@ -3,28 +3,41 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: tables
-- file: tables_full_width
-- file: examples/ascii/ascii
-- file: examples/basic/basic
-- file: examples/basic/basic_pump
-- file: examples/best_profit_basic/best_profit_basic
-- file: examples/cuts/cuts
-- file: examples/discrete_droop/discrete_droop
-- file: examples/individual_water_values/individual_water_values
-- file: examples/maintenance/run_maintenance
-- file: examples/multi_price_bid_matrix/multi_price_bid_matrix
-- file: examples/reserve_capacity/reserve_cap
-- file: examples/simple_tunnel/simple_tunnel
-- file: tutorials/ascii_standard/ascii
-- file: tutorials/best_profit/best_profit
-- file: tutorials/interaction/interaction
-- file: tutorials/pyshop/pyshop
-- file: tutorials/ramping/ramping
-- file: tutorials/reserve_capacity/reserve_capacity
-- file: tutorials/simulation/simulation
-- file: tutorials/tunnel/tunnel
-- file: tutorials/water_budgeting/water_budgeting
-- file: tutorials/water_values/water_values
-- file: tutorials/yaml_standard/yaml_standard
+parts:
+- caption: Introduction
+  maxdepth: 2
+  chapters:
+  - file: examples/interaction/interaction
+    sections:
+    - file: examples/ascii/ascii_example
+    - file: examples/ascii/ascii_data_formats
+    - file: examples/ascii_standard/ascii
+    - file: examples/yaml_standard/yaml_standard
+    - file: examples/pyshop/pyshop
+    - file: examples/basic/basic
+- caption: Objects and modules
+  maxdepth: 2
+  chapters:
+  - file: tables
+  - file: tables_full_width
+  - file: examples/basic/basic_pump
+  - file: examples/best_profit_basic/best_profit_basic
+  - file: examples/cuts/cuts
+  - file: examples/maintenance/run_maintenance
+  - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
+  - file: examples/reserve_capacity/reserve_capacity
+    sections:
+      - file: examples/reserve_capacity/reserve_cap
+      - file: examples/discrete_droop/discrete_droop
+  - file: examples/tunnel/tunnel
+    sections:
+      - file: examples/tunnel/simple_tunnel
+      - file: examples/tunnel/advanced_tunnel
+  - file: examples/best_profit/best_profit
+  - file: examples/ramping/ramping
+  - file: examples/simulation/simulation
+    sections:
+      - file: examples/water_budgeting/water_budgeting
+  - file: examples/water_values/water_values
+    sections:
+      - file: examples/water_values/individual_water_values
