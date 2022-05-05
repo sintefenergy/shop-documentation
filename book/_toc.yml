@@ -11,7 +11,7 @@ parts:
     sections:
     - file: examples/ascii/ascii_example
     - file: examples/ascii/ascii_data_formats
-    - file: examples/ascii_standard/ascii
+    - file: examples/ascii/ascii
     - file: examples/yaml_standard/yaml_standard
     - file: examples/pyshop/pyshop
     - file: examples/basic/basic
@@ -20,8 +20,7 @@ parts:
   chapters:
   - file: tables
   - file: tables_full_width
-  - file: examples/basic/basic_pump
-  - file: examples/best_profit_basic/best_profit_basic
+  - file: examples/basic_pump/basic_pump
   - file: examples/cuts/cuts
   - file: examples/maintenance/run_maintenance
   - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
@@ -33,11 +32,16 @@ parts:
     sections:
       - file: examples/tunnel/simple_tunnel
       - file: examples/tunnel/advanced_tunnel
-  - file: examples/best_profit/best_profit
   - file: examples/ramping/ramping
-  - file: examples/simulation/simulation
-    sections:
-      - file: examples/water_budgeting/water_budgeting
   - file: examples/water_values/water_values
     sections:
       - file: examples/water_values/individual_water_values
+- caption: Functionalities
+  maxdepth: 2
+  chapters:
+  - file: examples/best_profit/best_profit
+    sections:
+      - file: examples/best_profit/best_profit_basic
+  - file: examples/simulation/simulation
+    sections:
+      - file: examples/water_budgeting/water_budgeting
