@@ -346,7 +346,7 @@ For a complete overview of all objects and attributes you can query data from, s
 
 +++ {"Collapsed": "false"}
 
-![LSP.PNG](attachment:LSP.PNG)
+![lsp.png](lsp.png)
 
 +++ {"Collapsed": "false"}
 
