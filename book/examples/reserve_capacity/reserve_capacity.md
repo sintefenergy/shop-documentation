@@ -38,7 +38,7 @@ All of the reserve capacity functionality implemented in SHOP is tied to the **S
 
 +++
 
-### Primary reserves
+## Primary reserves
 
 The FCR-N and FCR-D reserves are limited by the droop setting of the unit in addition to the standard capacity limits visualized in the figure above. The amount of FCR reserves that can be delivered $\left(r_{fcr}\right)$ depends on the static nominal unit production $\left(P_{nom}\right)$, the size of the frequency band $\left(\Delta_f\right)$, and the inverse of the unit droop $\left(d\right)$:
 
@@ -58,12 +58,12 @@ In some cases, the TSO may stipulate a capacity limit rule which requires a cert
 
 +++
 
-### Secondary reserves
+## Secondary reserves
 Unlike the primary reserves, there are no special constraints that have to be enforced for the secondary FRR reserves, although the unit must still be running to provide FRR capacity. The FRR capacity it is possible to deliver is limited by the distance between scheduled production/consumption and the minimum and maximum generation limits, as well as the delivery of the other reserve types.
 
 +++
 
-### Tertiary reserves
+## Tertiary reserves
 The RR reserve capacity can be delivered from units that are turned off, which means that RR_UP is handled in a special way for generators to allow delivery from offline units, and RR_DOWN is handled in an equivalent way for pumps. This requires binary variables for a precise modelling, so allowing SHOP to use binary variables for generators delivering RR_UP and pumps delivering RR_DOWN is especially beneficial. A **p_rr_min** TXY attribute for generators and pumps can be specified to allow the unit to deliver RR reserves below the minimum production limit, typically down to zero. 
 
 +++

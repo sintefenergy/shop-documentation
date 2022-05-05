@@ -225,7 +225,7 @@ The upper level map of this can also have the optional key “timeresolution”.
 
 +++
 
-#### time example <a name="Time_example"></a>
+### time example <a name="Time_example"></a>
 
     time:
       starttime: 2018-02-27 00:00:00

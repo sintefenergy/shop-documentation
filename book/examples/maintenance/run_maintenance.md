@@ -11,8 +11,8 @@ kernelspec:
 ---
 
 # Example of maintenance for generator and plant
-#### Example responsible: Jiehong Kong
-#### Latest update: 08.01.2021
+Example responsible: Jiehong Kong
+Latest update: 08.01.2021
 
 +++
 
