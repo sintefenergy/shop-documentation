@@ -11,18 +11,18 @@ parts:
     sections:
     - file: examples/ascii/ascii_example
     - file: examples/ascii/ascii_data_formats
-    - file: examples/ascii/ascii
     - file: examples/yaml_standard/yaml_standard
     - file: examples/pyshop/pyshop
     - file: examples/basic/basic
-- caption: Objects and modules
+- caption: Object and attribute table
   maxdepth: 2
   chapters:
   - file: tables
   - file: tables_full_width
+- caption: Water course objects and functionalities
+  maxdepth: 2
+  chapters:
   - file: examples/basic_pump/basic_pump
-  - file: examples/cuts/cuts
-  - file: examples/maintenance/run_maintenance
   - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
   - file: examples/reserve_capacity/reserve_capacity
     sections:
@@ -36,12 +36,11 @@ parts:
   - file: examples/water_values/water_values
     sections:
       - file: examples/water_values/individual_water_values
-- caption: Functionalities
-  maxdepth: 2
-  chapters:
+      - file: examples/cuts/cuts
   - file: examples/best_profit/best_profit
     sections:
       - file: examples/best_profit/best_profit_basic
   - file: examples/simulation/simulation
     sections:
       - file: examples/water_budgeting/water_budgeting
+  - file: examples/maintenance/run_maintenance
