@@ -22,6 +22,10 @@ jobs:
       - name: Build documentation
         run: |
           jupyter book build ./book
+      - name: Modify html
+        run: |
+          python -c 'from scripts import insert_line_in_all_html
+          insert_line_in_all_html("./book/_build/html/")'
       - name: Upload to portal
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
