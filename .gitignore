@@ -4,3 +4,6 @@ book/_build/
 *.xml
 *.json
 __pycache__
+*.lp
+*.html
+*.log.*
