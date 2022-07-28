@@ -31,7 +31,7 @@ parts:
   - file: examples/tunnel/tunnel
     sections:
       - file: examples/tunnel/simple_tunnel
-      - file: examples/tunnel/advanced_tunnel
+      # - file: examples/tunnel/advanced_tunnel
   - file: examples/ramping/ramping
   - file: examples/water_values/water_values
     sections:
@@ -42,5 +42,5 @@ parts:
       - file: examples/best_profit/best_profit_basic
   - file: examples/simulation/simulation
     sections:
-      - file: examples/water_budgeting/water_budgeting
+      - file: examples/simulation/water_budgeting
   - file: examples/maintenance/run_maintenance

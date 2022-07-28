@@ -43,7 +43,7 @@ py.offline.init_notebook_mode(connected=True)
 from pyshop import ShopSession
 
 #Functions used in this example for building and solving a simple model with cuts
-from reserve_cap import build_model, run_model
+from reserve import build_model, run_model
 ```
 
 ```{code-cell} ipython3
