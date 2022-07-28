@@ -119,11 +119,3 @@ The BP-functionality is activated by the command
 Starttime and endtime are given as the number of **hours** from the start of the optimization horizon, regardless of the time resolution of SHOP. To define the operating point for each hour, the **ref_prod** attribute must be set on each generator. If a generator has a production schedule, it will be fixed to that production in the BP-curve as well.
 
 The results are accessible both in the API and written to one XML-file per plant.
-
-+++
-
-## Examples
-
-The following examples are available for the BP-functionality.
-
-- <a href="https://shop.sintef.energy/documentation/examples/basic-best-profit-example/" target="_parent">Basic best profit example</a>
