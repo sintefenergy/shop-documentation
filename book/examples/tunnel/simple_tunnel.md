@@ -30,14 +30,14 @@ td {
 This example is available in the following formats.
 
 - pyshop
-    - [tunnel_model.py](#tunnel_model.py)
-    - [tunnel_gate.py](#tunnel_gate.py)
+    - [tunnel_model.py](tunnel-model-py)
+    - [tunnel_gate.py](tunnel-gate-py)
 - YAML
-    - [tunnel_model.yaml](#tunnel_model.yaml)
-    - [tunnel_gate.yaml](#tunnel_gate.yaml)
+    - [tunnel_model.yaml](tunnel-model-yaml)
+    - [tunnel_gate.yaml](tunnel-gate-yaml)
 - ASCII
-    - [tunnel_model.ascii](#tunnel_model.ascii)
-    - [tunnel_gate.ascii](#tunnel_gate.ascii)
+    - [tunnel_model.ascii](tunnel-model-ascii)
+    - [tunnel_gate.ascii](tunnel-gate-ascii)
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -110,60 +110,78 @@ print(f"Optimization of the gate in Tunnel2 improved the objective with {-(optim
 
 +++ {"Collapsed": "false"}
 
+(tunnel-model-py)=
 ## tunnel_model.py <a name="tunnel_model.py"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat tunnel_model.py
+with open('tunnel_model.py', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(tunnel-gate-py)=
 ## tunnel_gate.py
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat tunnel_gate.py
+with open('tunnel_gate.py', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(tunnel-model-yaml)=
 ## tunnel_model.yaml <a name="tunnel_model.yaml"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat tunnel_model.yaml
+with open('tunnel_model.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(tunnel-gate-yaml)=
 ## tunnel_gate.yaml <a name="tunnel_gate.yaml"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat tunnel_gate.yaml
+with open('tunnel_gate.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(tunnel-model-ascii)=
 ## tunnel_model.ascii <a name="tunnel_model.ascii"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat tunnel_model.ascii
+with open('tunnel_model.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(tunnel-gate-ascii)=
 ## tunnel_gate.ascii <a name="tunnel_gate.ascii"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat tunnel_gate.ascii
+with open('tunnel_gate.ascii', 'r') as f:
+    print(f.read())
 ```
