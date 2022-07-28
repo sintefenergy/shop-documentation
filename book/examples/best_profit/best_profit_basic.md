@@ -20,7 +20,7 @@ kernelspec:
 The model setup for this example is available in the following formats:
 
 - pyshop
-    - [bp.py](#bp.py)
+    - [bp.py](bp-py)
      
 
 ```{code-cell} ipython3
@@ -177,14 +177,13 @@ fig.show()
 
 +++ {"Collapsed": "false"}
 
+(bp-py)=
 ## bp.py
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat bp.py
-```
-
-```{code-cell} ipython3
-
+with open('bp.py', 'r') as f:
+    print(f.read())
 ```

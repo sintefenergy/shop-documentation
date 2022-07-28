@@ -29,11 +29,11 @@ td {
 This example is available in the following formats:
 
 - pyshop
-    - [basic_pump.py](#basic_pump.py)
+    - [basic_pump.py](basic-pump-py)
 - YAML
-    - [basic_pump.yaml](#basic_pump.yaml)
+    - [basic_pump.yaml](basic-pump-yaml)
 - ASCII
-    - [basic_pump.ascii](#basic_pump.ascii)
+    - [basic_pump.ascii](basic-pump-ascii)
 
 +++
 
@@ -163,33 +163,43 @@ fig.show()
 
 +++ {"Collapsed": "false"}
 
+(basic-pump-py)=
 ## basic_pump.py <a name="tunnel_model.py"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat basic_pump.py
+with open('basic_pump.py', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(basic-pump-yaml)=
 ## basic_pump.yaml <a name="tunnel_model.yaml"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
 shop.dump_yaml(file_path='basic_pump.yaml',input_only=True)
-%pycat basic_pump.yaml
+
+with open('basic_pump.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(basic-pump-ascii)=
 ## basic_pump.ascii <a name="tunnel_model.ascii"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat basic_pump.ascii
+with open('basic_pump.ascii', 'r') as f:
+    print(f.read())
 ```
 
 ```{code-cell} ipython3

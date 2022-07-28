@@ -18,7 +18,7 @@ kernelspec:
 The model setup is available in the following formats:
 
 - pyshop
-    - [multi_price_bid_matrix_model.py](#multi_price_bid_matrix_model.py)
+    - [multi_price_bid_matrix_model.py](multi-price-bid-matrix-model-py)
 
 +++ {"Collapsed": "false"}
 
@@ -414,10 +414,13 @@ optimal_production.iplot(kind='bar',barmode='stack', bargap=.1,title="Bid volume
 
 +++ {"Collapsed": "false"}
 
+(multi-price-bid-matrix-model-py)=
 ## multi_price_bid_matrix_model.py
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat multi_price_bid_matrix_model.py
+with open('multi_price_bid_matrix_model.py', 'r') as f:
+    print(f.read())
 ```

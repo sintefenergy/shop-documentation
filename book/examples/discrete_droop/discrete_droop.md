@@ -16,15 +16,15 @@ kernelspec:
 The model setup for the iterative discretization of droop results presented below is available in the following formats:
 
 - pyshop
-    - [discrete_droop.py](#discrete_droop.py)
+    - [discrete_droop.py](discrete-droop-py)
 - YAML
-    - [model.yaml](#model.yaml)
-    - [reserve_obligation.yaml](#reserve_obligation.yaml)
-    - [discrete_droop_input.yaml](#discrete_droop_input.yaml)
+    - [model.yaml](discrete-droop-model-yaml)
+    - [reserve_obligation.yaml](discrete-droop-reserve-obligation-yaml)
+    - [discrete_droop_input.yaml](discrete-droop-input-yaml)
 - ASCII
-    - [model.ascii](#model.ascii)
-    - [reserve_obligation.ascii](#reserve_obligation.ascii)    
-    - [discrete_droop_input.ascii](#discrete_droop_input.ascii)
+    - [model.ascii](discrete-droop-model-ascii)
+    - [reserve_obligation.ascii](discrete-droop-reserve-obligation-ascii)    
+    - [discrete_droop_input.ascii](discrete-droop-input-ascii)
 
 +++
 
@@ -155,44 +155,72 @@ Since the default upper bound for the droop is 12 in SHOP, all droop values are 
 
 +++
 
+(discrete-droop-py)=
 ## discrete_droop.py <a name="discrete_droop.py"></a>
 
 ```{code-cell} ipython3
-%pycat discrete_droop.py
+:tags: ['remove-input']
+
+with open('discrete_droop.py', 'r') as f:
+    print(f.read())
 ```
 
+(discrete-droop-model-yaml)=
 ## model.yaml <a name="model.yaml"></a>
 
 ```{code-cell} ipython3
-%pycat model.yaml
+:tags: ['remove-input']
+
+with open('model.yaml', 'r') as f:
+    print(f.read())
 ```
 
+(discrete-droop-reserve-obligation-yaml)=
 ## reserve_obligation.yaml <a name="reserve_obligation.yaml"></a>
 
 ```{code-cell} ipython3
-%pycat reserve_obligation.yaml
+:tags: ['remove-input']
+
+with open('reserve_obligation.yaml', 'r') as f:
+    print(f.read())
 ```
 
+(discrete-droop-input-yaml)=
 ## discrete_droop_input.yaml <a name="discrete_droop_input.yaml"></a>
 
 ```{code-cell} ipython3
-%pycat discrete_droop_input.yaml
+:tags: ['remove-input']
+
+with open('discrete_droop_input.yaml', 'r') as f:
+    print(f.read())
 ```
 
+(discrete-droop-model-ascii)=
 ## model.ascii <a name="model.ascii"></a>
 
 ```{code-cell} ipython3
-%pycat model.ascii
+:tags: ['remove-input']
+
+with open('model.ascii', 'r') as f:
+    print(f.read())
 ```
 
+(discrete-droop-reserve-obligation-ascii)=
 ## reserve_obligation.ascii <a name="reserve_obligation.ascii"></a>
 
 ```{code-cell} ipython3
-%pycat reserve_obligation.ascii
+:tags: ['remove-input']
+
+with open('reserve_obligation.ascii', 'r') as f:
+    print(f.read())
 ```
 
+(discrete-droop-input-ascii)=
 ## discrete_droop_input.ascii <a name="discrete_droop_input.ascii"></a>
 
 ```{code-cell} ipython3
-%pycat discrete_droop_input.ascii
+:tags: ['remove-input']
+
+with open('discrete_droop_input.ascii', 'r') as f:
+    print(f.read())
 ```

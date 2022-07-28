@@ -17,15 +17,15 @@ kernelspec:
 The model setup for the reserve capacity examples presented below are available in the following formats.
 
 - pyshop
-    - [reserve_cap.py](#reserve_cap.py)
+    - [reserve.py](reserve-cap-py)
 - YAML
-    - [model.yaml](#model.yaml)
-    - [reserve_obligation.yaml](#reserve_obligation.yaml)
-    - [smooth_reserve.yaml](#smooth_reserve.yaml)
+    - [model.yaml](reserve-model-yaml)
+    - [reserve_obligation.yaml](reserve-obligation-yaml)
+    - [smooth_reserve.yaml](smooth-reserve-yaml)
 - ASCII
-    - [model.ascii](#model.ascii)
-    - [reserve_obligation.ascii](#reserve_obligation.ascii)
-    - [smooth_reserve.ascii](#smooth_reserve.ascii)
+    - [model.ascii](reserve-model-ascii)
+    - [reserve_obligation.ascii](reserve-obligation-ascii)
+    - [smooth_reserve.ascii](smooth-reserve-ascii)
 
 +++
 
@@ -203,44 +203,72 @@ for gen in shop.model.generator:
     fig.show()
 ```
 
-## reserve_cap.py <a name="reserve_cap.py"></a>
+(reserve-cap-py)=
+## reserve_cap.py <a name="reserve.py"></a>
 
 ```{code-cell} ipython3
-%pycat reserve_cap.py
+:tags: ['remove-input']
+
+with open('reserve.py', 'r') as f:
+    print(f.read())
 ```
 
+(reserve-model-yaml)=
 ## model.yaml <a name="model.yaml"></a>
 
 ```{code-cell} ipython3
-%pycat model.yaml
+:tags: ['remove-input']
+
+with open('model.yaml', 'r') as f:
+    print(f.read())
 ```
 
+(reserve-obligation-yaml)=
 ## reserve_obligation.yaml <a name="reserve_obligation.yaml"></a>
 
 ```{code-cell} ipython3
-%pycat reserve_obligation.yaml
+:tags: ['remove-input']
+
+with open('reserve_obligation.yaml', 'r') as f:
+    print(f.read())
 ```
 
+(smooth-reserve-yaml)=
 ## smooth_reserve.yaml <a name="smooth_reserve.yaml"></a>
 
 ```{code-cell} ipython3
-%pycat smooth_reserve.yaml
+:tags: ['remove-input']
+
+with open('smooth_reserve.yaml', 'r') as f:
+    print(f.read())
 ```
 
+(reserve-model-ascii)=
 ## model.ascii <a name="model.ascii"></a>
 
 ```{code-cell} ipython3
-%pycat model.ascii
+:tags: ['remove-input']
+
+with open('model.ascii', 'r') as f:
+    print(f.read())
 ```
 
+(reserve-obligation-ascii)=
 ## reserve_obligation.ascii <a name="reserve_obligation.ascii"></a>
 
 ```{code-cell} ipython3
-%pycat reserve_obligation.ascii
+:tags: ['remove-input']
+
+with open('reserve_obligation.ascii', 'r') as f:
+    print(f.read())
 ```
 
+(smooth-reserve-ascii)=
 ## smooth_reserve.ascii <a name="smooth_reserve.ascii"></a>
 
 ```{code-cell} ipython3
-%pycat smooth_reserve.ascii
+:tags: ['remove-input']
+
+with open('smooth_reserve.ascii', 'r') as f:
+    print(f.read())
 ```
