@@ -17,9 +17,11 @@ parts:
 - caption: Object and attribute table
   maxdepth: 2
   chapters:
-  - file: tables
+  - file: command-table
+  - file: object-table
+  - file: attribute-table
   - file: tables_full_width
-- caption: Water course objects and functionalities
+- caption: Objects and functionalities
   maxdepth: 2
   chapters:
   - file: examples/basic_pump/basic_pump
@@ -44,3 +46,4 @@ parts:
     sections:
       - file: examples/simulation/water_budgeting
   - file: examples/maintenance/run_maintenance
+# - caption: Publications
