@@ -6,7 +6,7 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.13.8
 kernelspec:
-  display_name: 'Python 3.7.9 64-bit (''SHOP'': conda)'
+  display_name: 'Python 3'
   name: python3
 ---
 

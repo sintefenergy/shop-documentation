@@ -26,7 +26,7 @@ td {
 
 +++
 
-# Introduction
+## Introduction
 
 It is possible to run a simulation in SHOP with reservoir storage volume
 or height as input, and in return get the inflow that would have
@@ -35,7 +35,7 @@ additional data and commands related to the inflow simulation. See the
 main documentation for the simulator in SHOP for a complete description
 of that functionality.
 
-# Input data 
+## Input data 
 
 The main additional input for the inflow simulation is the storage level
 for each reservoir. It can either be given in Mm3 or in masl. If there
@@ -57,7 +57,7 @@ reservoir\_pressure\_flag is set for a creek intake, the inflow is
 calculated based on the assumption that the creek intake has the same
 pressure height as the reservoir above.
 
-# Commands 
+## Commands 
 
 The only command that affects the inflow simulation is the "start
 shopsim" command. By adding the option /inflow after that command, the
@@ -68,7 +68,7 @@ simulator.
 | ------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | start shopsim | /gen\_mw\_schedule, /gen\_m3s\_schedule, /plant\_mw\_schedule, /gen\_m3s\_schedule, /inflow | Run simulation. The inflow option activates the inflow simulation in the SHOP simulator. Default behavior is that all inflow will be simulated for all reservoirs and creek intakes when this option is set. See main simulator documentation for the other options. |
 
-# Result data
+## Result data
 
 The simulator calculates the physical behaviour of the system given the
 input schedules, but also reports the economical value of the schedule.

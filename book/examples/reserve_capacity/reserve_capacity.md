@@ -108,7 +108,7 @@ Note that the reserve ramping functionality requires the **SHOP_RESERVE_CLUSTERI
 
 +++
 
-# Related Examples
+## Related Examples
 Examples showing the use of some of the reserve capacity functionality is available here:
 
 - [Basic usage of the reserve capacity functionality](reserve-example)

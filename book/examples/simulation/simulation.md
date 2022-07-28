@@ -26,7 +26,7 @@ td {
 
 +++
 
-# Introduction
+## Introduction
 
 It is now possible to run a simulation on an entire watercourse in SHOP.
 When running a simulation, no constraints are taken into account. The
@@ -34,7 +34,7 @@ model is neither run through the same validation functions as for
 optimization. The purpose is to return the physical response of the
 system given all user-controllable decisions as input.
 
-# Input data 
+## Input data 
 
 Input of model and data is done using the same format as for
 optimization. For the simulation, most decisions that otherwise are made
@@ -68,7 +68,7 @@ started in the same session as an optimization, the result from the
 optimization will be used as schedule. Otherwise, the schedule will be
 set to 0. If a start reservoir is missing, it is set to 0.
 
-# Simulation rules 
+## Simulation rules 
 
 If the decisions lead to situations that are physically infeasible or
 not adequately described by the input data the rules listed below are
@@ -91,7 +91,7 @@ applied.
     the maximum from the turbine efficiency curves, the flow remains
     unchanged and the amount maximum is reported as a warning.
 
-# Commands 
+## Commands 
 
 The commands listed in the table below are added to SHOP to interface
 the simulator. There are two main modes for reservoir simulation.
@@ -110,12 +110,12 @@ series.
 | save shopsimseries        | /start, /end, /removeequal                                                                  | Write results from simulation to ser file.                                                                                                                                                          |
 | save xmlshopsimseries     | /start, /end, /removeequal                                                                  | Write results simulation to xml file.                                                                                                                                                               |
 
-# Result data
+## Result data
 
 The simulator calculates the physical behaviour of the system given the
 input schedules, but also reports the economical value of the schedule.
 
-## Physical results
+### Physical results
 
 The time series in the table below are returned as physical results from
 the
@@ -137,7 +137,7 @@ simulation.
 | Junction\_gate  | sim\_tunnel\_flow\_1 | TXY           | Flow through first input tunnel in m3/s                                                                            |
 | Junction\_gate  | sim\_tunnel\_flow\_2 | TXY           | Flow through second input tunnel in m3/s                                                                           |
 
-## Economical results
+### Economical results
 
 As a post-processing operation after the simulation, the value of the
 simulated schedule is calculated. The table below summarizes the data
