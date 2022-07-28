@@ -19,6 +19,7 @@ The functionality in SHOP is presented through examples. All examples are writte
 This documentation contains executable code examples that can be executed on the SHOP virtual lab simply by hovering ![](images/rocket.png) in the top right corner and select ![](images/jupyter-hub.png). You can try it out here and now to execute the code block below.
 
 ```{code-cell} ipython3
+:tags: ["remove-output"]
 print("Hello SHOP!")
 ```
 
