@@ -6,7 +6,8 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.13.8
 kernelspec:
-  display_name: 'Python 3.7.9 64-bit (''SHOP'': conda)'
+  display_name: 'Python 3'
+  language: python
   name: python3
 ---
 
@@ -17,17 +18,17 @@ kernelspec:
 The model setup for the three examples are available in the following formats:
 
 - pyshop
-    - [ind_wv.py](#ind_wv.py)
+    - [ind_wv.py](ind-wv-py)
 - YAML
-    - [model.yaml](#model.yaml)
-    - [constant_energy_value.yaml](#constant_energy_value.yaml)
-    - [constant_mixed_values.yaml](#constant_mixed_values.yaml)
-    - [water_value_tables.yaml](#water_value_tables.yaml)
+    - [model.yaml](ind-wv-model-yaml)
+    - [constant_energy_value.yaml](constant-energy-values-yaml)
+    - [constant_mixed_values.yaml](constant-mixed-values-yaml)
+    - [water_value_tables.yaml](water-value-tables-yaml)
 - ASCII
-    - [model.ascii](#model.ascii)
-    - [constant_energy_values.ascii](#constant_energy_values.ascii)
-    - [constant_mixed_values.ascii](#constant_mixed_values.ascii)
-    - [water_value_tables.ascii](#water_value_tables.ascii)
+    - [model.ascii](ind-wv-model-ascii)
+    - [constant_energy_values.ascii](constant-energy-values-ascii)
+    - [constant_mixed_values.ascii](constant-mixed-values-ascii)
+    - [water_value_tables.ascii](water-value-tables-ascii)
       
 
 The examples show how to use constant water values (in €/Mm$^3$ and €/MWh) and water value tables to specify the end value of the end reservoir contents in SHOP. A simple case with three reservoirs and two plants is used to illustrate some of the relevant input and output for individual water values.
@@ -269,90 +270,117 @@ pd.DataFrame([-rsv.energy_value_local_result.get().rename(rsv.get_name()) for rs
 
 +++ {"Collapsed": "false"}
 
+(ind-wv-py)=
 ## ind_wv.py <a name="ind_wv.py"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat ind_wv.py
+with open('ind_wv.py', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(ind-wv-model-yaml)=
 ## model.yaml <a name="model.yaml"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat model.yaml
+with open('model.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(constant-energy-values-yaml)=
 ## constant_energy_values.yaml <a name="constant_energy_values.yaml"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat constant_energy_values.yaml
+with open('constant_energy_values.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(constant-mixed-values-yaml)=
 ## constant_mixed_values.yaml <a name="constant_mixed_values.yaml"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat constant_mixed_values.yaml
+with open('constant_mixed_values.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(water-value-tables-yaml)=
 ## water_value_tables.yaml <a name="water_value_tables.yaml"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat water_value_tables.yaml
+with open('water_value_tables.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(ind-wv-model-ascii)=
 ## model.ascii <a name="model.ascii"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat model.ascii
+with open('model.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(constant-energy-values-ascii)=
 ## constant_energy_values.ascii <a name="constant_energy_values.ascii"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat constant_energy_values.ascii
+with open('constant_energy_values.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(constant-mixed-values-ascii)=
 ## constant_mixed_values.ascii <a name="constant_mixed_values.ascii"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat constant_mixed_values.ascii
+with open('constant_mixed_values.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
+(water-value-tables-ascii)=
 ## water_value_tables.ascii <a name="water_value_tables.ascii"></a>
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat water_value_tables.ascii
+with open('water_value_tables.ascii', 'r') as f:
+    print(f.read())
 ```
