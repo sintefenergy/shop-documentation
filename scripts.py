@@ -14,6 +14,6 @@ def insert_line_in_file(filename: str):
 def insert_line_in_all_html(folder):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".html"):
+            if file.endswith(".html") and not file.endswith("macros.html"):
                 print(os.path.join(root, file))
                 insert_line_in_file(os.path.join(root, file))
