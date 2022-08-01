@@ -77,7 +77,7 @@ parts:
   - file: objects/lp_model
   - file: objects/market
   - file: objects/needle_comb_reserve_capability
-  - file: objects/newtork
+  - file: objects/network
   - file: objects/objective
   - file: objects/plant_reserve_capability
   - file: objects/production_group
