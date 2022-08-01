@@ -31,6 +31,9 @@ parts:
       - file: examples/cuts/cuts
   - file: objects/plant
     sections:
+      - file: objects/generator
+      - file: objects/needle_combination
+      - file: objects/pump
       - file: examples/basic_pump/basic_pump
   - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
   - file: objects/reserve_group
@@ -38,11 +41,16 @@ parts:
       - file: examples/reserve_capacity/reserve_capacity
       - file: examples/reserve_capacity/reserve_cap
       - file: examples/discrete_droop/discrete_droop
-  - file: objects/tunnel
+  - file: water-route
     sections:
+      - file: objects/tunnel
       - file: examples/tunnel/tunnel
       # - file: examples/tunnel/simple_tunnel
       # - file: examples/tunnel/advanced_tunnel
+      - file: objects/river
+      - file: objects/gate
+      - file: objects/junction
+      - file: objects/junction_gate
   - file: examples/ramping/ramping
   - file: examples/best_profit/best_profit
     sections:
@@ -51,34 +59,29 @@ parts:
     sections:
       - file: examples/simulation/water_budgeting
   - file: examples/maintenance/run_maintenance
-  - file: objects/ac_line
+  - file: power-flow
+    sections:
+      - file: objects/ac_line
+      - file: objects/dc_line
   - file: objects/bid_group
   - file: objects/busbar
   - file: objects/commit_group
   - file: objects/contract
   - file: objects/creek_intake
   - file: objects/cut_group
-  - file: objects/dc_line
   - file: objects/discharge_group
-  - file: objects/gate
   - file: objects/gen_reserve_capability
-  - file: objects/generator
   - file: objects/global_settings
   - file: objects/inflow_series
   - file: objects/interlock_constraint
-  - file: objects/junction_gate
-  - file: objects/junction
   - file: objects/lp_model
   - file: objects/market
   - file: objects/needle_comb_reserve_capability
-  - file: objects/needle_combination
   - file: objects/newtork
   - file: objects/objective
   - file: objects/plant_reserve_capability
   - file: objects/production_group
   - file: objects/pump_reserve_capability
-  - file: objects/pump
-  - file: objects/river
   - file: objects/scenario
   - file: objects/thermal
   - file: objects/unit_combination

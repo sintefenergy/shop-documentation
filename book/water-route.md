@@ -1,0 +1,2 @@
+# Water route
+The water route between reservoirs and plants can either be modelled by connecting the reservoir and plants directly or by using the different water route objects [river](river), [tunnel](tunnel), [gate](gate), [junction](junction) and [junction_gate](junction_gate). [River](river) and [tunnel](tunnel) are recommended to be used for future compatibility.

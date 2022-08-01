@@ -46,7 +46,8 @@ kernelspec:
             )
 
             # Write object type description
-            f.write(f"# {object_type.capitalize()}\n")
+            f.write(f"({object_type})=\n")
+            f.write(f"# {object_type.capitalize()} (object type)\n")
             f.write(f"{description}\n\n")
             # Show table with all attributes
             f.write("## Attributes\n")
