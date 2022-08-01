@@ -13,7 +13,7 @@ kernelspec:
 
 # Getting started
 
-The functionality in SHOP is presented through examples. All examples are written in python using pySHOP. For new SHOP users, the introduction example is recommended before looking into more advanced functionality. To get started coding your own models, you can either use the [vLab](https://vlab.sintef.energy) where pySHOP is preinstalled in a Jupyter based environment, or you can [download SHOP](https://shop.sintef.energy/files/shop-releases/) from the portal and install [pySHOP](https://github.com/sintef-energy/pyshop) on your local computer.
+This documentation presents an updated overview of available functionality in SHOP. Many of the functionalities are presented through examples. SHOP supports several input formats as decribed in the [introduction](interaction). For new SHOP users, the introduction example is recommended before looking into more advanced functionality. To get started coding your own models, you can either use the [vLab](https://vlab.sintef.energy) where pySHOP is preinstalled in a Jupyter based environment, or you can [download SHOP](https://shop.sintef.energy/files/shop-releases/) from the portal and install [pySHOP](https://github.com/sintef-energy/pyshop) on your local computer.
 
 ## Launching code with SHOP vlab
 This documentation contains executable code examples that can be executed on the SHOP virtual lab simply by hovering ![](images/rocket.png) in the top right corner and select ![](images/jupyter-hub.png). You can try it out here and now to execute the code block below.
