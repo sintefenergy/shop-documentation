@@ -18,7 +18,7 @@ kernelspec:
 
 import itables as itables
 from itables import init_notebook_mode
-init_notebook_mode(all_interactive=True)
+init_notebook_mode(all_interactive=True, connected=True)
 import pandas as pd
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/commands_v14.csv')
 itables.show(table, dom='tlip')
