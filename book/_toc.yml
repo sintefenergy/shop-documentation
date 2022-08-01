@@ -75,7 +75,6 @@ parts:
   - file: objects/newtork
   - file: objects/objective
   - file: objects/plant_reserve_capability
-  - file: objects/plant
   - file: objects/production_group
   - file: objects/pump_reserve_capability
   - file: objects/pump
