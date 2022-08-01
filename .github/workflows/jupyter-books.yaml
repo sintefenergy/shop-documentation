@@ -19,6 +19,9 @@ jobs:
         run: |
           pip install pytest pytest-xdist nbmake itables
           pytest --nbmake -n=auto
+      - name: Auto-generate object sections
+        run: |
+          python -c "from scripts import generate_object_descriptions; generate_object_descriptions()"
       - name: Build documentation
         run: |
           jupyter book build ./book
