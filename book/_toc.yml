@@ -14,7 +14,7 @@ parts:
     - file: examples/yaml_standard/yaml_standard
     - file: examples/pyshop/pyshop
     - file: examples/basic/basic
-- caption: Object and attribute table
+- caption: Command, object and attribute tables
   maxdepth: 2
   chapters:
   - file: command-table
@@ -24,6 +24,8 @@ parts:
 - caption: Objects and functionalities
   maxdepth: 2
   chapters:
+  # - file: objects/reservoir
+  # - file: objects/plant
   - file: examples/basic_pump/basic_pump
   - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
   - file: examples/reserve_capacity/reserve_capacity
@@ -31,8 +33,8 @@ parts:
       - file: examples/reserve_capacity/reserve_cap
       - file: examples/discrete_droop/discrete_droop
   - file: examples/tunnel/tunnel
-    sections:
-      - file: examples/tunnel/simple_tunnel
+    # sections:
+      # - file: examples/tunnel/simple_tunnel
       # - file: examples/tunnel/advanced_tunnel
   - file: examples/ramping/ramping
   - file: examples/water_values/water_values
