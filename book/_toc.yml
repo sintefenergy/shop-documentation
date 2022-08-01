@@ -81,7 +81,7 @@ parts:
   - file: objects/objective
   - file: objects/production_group
   - file: objects/scenario
-    section:
+    sections:
       - file: objects/bid_group
       - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
   - file: objects/thermal
