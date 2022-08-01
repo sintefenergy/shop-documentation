@@ -45,10 +45,11 @@ kernelspec:
 ---\n\n"""
             )
 
+            # Write object type description
             f.write(f"# {object_type.capitalize()}\n")
             f.write(f"{description}\n\n")
-
-            object_attributes = attribute_table[attribute_table["Object type"] == object_type]
+            # Show table with all attributes
+            f.write("## Attributes\n")
             f.write(
 f"""```{{code-cell}} ipython3
 :tags: ['remove-input', 'full-width']
@@ -58,7 +59,7 @@ from itables import init_notebook_mode
 init_notebook_mode(all_interactive=True, connected=True)
 import pandas as pd
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
-object_attributes = table[table["Object type"] == "{object_type}"]
+object_attributes = table[table["Object type"] == "{object_type}"].iloc[:, 1:]
 itables.show(object_attributes, dom='tlip')
 ```\n\n"""
             )
