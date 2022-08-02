@@ -15,42 +15,9 @@ kernelspec:
 
 +++
 
- - [Introduction](#Introduction)
-   - [PyShop background and overview](#Pyshop_background)
-   - [Documentation structure](#Documentation_structure)
- - [ShopSession](#Shopsession)
-   - [Initialization](#Initialization)
-   - [Methods](#Methods)
- - [PyShop model structure](#Pyshop_model)
-   - [Note on what happens behind the scenes](#Note_behind)
-   - [Note on accessing the next level](#Note_access)
-   - [Auto-completion support](#Auto_completion)
-   - [Model hierarchy](#Model_hierarchy)
-     - [Model hierarchy overview](#Hierarchy_overview)
-     - [Model level](#Model_level)
-     - [SHOP object type level](#Object_type_level)
-     - [SHOP object level](#Object_level)
-     - [Attribute level](#Attribute_level)
-   - [Relations](#Relations)
-     - [Relation terms](#Relation_terms)
-     - [Connecting SHOP objects](#Connecting_objects)
-   - [Expected data formats of attribute datatypes](#Expected_formats)
-     - [Scalar](#Scalar)
-     - [Array](#Array)
-     - [Xy](#Xy)
-     - [Xy_array](#Xy_array)
-     - [Txy](#Txy)
- - [Installation](#Installation)
-   - [General note](#General_note)
-   - [License file location](#License_file)
-   - [Solver interface+ location](#Solver_interface)
-   - [Support of different python versions](#Support_python)
-   - [Note on pip](#Note_pip)
-   - [PyShop(Windows, with CPLEX): Step-by-step guide](#Pyshop_win_cplex)
-   - [PyShop(Windows, no CPLEX): Step-by-step guide](#Pyshop_win)
-   - [PyShop(Linux): Step-by-step guide](#Pyshop_linux)
-   - [Getting started with PyShop in Docker](#Pyshop_docker)
- - [Complete examples](#Complete_examples)
+```{contents}
+:local:
+```
 
 +++
 
@@ -93,8 +60,8 @@ ShopSession initialization arguments:
 |supress_log|Set to "True" if you do not want any SHOP log files.|False|
 |log_file|Provide a path to an output log if you want to generate a **runnable python log**. This is especially useful for sending in cases for debugging errors.|""|
 |log_gets|Option **used alongside "log_file"** for filtering out "query" calls in the generated python log. Query calls are any call that do not alter the internal state of the SHOP model, moslty "getters" and specialized calls for checking states. Set to "False" to filter out such calls.|True|
-|license_path|Used for overriding the location where SHOP will look for the license file. See [License file location](#License_file)|""|
-|solver_path|Used for overriding the location where SHOP will look for solver and solver interface. See [Solver interface location](#Solver_interface)|""|
+|license_path|Used for overriding the location where SHOP will look for the license file. See [](license-file-location)|""|
+|solver_path|Used for overriding the location where SHOP will look for solver and solver interface. See [](solver-interface-location)|""|
 
 Example of usage:
 
@@ -239,7 +206,8 @@ Represents a specific SHOP object type and allows you to creat new SHOP object o
 
 +++
 
-#### SHOP object level <a name="Object_level"></a>
+(object-level)=
+#### SHOP object level
 Represents a specific SHOP object and allows you to connect the SHOP object with other SHOP objects. At this level the SHOP object type and SHOP object name are known and will be referred to as *object_type* and *object_name* respectively.
 
 |Method|Description|Arguments(default values)|
@@ -247,8 +215,8 @@ Represents a specific SHOP object and allows you to connect the SHOP object with
 |get_type|Returns *object_type*.||
 |get_name|Returns *object_name*.||
 |get_relations|Returns a list of "SHOP object level" representations of all SHOP objects connected to *object_name*. Options for filtering based on "direction", "relation type" and "relation category"|direction(both), relation_type="all", relation_category('both')|
-|connect|An old method for connecting SHOP objects. See [Connecting SHOP objects](#Connecting_objects)|connection_type("")|
-|connect_to|A new method for connecting SHOP object using a SHOP object level python object. See [Connecting SHOP objects](#Connecting_objects)|related_object, connection_type("")|
+|connect|An old method for connecting SHOP objects. See [](connecting-objects)|connection_type("")|
+|connect_to|A new method for connecting SHOP object using a SHOP object level python object. See [](connecting-objects)|related_object, connection_type("")|
 
     # Usage examples
     object_level = shop.model.reservoir.Reservoir1
@@ -298,8 +266,9 @@ Before SHOP 14, you had to provide a specific **relation type** when connecting 
 
 +++
 
-#### Connecting SHOP objects <a name="Connecting_objects"></a>
-You can connect SHOP object using two different methods of the "SHOP object" level in the PyShop model structure. These are listed in [SHOP object level](#Object_level) but also warrent some further explanation due to their importance. When connecting **physical** relations the water is implied to flow from the first object to the second object. Note in the examples below that you can provide the relation type through a keyword argument in both alternatives.
+(connecting-objects)=
+#### Connecting SHOP objects
+You can connect SHOP object using two different methods of the "SHOP object" level in the PyShop model structure. These are listed in [](object-level) but also warrent some further explanation due to their importance. When connecting **physical** relations the water is implied to flow from the first object to the second object. Note in the examples below that you can provide the relation type through a keyword argument in both alternatives.
 
     # Available SHOP objects and PyShop variables
     rsv1 = model.reservoir.add_object('Reservoir1')
@@ -403,14 +372,16 @@ PyShop is distributed in three different packages. There are two packages bundle
 
 +++
 
-### License file location <a name="License_file"></a>
+(license-file-location)=
+### License file location
 Like the SHOP executable, PyShop expects to find the license file using an "environment variable" named "ICC_COMMAND_PATH" by default. This has to be defined locally on the system running SHOP. We recommend you to look at resources on the web if you are unfamiliar with environment variables. It is fairly simple to set up and is a common pratice so you should not have any problems with this step. **Note**: keep in mind that many running programs needs to be restarted to get new/updated environment variables.
 
 PyShop allows you "override" the license path by providing a path to your license using the "license_path" parameter when initializing the ShopSession.
 
 +++
 
-### Solver interface+ location <a name="Solver_interface"></a>
+(solver-interface-location)=
+### Solver interface+ location
 **Windows** will by default look for the solver interface and the solver within the PyShop installation itself. For the package bundled with CPLEX you can simply install the zip file as it is and the solver files will be taken care of. For the package bundled without CPLEX, you will have to copy in your own CPLEX solver in the unpacked package before installing, **if** you want to use CPLEX.
 
 **Linux** will by default look for the solver interface in the environment variable ICC_COMMAND_PATH. Note that you only have to take care of the solver interface in Linux as it contains the solver as well. 

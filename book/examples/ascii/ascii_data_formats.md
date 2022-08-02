@@ -18,35 +18,9 @@ kernelspec:
 
 The listed formats and following data layouts are accepted by the ASCII interpreter in SHOP. Comments can be inserted if the first character on the line is #.
 
-- [Single value](#Single_value)
-- [XY-curve](#XY-curve)
-- [TXY-series](#TXY-series)
-- [OPTIMIZATION time](#Optimization_time)
-- [OPTIMIZATION time_resolution](#Optimization_time_resolution)
-- [CONNECT](#Connect)
-- [MARKET](#Market)
-- [RESERVOIR attributes](#Reservoir_attributes)
-- [PLANT attributes](#Plant_attributes)
-- [GENERATOR attributes](#Generator_attributes)
-- [NEEDLE_COMB attributes](#Needle_comb_attributes)
-- [PUMP attributes](#Pump_attributes)
-- [GATE attributes](#Gate_attributes)
-- [TUNNEL attributes](#Tunnel_attributes)
-- [JUNCTION attributes](#Junction_attributes)
-- [JUNCTION_GATE attributes](#Junction_gate_attributes)
-- [CREEK_INTAKE attributes](#Creek_intake)
-- [PRESSURE_POINT attributes](#Pressure_point)
-- [CONTRACT definition](#Contract_definition)
-- [PLANT_OUTLET](#Plant_outlet)
-- [STARTRES](#Startres)
-- [SHOP_WATER_VALUES](#Shop_water_values)
-- [NAMELIST](#Namelist)
-- [NAMELIST_ICC](#Namelist_icc)
-- [SHOP_EXT_WATER_VALUES](#Shop_ext_water_values)
-- [CUTORDER](#Cutorder)
-- [LOSE_SPILL](#Lose_spill)
-- [INITIAL_STATE](#Initial_state)
-- [MULTI_OBJECT_DATA](#Multi_object_data)
+```{contents}
+:local:
+```
 
 To identify the data layout of the following lines, the ASCII interpreter in SHOP reads up to five identifiers on the line preceding the actual data. They must be ordered as in the table below.
 

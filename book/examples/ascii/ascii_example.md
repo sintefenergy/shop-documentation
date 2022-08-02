@@ -20,10 +20,10 @@ kernelspec:
 The model setup for this example is available in the following formats:
 
 - ASCII
-    - [ascii_model.ascii](#ascii_model.ascii)
-    - [ascii_data.ascii](#ascii_data.ascii)
-    - [ascii_time.ascii](#ascii_time.ascii)
-    - [ascii_commands.ascii](#ascii_commands.ascii)
+    - [](ascii_model.ascii)
+    - [](ascii_data.ascii)
+    - [](ascii_time.ascii)
+    - [](ascii_commands.txt)
       
 
 This example models the exact same model found in the basic example and runs the same optimization. However, in this script the model is defined in ASCII files and optimized by running a command file. PyShop provides methods for reading models from ASCII files and executing commands in command files. ASCII files have historically been the main method for defining Shop models, and command files have been used for executing commands on such ASCII models. In PyShop it is possible to combine the older approach with the newer python-based one.
@@ -394,44 +394,56 @@ plot.iplot(title="Reservoir trajectories",xaxis_title="Time",yaxis_title="Mm3")
 
 +++ {"Collapsed": "false"}
 
-# Files
+## Files
 
 +++ {"Collapsed": "false"}
 
-## ascii_model.ascii
+(ascii_model.ascii)=
+### ascii_model.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat ascii_model.ascii
+with open('ascii_model.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## ascii_data.ascii
+(ascii_data.ascii)=
+### ascii_data.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat ascii_data.ascii
+with open('ascii_data.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## ascii_time.ascii
+(ascii_time.ascii)=
+### ascii_time.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat ascii_time.ascii
+with open('ascii_time.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## ascii_commands.txt
+(ascii_commands.txt)=
+### ascii_commands.txt
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat ascii_commands.txt
+with open('ascii_commands.txt', 'r') as f:
+    print(f.read())
 ```

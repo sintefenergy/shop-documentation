@@ -11,38 +11,14 @@ kernelspec:
   name: python3
 ---
 
+(yaml-standard)=
 # SHOP YAML Standard
 
 +++
 
-- [YAML types](#Yaml_types)
-  - [Map](#Map)
-    - [Map example](#Map_example)
-  - [List](#List)
-    - [List example](#List_example)
-  - [Scalar](#Scalar)
-    - [Integer](#Integer)
-    - [Double](#Double)
-  - [String](#String)
-    - [Timestamp](#Timestamp)
-- [SHOP YAML case](#Shop_yaml)
-  - [time](#Time)
-    - [time example](#Time_example)
-  - [model](#Model)
-    - [model example](#Model_example)
-  - [connections](#Connections)
-    - [connections example](#Connections_example)
-  - [commands](#Commands)
-    - [commands example](#Commands_example)
-- [SHOP attribute type formats](#Shop_attribute)
-  - [int](#Int_shop)
-  - [double](#Double_shop)
-  - [int_array](#Int_array)
-  - [double_array](#Double_array)
-  - [xy](#Xy)
-  - [xy_array](#Xy_array)
-  - [txy](#Txy)
-  - [txy(stochastic)](#Txy_stochastic)
+```{contents}
+:local:
+```
 
 +++
 
