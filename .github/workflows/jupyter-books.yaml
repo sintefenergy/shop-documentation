@@ -2,6 +2,10 @@ name: Update Jupyter Books
 
 on:
   workflow_dispatch:
+  # push:
+  #   branches:
+  #   - main
+
 
 jobs:
   build:
@@ -32,8 +36,9 @@ jobs:
       - name: Upload to portal
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: shop.sintef.energy
+          server: sintef.sircon.net
           username: ${{ secrets.SHOP_PORTAL_FTP_USERNAME }}
           password: ${{ secrets.SHOP_PORTAL_FTP_PASSWORD }}
           local-dir: ./book/_build/html/
           server-dir: doc/book/html/
+          protocol: ftps
