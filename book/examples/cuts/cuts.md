@@ -13,24 +13,25 @@ kernelspec:
 
 +++ {"Collapsed": "false"}
 
+(cut-description)=
 # Cut descriptions in SHOP
 
 The model setup for the two cut description examples are available in the following formats.
 
 - pyshop
-    - [cuts.py](#cuts.py)
-    - [rhs_file.txt](#rhs_file.txt)
-    - [wv_file.txt](#wv_file.txt)
+    - [](cuts.py)
+    - [](rhs_file.txt)
+    - [](wv_file.txt)
 - YAML
-    - [model.yaml](#model.yaml)
-    - [standard_cuts.yaml](#standard_cuts.yaml)
-    - [price_dep_cuts.yaml](#price_dep_cuts.yaml)
+    - [](cut-model.yaml)
+    - [](standard_cuts.yaml)
+    - [](price_dep_cuts.yaml)
 - ASCII
-    - [model.ascii](#model.ascii)
-    - [name_coupling.txt](#name_coupling.txt)
-    - [cut_order.txt](#cut_order.txt)
-    - [standard_cuts.txt](#standard_cuts.txt)    
-    - [price_dep_cuts.txt](#price_dep_cuts.txt)        
+    - [](cut-model.ascii)
+    - [](name_coupling.txt)
+    - [](cut_order.txt)
+    - [](standard_cuts.txt)    
+    - [](price_dep_cuts.txt)        
 
 +++ {"Collapsed": "false"}
 
@@ -380,110 +381,143 @@ pd.DataFrame([-rsv.water_value_global_result.get().rename(rsv.get_name()) for rs
 
 +++ {"Collapsed": "false"}
 
-## cuts.py <a name="cuts.py"></a>
+(cuts.py)=
+## cuts.py
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat cuts.py
+with open('cuts.py', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## rhs_file.txt <a name="rhs_file.txt"></a>
+(rhs_file.txt)=
+## rhs_file.txt
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat rhs_file.txt
+with open('rhs_file.txt', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## wv_file.txt <a name="wv_file.txt"></a>
+(wv_file.txt)=
+## wv_file.txt
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat wv_file.txt
+with open('wv_file.txt', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## model.yaml <a name="model.yaml"></a>
+(cut-model.yaml)=
+## model.yaml
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat model.yaml
+with open('model.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## standard_cuts.yaml <a name="standard_cuts.yaml"></a>
+(standard_cuts.yaml)=
+## standard_cuts.yaml
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat standard_cuts.yaml
+with open('standard_cuts.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## price_dep_cuts.yaml <a name="price_dep_cuts.yaml"></a>
+(price_dep_cuts.yaml)=
+## price_dep_cuts.yaml
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat price_dep_cuts.yaml
+with open('price_dep_cuts.yaml', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## model.ascii <a name="model.ascii"></a>
+(cut-model.ascii)=
+## model.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat model.ascii
+with open('model.ascii', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## name_coupling.txt <a name="name_coupling.txt"></a>
+(name_coupling.txt)=
+## name_coupling.txt
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat name_coupling.txt
+with open('name_coupling.txt', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## cut_order.txt <a name="cut_order.txt"></a>
+(cut_order.txt)=
+## cut_order.txt
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat cut_order.txt
+with open('cut_order.txt', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## standard_cuts.txt <a name="standard_cuts.txt"></a>
+(standard_cuts.txt)=
+## standard_cuts.txt
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat standard_cuts.txt
+with open('standard_cuts.txt', 'r') as f:
+    print(f.read())
 ```
 
 +++ {"Collapsed": "false"}
 
-## price_dep_cuts.txt <a name="price_dep_cuts.txt"></a>
+(price_dep_cuts.txt)=
+## price_dep_cuts.txt
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
+:tags: ['remove-input']
 
-%pycat price_dep_cuts.txt
+with open('price_dep_cuts.txt', 'r') as f:
+    print(f.read())
 ```

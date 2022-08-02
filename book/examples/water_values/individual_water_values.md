@@ -13,22 +13,23 @@ kernelspec:
 
 +++ {"Collapsed": "false"}
 
+(individual-water-values)=
 # Individual water values in SHOP
 
 The model setup for the three examples are available in the following formats:
 
 - pyshop
-    - [ind_wv.py](ind-wv-py)
+    - [](ind-wv-py)
 - YAML
-    - [model.yaml](ind-wv-model-yaml)
-    - [constant_energy_value.yaml](constant-energy-values-yaml)
-    - [constant_mixed_values.yaml](constant-mixed-values-yaml)
-    - [water_value_tables.yaml](water-value-tables-yaml)
+    - [](ind-wv-model-yaml)
+    - [](constant-energy-values-yaml)
+    - [](constant-mixed-values-yaml)
+    - [](water-value-tables-yaml)
 - ASCII
-    - [model.ascii](ind-wv-model-ascii)
-    - [constant_energy_values.ascii](constant-energy-values-ascii)
-    - [constant_mixed_values.ascii](constant-mixed-values-ascii)
-    - [water_value_tables.ascii](water-value-tables-ascii)
+    - [](ind-wv-model-ascii)
+    - [](constant-energy-values-ascii)
+    - [](constant-mixed-values-ascii)
+    - [](water-value-tables-ascii)
       
 
 The examples show how to use constant water values (in €/Mm$^3$ and €/MWh) and water value tables to specify the end value of the end reservoir contents in SHOP. A simple case with three reservoirs and two plants is used to illustrate some of the relevant input and output for individual water values.
@@ -271,7 +272,7 @@ pd.DataFrame([-rsv.energy_value_local_result.get().rename(rsv.get_name()) for rs
 +++ {"Collapsed": "false"}
 
 (ind-wv-py)=
-## ind_wv.py <a name="ind_wv.py"></a>
+## ind_wv.py
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -284,7 +285,7 @@ with open('ind_wv.py', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (ind-wv-model-yaml)=
-## model.yaml <a name="model.yaml"></a>
+## model.yaml
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -297,7 +298,7 @@ with open('model.yaml', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (constant-energy-values-yaml)=
-## constant_energy_values.yaml <a name="constant_energy_values.yaml"></a>
+## constant_energy_values.yaml
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -310,7 +311,7 @@ with open('constant_energy_values.yaml', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (constant-mixed-values-yaml)=
-## constant_mixed_values.yaml <a name="constant_mixed_values.yaml"></a>
+## constant_mixed_values.yaml
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -323,7 +324,7 @@ with open('constant_mixed_values.yaml', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (water-value-tables-yaml)=
-## water_value_tables.yaml <a name="water_value_tables.yaml"></a>
+## water_value_tables.yaml
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -336,7 +337,7 @@ with open('water_value_tables.yaml', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (ind-wv-model-ascii)=
-## model.ascii <a name="model.ascii"></a>
+## model.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -349,7 +350,7 @@ with open('model.ascii', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (constant-energy-values-ascii)=
-## constant_energy_values.ascii <a name="constant_energy_values.ascii"></a>
+## constant_energy_values.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -362,7 +363,7 @@ with open('constant_energy_values.ascii', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (constant-mixed-values-ascii)=
-## constant_mixed_values.ascii <a name="constant_mixed_values.ascii"></a>
+## constant_mixed_values.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -375,7 +376,7 @@ with open('constant_mixed_values.ascii', 'r') as f:
 +++ {"Collapsed": "false"}
 
 (water-value-tables-ascii)=
-## water_value_tables.ascii <a name="water_value_tables.ascii"></a>
+## water_value_tables.ascii
 
 ```{code-cell} ipython3
 :Collapsed: 'false'

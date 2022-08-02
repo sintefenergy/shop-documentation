@@ -58,7 +58,7 @@ An example of a water value table for a reservoir of 100 Mm$^3$ is illustrated b
 
 | | |
 |:-------------------------:|:-------------------------:|
-|<img src="./img/water_value_table_marginal.png">|<img src="./img/water_value_table_total.png">|
+|![](./img/water_value_table_marginal.png)|![](./img/water_value_table_total.png)|
 
 +++
 
@@ -121,5 +121,5 @@ Note that water in transit from plants and gates that have a specified **dischar
 
 Examples showing the use of different water value descriptions are available:
 
-- <a href="https://shop.sintef.energy/documentation/examples/individual-water-values/" target="_parent">Individual water value examples</a> (Constant energy values, mix of constant energy values and constant water values, water value tables)
-- <a href="https://shop.sintef.energy/documentation/examples/cuts/" target="_parent">Coupled water value examples</a> (Standard cut description and price dependent cut description)
+- [Individual water values example](individual-water-values) (Constant energy values, mix of constant energy values and constant water values, water value tables)
+- [Coupled water values](cut-description) (Standard cut description and price dependent cut description)
