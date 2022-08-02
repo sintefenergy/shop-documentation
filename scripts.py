@@ -61,7 +61,7 @@ init_notebook_mode(all_interactive=True, connected=True)
 import pandas as pd
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
 object_attributes = table[table["Object type"] == "{object_type}"].iloc[:, 1:]
-itables.show(object_attributes, dom='tlip')
+itables.show(object_attributes, dom='tlip', column_filters='header')
 ```\n\n"""
             )
 
