@@ -17,45 +17,63 @@ parts:
 - caption: Command, object and attribute tables
   maxdepth: 2
   chapters:
-  - file: command-table
-  - file: object-table
-  - file: attribute-table
-  - file: tables_full_width
-- caption: Objects and functionalities
-  maxdepth: 2
-  chapters:
-  - file: objects/reservoir
+  - file: objects
     sections:
-      - file: examples/water_values/water_values
-      - file: examples/water_values/individual_water_values
-      - file: examples/cuts/cuts
-  - file: objects/plant
-    sections:
+      - file: objects/reservoir
+      - file: objects/plant
       - file: objects/generator
       - file: objects/needle_combination
       - file: objects/pump
-      - file: examples/basic_pump/basic_pump
-  - file: objects/reserve_group
-    sections:
-      - file: examples/reserve_capacity/reserve_capacity
-      - file: examples/reserve_capacity/reserve_cap
-      - file: examples/discrete_droop/discrete_droop
+      - file: objects/reserve_group
       - file: objects/plant_reserve_capability
       - file: objects/gen_reserve_capability
       - file: objects/needle_comb_reserve_capability
       - file: objects/pump_reserve_capability
-  - file: water-route
-    sections:
       - file: objects/tunnel
       - file: objects/interlock_constraint
-      - file: examples/tunnel/tunnel
-      # - file: examples/tunnel/simple_tunnel
-      # - file: examples/tunnel/advanced_tunnel
       - file: objects/river
       - file: objects/gate
       - file: objects/junction
       - file: objects/junction_gate
       - file: objects/creek_intake
+      - file: objects/busbar
+      - file: objects/ac_line
+      - file: objects/dc_line
+      - file: objects/commit_group
+      - file: objects/contract
+      - file: objects/cut_group
+      - file: objects/discharge_group
+      - file: objects/global_settings
+      - file: objects/inflow_series
+      - file: objects/lp_model
+      - file: objects/market
+      - file: objects/network
+      - file: objects/objective
+      - file: objects/production_group
+      - file: objects/scenario
+      - file: objects/bid_group
+      - file: objects/thermal
+      - file: objects/unit_combination
+      - file: objects/volume_constraint
+  - file: command-table
+  - file: object-table
+  - file: attribute-table
+  - file: tables_full_width
+- caption: Examples and tutorials
+  maxdepth: 2
+  chapters:
+  - file: examples/water_values/water_values
+  - file: examples/water_values/individual_water_values
+  - file: examples/cuts/cuts
+  - file: examples/basic_pump/basic_pump
+  - file: examples/reserve_capacity/reserve_capacity
+  - file: examples/reserve_capacity/reserve_cap
+  - file: examples/discrete_droop/discrete_droop
+  - file: water-route
+    sections:
+      - file: examples/tunnel/tunnel
+      # - file: examples/tunnel/simple_tunnel
+      # - file: examples/tunnel/advanced_tunnel
   - file: examples/ramping/ramping
   - file: examples/best_profit/best_profit
     sections:
@@ -65,26 +83,5 @@ parts:
       - file: examples/simulation/water_budgeting
   - file: examples/maintenance/run_maintenance
   - file: power-flow
-    sections:
-      - file: objects/busbar
-      - file: objects/ac_line
-      - file: objects/dc_line
-  - file: objects/commit_group
-  - file: objects/contract
-  - file: objects/cut_group
-  - file: objects/discharge_group
-  - file: objects/global_settings
-  - file: objects/inflow_series
-  - file: objects/lp_model
-  - file: objects/market
-  - file: objects/network
-  - file: objects/objective
-  - file: objects/production_group
-  - file: objects/scenario
-    sections:
-      - file: objects/bid_group
-      - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
-  - file: objects/thermal
-  - file: objects/unit_combination
-  - file: objects/volume_constraint
+  - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
 # - caption: Publications

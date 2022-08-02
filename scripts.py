@@ -47,8 +47,16 @@ kernelspec:
 
             # Write object type description
             f.write(f"({object_type})=\n")
-            f.write(f"# {object_type.capitalize()} (object type)\n")
+            f.write(f"# {object_type.capitalize()}\n")
             f.write(f"{description}\n\n")
+
+            f.write(
+f"""|||
+|---|---|
+|test1|test|
+"""
+            )
+
             # Show table with all attributes
             f.write("## Attributes\n")
             f.write(
@@ -61,23 +69,14 @@ init_notebook_mode(all_interactive=True, connected=True)
 import pandas as pd
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
 object_attributes = table[table["Object type"] == "{object_type}"].reset_index().iloc[:, 2:]
+for id, row in object_attributes.iterrows():
+    row["Description"] = f'<a href="#{{row["Attribute name"].replace("_","-")}}">Description</a>'
 itables.show(object_attributes, dom='tlip', column_filters='header')
 ```\n\n"""
             )
 
-            # for index, arow in object_attributes.iterrows():
-            #     attribute_name = arow["Attribute name"]
-            #     datatype = arow["Data type"]
-            #     io = arow["I/O"]
-            #     license = arow["License"]
-            #     version = arow["Version added"]
-            #     adescription = arow["Description"]
-            #     f.write(f"## {attribute_name}\n")
-            #     f.write(f"|Description|Value|\n")
-            #     f.write("|---|---|\n")
-            #     f.write(f"|Data type|{datatype}|\n")
-            #     f.write(f"|I/O|{io}|\n")
-            #     f.write(f"|License|{license}|\n")
-            #     f.write(f"|Version added|{version}|\n\n")
-            #     f.write(f"{adescription}\n\n")
-
+            object_attributes = attribute_table[attribute_table["Object type"] == object_type]
+            for id, row in object_attributes.iterrows():
+                f.write(f"(doc-{object_type}-{row['Attribute name']})=\n")
+                f.write(f'### {row["Attribute name"]}\n')
+                f.write(f"{row['Description']}\n\n")
