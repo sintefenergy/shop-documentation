@@ -53,9 +53,18 @@ kernelspec:
             f.write(
 f"""|||
 |---|---|
-|test1|test|
 """
             )
+            f.write('|Outputs|')
+            if isinstance(row["Legal output connections"], str):
+                for i, o in enumerate(row["Legal output connections"].split(',')):
+                    if i > 0:
+                        f.write(", ")
+                    f.write(f'<a href="{o.strip()}.html">{o.strip()}</a>')
+            f.write("|\n")
+            f.write(f'|License|{row["License"]}|\n')
+            f.write(f'|Release version|{row["Version added"]}|\n')
+            f.write('\n')
 
             # Show table with all attributes
             f.write("## Attributes\n")
