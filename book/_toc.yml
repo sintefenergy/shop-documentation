@@ -58,7 +58,6 @@ parts:
   - file: command-table
   - file: object-table
   - file: attribute-table
-  - file: tables_full_width
 - caption: Examples and tutorials
   maxdepth: 2
   chapters:
