@@ -95,16 +95,70 @@ import itables as itables
 from itables import init_notebook_mode
 init_notebook_mode(all_interactive=True, connected=True)
 import pandas as pd
+from IPython.core.display import HTML
+
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
-object_attributes = table[table["Object type"] == "{object_type}"].reset_index().iloc[:, 2:]
-for id, row in object_attributes.iterrows():
-    row["Description"] = f'<a href="#{{row["Attribute name"].replace("_","-")}}">Description</a>'
-itables.show(object_attributes, dom='tlip', column_filters='header')
+object_attributes = table[table["Object type"] == "{object_type}"].reset_index().iloc[:, 1:]
+itables.show(object_attributes,
+  dom='tlip',
+  search={{'regex': True, "caseInsensitive": True}},
+  column_filters='header',
+  columns=[
+    {{
+      'name': '',
+      'className': 'dt-control',
+      'orderable': False,
+      'data': None,
+      'defaultContent': '',
+    }},
+    {{
+      'name': 'Attribute name',
+      'className': 'dt-body-left'
+    }},
+    {{
+      'name': 'Data type',
+      'className': 'dt-body-left'
+    }},
+    {{
+      'name': 'I/O',
+      'className': 'dt-body-left'
+    }},
+    {{
+      'name': 'License',
+      'className': 'dt-body-left'
+    }},
+    {{
+      'name': 'Version added',
+      'className': 'dt-body-left'
+    }},
+    {{
+      'name': 'Description',
+      'visible': False
+    }}
+  ]
+)
+HTML('''<script>
+$('tbody').on('click', 'td.dt-control', function () {{
+    var tr = $(this).closest('tr');
+    var table = $(this).closest('table').DataTable();
+    var row = table.row(tr);
+
+    if (row.child.isShown()) {{
+        // This row is already open - close it
+        row.child.hide();
+        tr.removeClass('shown');
+    }} else {{
+        // Open this row
+        row.child(row.data()[6]).show();
+        tr.addClass('shown');
+    }}
+}});
+</script>''')
 ```\n\n"""
             )
 
-            object_attributes = attribute_table[attribute_table["Object type"] == object_type]
-            for id, row in object_attributes.iterrows():
-                f.write(f"(doc-{object_type}-{row['Attribute name']})=\n")
-                f.write(f'### {row["Attribute name"]}\n')
-                f.write(f"{row['Description']}\n\n")
+            # object_attributes = attribute_table[attribute_table["Object type"] == object_type]
+            # for id, row in object_attributes.iterrows():
+            #     f.write(f"(doc-{object_type}-{row['Attribute name']})=\n")
+            #     f.write(f'### {row["Attribute name"]}\n')
+            #     f.write(f"{row['Description']}\n\n")
