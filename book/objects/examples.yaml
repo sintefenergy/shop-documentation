@@ -1,0 +1,34 @@
+pump:
+  - examples/basic_pump/basic_pump
+plant:
+  - examples/best_profit/best_profit
+  - examples/best_profit/best_profit_basic
+  - examples/maintenance/run_maintenance
+  - examples/ramping/ramping
+generator:
+  - examples/best_profit/best_profit
+  - examples/best_profit/best_profit_basic
+  - examples/discrete_droop/discrete_droop
+  - examples/maintenance/run_maintenance
+reservoir:
+  - examples/cuts/cuts
+  - examples/water_values/water_values
+  - examples/water_values/ind_wv
+  - examples/water_values/individual_water_values
+  - examples/ramping/ramping
+scenario:
+  - examples/multi_price_bid_matrix/multi_price_bid_matrix
+gate:
+  - examples/ramping/ramping
+contract:
+  - examples/ramping/ramping
+reserve_group:
+  - examples/reserve_capacity/reserve_capacity
+  - examples/reserve_capacity/reserve_cap
+simulation:
+  - examples/simulation/simulation
+  - examples/simulation/water_budgeting
+tunnel:
+  - examples/tunnel/tunnel
+  - examples/tunnel/simple_tunnel
+  - examples/tunnel/advanced_tunnel

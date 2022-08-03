@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import yaml
 
 def insert_line_in_file(filename: str):
     with open(filename, "r", encoding="utf8") as f:
@@ -31,7 +32,7 @@ def generate_object_descriptions():
         object_path = "book/objects"
         if not os.path.exists(object_path):
             os.makedirs(object_path)
-        with open(f"{object_path}/{object_type}.md", "w") as f:
+        with open(f"{object_path}/{object_type}.md", "w") as f, open(f"{object_path}/examples.yaml") as examples:
             f.write("""---
 jupytext:
   text_representation:
@@ -65,6 +66,14 @@ f"""|||
             f.write(f'|License|{row["License"]}|\n')
             f.write(f'|Release version|{row["Version added"]}|\n')
             f.write('\n')
+
+            # List examples
+            f.write("## Examples\n")
+            example_list = yaml.load(examples, Loader=yaml.FullLoader)
+            if object_type in example_list:
+                for item in example_list[object_type]:
+                    f.write(f"- []({item})\n")
+            f.write("\n")
 
             # Show table with all attributes
             f.write("## Attributes\n")
