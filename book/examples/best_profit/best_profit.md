@@ -49,7 +49,7 @@ Based on the theoretical discussion above, it is clear that an important part of
 
 +++
 
-<img src="./img/unit_combinations.png">
+![](./img/unit_combinations.png)
 
 +++
 
@@ -64,7 +64,7 @@ The costs faced by hydropower producers also include costs that are not direct f
 
 +++
 
-<img src="./img/bp_overview.png">
+![](./img/bp_overview.png)
 
 +++
 
@@ -72,11 +72,11 @@ The steps inside "Add profitable points down" and "Add profitable points up" are
 
 +++
 
-<img src="./img/bp_steps_down.png">
+![](./img/bp_steps_down.png)
 
 +++
 
-<img src="./img/bp_steps_up.png">
+![](./img/bp_steps_up.png)
 
 +++
 
@@ -104,7 +104,7 @@ We have now defined the components that constitute the BP-functionality. The flo
 
 +++
 
-<img src="./img/bp_functionality.png">
+![](./img/bp_functionality.png)
 
 +++
 

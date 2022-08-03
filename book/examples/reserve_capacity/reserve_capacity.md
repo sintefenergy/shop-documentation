@@ -28,9 +28,7 @@ The **FCR-N** reserve capacity corresponds to capacity used for primary frequenc
 
 The amount of reserves that can be delivered from a spinning generating unit is normally limited by the static **p_max** and **p_min** attributes on the unit, in addition to the optimized production level. Active production constraints on the unit, see the **min/max_p_constr** generator attributes, are also considered in the reserve capcity constraints. An example illustration of a reserve capacity allocation on a generator is shown in the figure below. The behaviour is similar for variable speed pumps, though the upward and downward directions are flipped since the pump is consuming power.
 
-<p align="center">
- <img src="./img/reserve_allocation.png">
-</p>
+![](./img/reserve_allocation.png)
     
 As indicated by the picture above, the amount of reserve capacity possible to allocate on a single unit is closely linked to the unit commitment (on/off) constraints of the uit. It is therefore reccomended that binary unit commitment variables are active for units participating in the delivery of reserve capacity in the full SHOP iterations. This can be controlled by the **mip_flag** attribute on the plant objects, or by the `set universal_mip` command. If a unit is delivering reserve capacity in a time period without binary on/off variables, unexpected behaviour due to the relaxed unit commitment constraints can occur. For instance, a fractional startup will shift the upper and lower limits in the figure above and alter the amount of reserve capacity that can be delivered. This can again lead to penalties in incremental iterations when all units are fully turned on or off.
 
