@@ -23,6 +23,8 @@ from IPython.core.display import HTML
 
 init_notebook_mode(all_interactive=True, connected=True)
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2022/04/objects_v14.csv').reset_index()
+for index, row in table.iterrows():
+  table.at[index, "Object type"] = f"""<a href="objects/{row["Object type"]}.html">{row["Object type"]}</a>"""
 itables.show(
   table,
   dom='tlip',
