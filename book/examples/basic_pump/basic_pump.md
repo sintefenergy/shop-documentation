@@ -24,6 +24,7 @@ td {
 
 +++ {"Collapsed": "false"}
 
+(basic-pump-example)=
 # Basic pump example
 
 This example is available in the following formats:

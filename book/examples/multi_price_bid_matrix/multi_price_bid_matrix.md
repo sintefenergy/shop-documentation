@@ -13,6 +13,7 @@ kernelspec:
 
 +++ {"Collapsed": "false"}
 
+(multiple-price-bid-matrix)=
 # Multiple price bid matrix example
 
 The model setup is available in the following formats:

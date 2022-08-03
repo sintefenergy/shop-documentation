@@ -13,6 +13,7 @@ kernelspec:
 
 +++ {"Collapsed": "false"}
 
+(best-profit-basic-example)=
 # Best profit basic example
 
 +++ {"Collapsed": "false"}

@@ -22,6 +22,7 @@ td {
 
 +++
 
+(tunnel-description)=
 # Tunnel
 ## Introduction
 The tunnel module can be used to model both single tunnels between reservoirs and complex tunnel systems leading in and out of hydropower plants. The main assumption is that flow in a tunnel can be determined by the pressure difference between inlet and outlet, and the head loss due to friction inside the tunnel. Tunnels are also allowed to have gates inside them to control the water flow.

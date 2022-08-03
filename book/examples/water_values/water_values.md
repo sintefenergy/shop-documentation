@@ -21,6 +21,7 @@ td {
 
 +++
 
+(water-value-descriptions)=
 # Water value descriptions
 ## Introduction
 The valuation of the water saved in the reserovirs by the end of the optimization period is a crucial input to SHOP that will be an important factor in determining the optimal operation of the hydropower system. It is possible to define the water value description for each reservoir in several ways. The two main categories of water value descriptions are independent and coupled water values, each with its own sub-categories explained below.

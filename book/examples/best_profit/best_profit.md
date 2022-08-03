@@ -11,6 +11,7 @@ kernelspec:
   name: python3
 ---
 
+(best-profit)=
 # Best Profit
 
 ## Theory

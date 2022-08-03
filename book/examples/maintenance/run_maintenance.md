@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(maintenance-example)=
 # Example of maintenance for generator and plant
 Example responsible: Jiehong Kong
 Latest update: 08.01.2021
