@@ -51,6 +51,7 @@ kernelspec:
             f.write(f"# {object_type.capitalize()}\n")
             f.write(f"{description}\n\n")
 
+            # Insert table
             f.write(
 f"""|||
 |---|---|
@@ -67,11 +68,20 @@ f"""|||
             f.write(f'|Release version|{row["Version added"]}|\n')
             f.write('\n')
 
-            # List examples
-            f.write("## Examples\n")
+            #Insert TOC
+            f.write("```{contents}\n:local:\n:depth: 1\n```\n\n")
+
             example_list = yaml.load(examples, Loader=yaml.FullLoader)
-            if object_type in example_list:
-                for item in example_list[object_type]:
+            # Insert comprehensive doc
+            if object_type in example_list['doc']:
+                with open(f"book/{example_list['doc'][object_type]}.md") as doc:
+                    f.write(doc.read())
+                f.write('\n\n')
+
+            # List examples
+            if object_type in example_list['examples']:
+                f.write("## Examples\n")
+                for item in example_list['examples'][object_type]:
                     f.write(f"- []({item})\n")
             f.write("\n")
 
