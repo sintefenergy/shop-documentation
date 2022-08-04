@@ -17,13 +17,12 @@ parts:
 - caption: Command, object and attribute tables
   maxdepth: 2
   chapters:
-  - file: objects
-    sections:
-      {% for object_type in object_types -%}
-      - file: objects/{{ object_type }}
-      {% endfor -%}
-  - file: command-table
   - file: object-table
+    sections:
+      {%- for object_type in object_types %}
+      - file: objects/{{ object_type }}
+      {%- endfor %}
+  - file: command-table
   - file: attribute-table
 - caption: Examples and tutorials
   maxdepth: 2

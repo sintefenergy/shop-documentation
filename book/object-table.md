@@ -10,8 +10,9 @@ kernelspec:
   name: python3
 ---
 
-(object-table)=
-# Object table
+(objects)=
+# Objects
+Objects are the basic building blocks in a SHOP model. The table below shows all available objects in SHOP. Click the + icon to show a short description or click the object name to get extensive information.
 
 ```{code-cell} ipython3
 :tags: ['remove-input', 'full-width']
