@@ -2,6 +2,7 @@
 book/_build/
 book/_toc.yml
 book/objects/*.md
+book/commands/*.md
 *.log
 *.xml
 *.json

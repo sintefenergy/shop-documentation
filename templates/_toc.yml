@@ -23,6 +23,10 @@ parts:
       - file: objects/{{ object_type }}
       {%- endfor %}
   - file: command-table
+    sections:
+      {%- for command_type in command_types %}
+      - file: commands/{{ command_type }}
+      {%- endfor %}
   - file: attribute-table
 - caption: Examples and tutorials
   maxdepth: 2

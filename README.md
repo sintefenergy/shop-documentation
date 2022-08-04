@@ -12,10 +12,13 @@ To inspect the book, open `/book/_build/html/intro.html`
 To include additional description, examples and references, please follow this guideline.
 
 ### Additional object description
-Additional object description can be added by adding markdown files in the `book/doc` folder. The file name should be the same as the object type and should not containt level one headings (#). The content of the file will be automatically merged into the object type documentation by Github Actions.
+Additional object description can be added by adding markdown files in the [](/book/doc/objects/) folder. The file name should be the same as the object type and should not containt level one headings (#). The content of the file will be automatically merged into the object type documentation by Github Actions.
+
+## Additional command description
+Additional command description can be added by adding markdown files in the [](/book/doc/commands/) folder. The file name should be the same as the command type, but white space should be replaced with underscore (_). The file should not containt level one headings (#). The content of the file will be automatically merged into the object type documentation by Github Actions.
 
 ### Examples
-Examples can be added in the [book/examples](book/examples/) folder. Use sub-folders if necessary to keep the structure clean. The examples should be listed in the [table of contents](templates/_toc.yml) as a chapter in *Examples and tutorials*. The examples should also be listed under the relevant objects in [](book/objects/cross-references.yaml).
+Examples can be added in the [](/book/examples/) folder. Use sub-folders if necessary to keep the structure clean. The examples should be listed in the [table of contents](/templates/_toc.yml) as a chapter in *Examples and tutorials*. The examples should also be listed under the relevant objects in [](book/objects/cross-references.yaml).
 
 ### References
 References to scientific publications should be included in [](book/references.bib). Make sure the entry is not a duplicate of existing entries. Add reference to the new publication for the relevant objects in [](book/objects/cross-references.yaml) such that they appear it the automatically generated object documentation.
