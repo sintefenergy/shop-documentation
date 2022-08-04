@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# Scientific publications
+# List of publications
 This overview shows papers published by SINTEF that are relevant for SHOP.
 
 ```{code-cell} ipython3

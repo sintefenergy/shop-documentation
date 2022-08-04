@@ -31,5 +31,8 @@ examples:
   # tunnel:
   #   - simple-tunnel
   #   - advanced-tunnel
-doc:
-  tunnel: doc/tunnel
+references:
+  tunnel:
+    - Belsnes2004
+    - Aaslid2019a
+    - Dorn2016

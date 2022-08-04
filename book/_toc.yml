@@ -87,3 +87,4 @@ parts:
   maxdepth: 2
   chapters:
   - file: references
+  - file: bibliography

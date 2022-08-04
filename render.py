@@ -1,6 +1,8 @@
+import os
 import yaml
 import pandas as pd
 from jinja2 import Environment, FileSystemLoader
+import bibtexparser
 
 env = Environment(loader=FileSystemLoader("templates/"))
 
@@ -8,7 +10,7 @@ object_template = env.get_template("object.md")
 object_table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2022/04/objects_v14.csv')
 object_table.columns = [c.replace(' ', '_') for c in object_table.columns]
 
-with open(f"book/objects/examples.yaml") as examples:
+with open(f"book/objects/cross-references.yaml") as examples:
     example_list = yaml.load(examples, Loader=yaml.FullLoader)
     for index, row in object_table.iterrows():
         object_type = row["Object_type"]
@@ -31,13 +33,29 @@ with open(f"book/objects/examples.yaml") as examples:
         kwargs['inputs'] = inputs
         
         # Check for extensive doc
-        if object_type in example_list['doc']:
+        if os.path.isfile(f"book/doc/{object_type}.md"):
             with open(f"book/{example_list['doc'][object_type]}.md") as doc:
                 kwargs['doc'] = doc.read()
         
         # Check for examples
         if object_type in example_list['examples']:
             kwargs['examples'] = example_list['examples'][object_type]
+
+        # Check for examples
+        if object_type in example_list['references']:
+            with open('book/references.bib') as bibfile:
+              bib_list = bibtexparser.load(bibfile)
+            table = pd.DataFrame(bib_list.entries)
+            ## Available entries
+            # ['year', 'url', 'volume', 'title', 'pages', 'keywords', 'journal',
+            #      'isbn', 'doi', 'author', 'ENTRYTYPE', 'ID', 'abstract', 'publisher',
+            #      'month', 'issn', 'issue'],
+            table = table[['ID', 'author', 'title', 'journal', 'year', 'url', 'doi', 'abstract']].reset_index()
+            references = []
+            for id, reference in table.iterrows():
+                if reference['ID'] in example_list['references'][object_type]:
+                    references.append(reference)
+            kwargs['references'] = references
 
         # Render file
         content = object_template.render(kwargs)

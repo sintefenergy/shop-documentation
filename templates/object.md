@@ -40,10 +40,17 @@ kernelspec:
 
 {% if examples is defined -%}
 ## Examples
-{%- endif %}
-{% for example in examples -%}
+  {% for example in examples -%}
   - []({{ example }})
-{% endfor %}
+  {% endfor %}
+{%- endif %}
+
+{% if references is defined -%}
+## References
+  {% for reference in references -%}
+  - {{ reference.title }} {cite}`{{ reference.ID }}`
+  {% endfor %}
+{%- endif %}
 
 ## Attributes
 ```{code-cell} ipython3
