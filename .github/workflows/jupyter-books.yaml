@@ -21,11 +21,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Test notebooks
         run: |
-          pip install pytest pytest-xdist nbmake itables
+          pip install pytest pytest-xdist nbmake bibtexparser yaml Jinja2
           pytest --nbmake -n=auto
       - name: Auto-generate object sections
         run: |
-          python -c "from scripts import *; generate_object_descriptions(); generate_bibliography();"
+          python render.py
       - name: Build documentation
         run: |
           jupyter book build ./book
