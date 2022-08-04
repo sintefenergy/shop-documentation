@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+({{ object.Command|replace(" ", "_") }})=
 # {{ object.Command }}
 {{ object.Description }}
 
