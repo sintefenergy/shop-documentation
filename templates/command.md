@@ -10,7 +10,6 @@ kernelspec:
   name: python3
 ---
 
-({{ object.Command }})=
 # {{ object.Command }}
 {{ object.Description }}
 
