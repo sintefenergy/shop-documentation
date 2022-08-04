@@ -25,7 +25,7 @@ jobs:
           pytest --nbmake -n=auto
       - name: Auto-generate object sections
         run: |
-          python -c "from scripts import generate_object_descriptions; generate_object_descriptions()"
+          python -c "from scripts import *; generate_object_descriptions(); generate_bibliography();"
       - name: Build documentation
         run: |
           jupyter book build ./book

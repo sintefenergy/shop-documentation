@@ -83,4 +83,7 @@ parts:
   - file: examples/maintenance/run_maintenance
   - file: power-flow
   - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
-# - caption: Publications
+- caption: Publications
+  maxdepth: 2
+  chapters:
+  - file: references
