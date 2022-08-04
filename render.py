@@ -76,7 +76,7 @@ with open(f"book/commands/cross-references.yaml") as commands:
 
         # Check for extensive doc
         if os.path.isfile(f"book/doc/commands/{command_key}.md"):
-            with open(f"book/doc/commands/{command_key}.md") as doc:
+            with open(f"book/doc/commands/{command_key}.md", encoding='utf8') as doc:
                 kwargs['doc'] = doc.read()
         
         # Check for examples
@@ -94,7 +94,7 @@ with open(f"book/commands/cross-references.yaml") as commands:
         # Render file
         content = command_template.render(kwargs)
         filename = f"book/commands/{command_key}.md"
-        with open(filename, "w") as object_file:
+        with open(filename, "w", encoding='utf8') as object_file:
             object_file.write(content)
             print(f"... wrote {filename}")
 
