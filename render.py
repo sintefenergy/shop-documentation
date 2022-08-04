@@ -6,10 +6,10 @@ import bibtexparser
 
 env = Environment(loader=FileSystemLoader("templates/"))
 
-object_template = env.get_template("object.md")
 object_table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2022/04/objects_v14.csv')
 object_table.columns = [c.replace(' ', '_') for c in object_table.columns]
 
+object_template = env.get_template("object.md")
 with open(f"book/objects/cross-references.yaml") as examples:
     example_list = yaml.load(examples, Loader=yaml.FullLoader)
     for index, row in object_table.iterrows():
@@ -34,7 +34,7 @@ with open(f"book/objects/cross-references.yaml") as examples:
         
         # Check for extensive doc
         if os.path.isfile(f"book/doc/{object_type}.md"):
-            with open(f"book/{example_list['doc'][object_type]}.md") as doc:
+            with open(f"book/objects/{object_type}.md") as doc:
                 kwargs['doc'] = doc.read()
         
         # Check for examples
@@ -63,3 +63,11 @@ with open(f"book/objects/cross-references.yaml") as examples:
         with open(filename, "w") as object_file:
             object_file.write(content)
             print(f"... wrote {filename}")
+
+toc_template = env.get_template("_toc.yml")
+object_types = object_table["Object_type"].to_list()
+content = toc_template.render(object_types=object_types)
+filename = f"book/_toc.yml"
+with open(filename, "w") as toc:
+    toc.write(content)
+    print(f"... wrote {filename}")

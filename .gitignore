@@ -1,5 +1,7 @@
 .vscode
 book/_build/
+book/_toc.yml
+book/objects/*.md
 *.log
 *.xml
 *.json
@@ -7,4 +9,3 @@ __pycache__
 *.lp
 *.html
 *.log.*
-book/objects/*.md
