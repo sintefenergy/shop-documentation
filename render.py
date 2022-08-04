@@ -34,7 +34,7 @@ with open(f"book/objects/cross-references.yaml") as examples:
         
         # Check for extensive doc
         if os.path.isfile(f"book/doc/{object_type}.md"):
-            with open(f"book/objects/{object_type}.md") as doc:
+            with open(f"book/doc/{object_type}.md") as doc:
                 kwargs['doc'] = doc.read()
         
         # Check for examples
