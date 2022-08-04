@@ -16,11 +16,18 @@ kernelspec:
 
 |   |   |
 |---|---|
-|Outputs|
+|Input connections|
+{%- for connection in inputs -%}
+  {%- if loop.index > 1 %}, {% endif -%}
+  <a href="{{ connection }}.html">{{ connection }}</a>
+{%- endfor -%}
+|
+|Output connections|
 {%- for connection in object.Legal_output_connections -%}
   {%- if loop.index > 1 %}, {% endif -%}
   <a href="{{ connection }}.html">{{ connection }}</a>
-{%- endfor -%}|
+{%- endfor -%}
+|
 |License|{{ object.License }}|
 |Release version|{{ object.Version_added }}|
 

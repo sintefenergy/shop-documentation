@@ -11,6 +11,9 @@ object_table.columns = [c.replace(' ', '_') for c in object_table.columns]
 with open(f"book/objects/examples.yaml") as examples:
     example_list = yaml.load(examples, Loader=yaml.FullLoader)
     for index, row in object_table.iterrows():
+        object_type = row["Object_type"]
+
+        # Convert object_type object to dict
         obj = row.to_dict()
         if isinstance(row["Legal_output_connections"], str):
             obj['Legal_output_connections'] = [o.strip() for o in obj['Legal_output_connections'].split(',')]
@@ -18,9 +21,16 @@ with open(f"book/objects/examples.yaml") as examples:
             obj['Legal_output_connections'] = []
         kwargs = dict()
         kwargs['object'] = obj
+
+        # Get inputs
+        inputs = []
+        for id, r in object_table.iterrows():
+            connections = [o.strip() for o in r['Legal_output_connections'].split(',')] if isinstance(r["Legal_output_connections"], str) else []
+            if object_type in connections:
+                inputs.append(r["Object_type"])
+        kwargs['inputs'] = inputs
         
         # Check for extensive doc
-        object_type = row["Object_type"]
         if object_type in example_list['doc']:
             with open(f"book/{example_list['doc'][object_type]}.md") as doc:
                 kwargs['doc'] = doc.read()
