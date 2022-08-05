@@ -11,7 +11,7 @@ kernelspec:
 ---
 
 ({{ object.Object_type }})=
-# {{ object.Object_type|capitalize }}
+# {{ object.Object_type }}
 {{ object.Description }}
 
 |   |   |
@@ -64,6 +64,8 @@ from IPython.core.display import HTML
 
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
 object_attributes = table[table["Object type"] == "{{ object.Object_type }}"].reset_index().iloc[:, 1:]
+for index, row in object_attributes.iterrows():
+  object_attributes.at[index, "Attribute name"] = f"""<a href="{row['Object type'].replace('_', '-')}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
 itables.show(object_attributes,
   dom='tlip',
   search={'regex': True, "caseInsensitive": True},
@@ -114,9 +116,17 @@ $('tbody').on('click', 'td.dt-control', function () {
         tr.removeClass('shown');
     } else {
         // Open this row
-        row.child(row.data()[6]).show();
+        row.child("<div align='left'>".concat(row.data()[6], "</div>")).show();
         tr.addClass('shown');
     }
 });
 </script>''')
 ```
+
+{% for attribute in attributes -%}
+({{ attribute.Object_type }}:{{ attribute.Attribute_name }})=
+### {{ attribute.Attribute_name }}
+{{ attribute.Description }}
+
+{{ attribute.doc }}
+{% endfor %}

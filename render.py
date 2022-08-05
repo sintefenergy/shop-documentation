@@ -9,11 +9,15 @@ env = Environment(loader=FileSystemLoader("templates/"))
 object_table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2022/04/objects_v14.csv')
 object_table.columns = [c.replace(' ', '_') for c in object_table.columns]
 
+attribute_table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
+attribute_table.columns = [c.replace(' ', '_') for c in attribute_table.columns]
+
 with open('book/references.bib') as bibfile:
     bib_list = bibtexparser.load(bibfile)
 bib_table = pd.DataFrame(bib_list.entries)
 bib_table = bib_table[['ID', 'author', 'title', 'journal', 'year', 'url', 'doi', 'abstract']].reset_index()
 
+# Render object pages
 object_template = env.get_template("object.md")
 with open(f"book/objects/cross-references.yaml") as examples:
     example_list = yaml.load(examples, Loader=yaml.FullLoader)
@@ -53,6 +57,16 @@ with open(f"book/objects/cross-references.yaml") as examples:
                 if reference['ID'] in example_list['references'][object_type]:
                     references.append(reference)
             kwargs['references'] = references
+
+        # Include attributes
+        attribute_list = []
+        for index, row in attribute_table[attribute_table["Object_type"] == object_type].iterrows():
+            attribute_item = row.to_dict()
+            if os.path.isfile(f"book/doc/attributes/{object_type}-{row['Attribute_name']}.md"):
+                with open(f"book/doc/attributes/{object_type}-{row['Attribute_name']}.md") as doc:
+                    attribute_item['doc'] = doc.read()
+            attribute_list.append(attribute_item)
+        kwargs['attributes'] = attribute_list
 
         # Render file
         content = object_template.render(kwargs)
