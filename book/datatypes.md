@@ -1,5 +1,5 @@
 (datatypes)=
-# Datatypes
+# Attribute datatypes
 SHOP attributes, both inputs and outputs, uses the following datatypes:
 ```{contents}
 :local:
