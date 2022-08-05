@@ -62,7 +62,7 @@ Note that the xy_array attribute [](reservoir:water_value_input) should only con
 As the reservoirs in a watercourse are physically and temporaly coupled, the future expected value of the water saved at the end of the optimization horizon depends on the state of all reservoir levels. In contrast to the independent water value descriptions, a single multi-dimensional water value function dependent on the end volume of all coupled reservoirs can be used instead for a more refined formulation. This function is represented as a set of inequality constraints, usually created by a Benders decomposition scheme in the long-term models, often referred to as "cuts".
 
 ### Standard cut description
-To define a cut description for the system, a **[](cut_group)** object must be created and connected to all reservoirs part of the cut coupling. If several separate watercourses with different cut descriptions are used in the SHOP run, a [](cut_group) should be created for each coupled set of reservoirs. The constant terms (right-hand side) of the linear cut constraints are speceified on the [](cut_group) object through the **rhs** attribute:
+To define a cut description for the system, a **[](cut_group)** object must be created and connected to all reservoirs part of the cut coupling. If several separate watercourses with different cut descriptions are used in the SHOP run, a [](cut_group) should be created for each coupled set of reservoirs. The constant terms (right-hand side) of the linear cut constraints are speceified on the [](cut_group) object through the **[](cut_group:rhs)** attribute:
 
 |Object type|Attribute|Data type|Unit|I/O|Description|
 |:-|:-|:-|:-|:-|:-|
@@ -72,7 +72,7 @@ The sign convention of the rhs attribute in SHOP is defined in terms of income, 
 
 The water value cut coefficients for each reservoir in the cut description is again defined by the **water_value_input** attribute on the reservoir object, and a single xy table should be used in the standard cut description. The x values represent the reference volumes of the reservoir when the specific cut constraint was created, and the y values are the water value cut coefficients. The reference volumes are sometimes given as a percentage filling level of the reservoir in the long-term model coupling files, but should always be given in Mm$^3$ when interacting with the water_value_input attribute. The reference volumes are in some cases not reported from the long-term model, which means they are already baked into the rhs values of the cuts and the x values of the water_value_input attribute should be set to zero.
 
-The optimized end value of the cut description of the system is saved to the **end_value** attribute on the [](cut_group) object. The binding cut constraint after optimization is also saved to the **[](cut_group:binding_cut_up)** attribute:
+The optimized end value of the cut description of the system is saved to the **[](cut_group:end_value)** attribute on the [](cut_group) object. The binding cut constraint after optimization is also saved to the **[](cut_group:binding_cut_up)** attribute:
 
 |Object type|Attribute|Data type|Unit|I/O|Description|
 |:-|:-|:-|:-|:-|:-|
