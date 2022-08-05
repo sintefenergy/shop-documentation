@@ -22,6 +22,7 @@ init_notebook_mode(all_interactive=True, connected=True)
 import pandas as pd
 from IPython.core.display import HTML
 import bibtexparser
+import yaml
 
 with open('references.bib', encoding='utf8') as bibfile:
   bib_list = bibtexparser.load(bibfile)
@@ -31,6 +32,8 @@ table = pd.DataFrame(bib_list.entries)
 #      'isbn', 'doi', 'author', 'ENTRYTYPE', 'ID', 'abstract', 'publisher',
 #      'month', 'issn', 'issue'],
 table = table[['author', 'title', 'journal', 'year', 'url', 'doi', 'abstract']].reset_index()
+with open('author-links.yml', encoding='utf8') as f:
+  author_links = yaml.load(f, Loader=yaml.FullLoader)
 for index, row in table.iterrows():
   if not pd.isnull(row["url"]):
     table.at[index, "url"] = f'<a href="{row["url"]}">Url</a>'
@@ -40,6 +43,20 @@ for index, row in table.iterrows():
     table.at[index, "doi"] = f'<a href="https://doi.org/{row["doi"]}">Doi</a>'
   else:
     table.at[index, "doi"] = ""
+  author_list = [r.strip() for  r in row["author"].split(" and ")]
+  author_string = ""
+  for i,r in enumerate(author_list):
+    if r in author_links:
+      a = f"""<a href="{author_links[r]}">{r}</a>"""
+    else:
+      a = r
+    if i == len(author_list) - 1:
+      author_string += f", and {a}"
+    elif i > 0:
+      author_string += f", {a}"
+    else:
+      author_string += a
+  table.at[index, "author"] = author_string
 itables.show(table,
   dom='tlip',
   search={'regex': True, "caseInsensitive": True},
