@@ -23,7 +23,7 @@ import pandas as pd
 from IPython.core.display import HTML
 import bibtexparser
 
-with open('references.bib') as bibfile:
+with open('references.bib', encoding='utf8') as bibfile:
   bib_list = bibtexparser.load(bibfile)
 table = pd.DataFrame(bib_list.entries)
 ## Available entries

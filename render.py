@@ -12,7 +12,7 @@ object_table.columns = [c.replace(' ', '_') for c in object_table.columns]
 attribute_table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
 attribute_table.columns = [c.replace(' ', '_') for c in attribute_table.columns]
 
-with open('book/references.bib') as bibfile:
+with open('book/references.bib', encoding="utf8") as bibfile:
     bib_list = bibtexparser.load(bibfile)
 bib_table = pd.DataFrame(bib_list.entries)
 bib_table = bib_table[['ID', 'author', 'title', 'journal', 'year', 'url', 'doi', 'abstract']].reset_index()
