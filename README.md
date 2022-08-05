@@ -12,7 +12,7 @@ To inspect the book, open `/book/_build/html/intro.html`
 To include additional description, examples and references, please follow this guideline.
 
 ## Additional command description
-Additional command description can be added by adding markdown files in the [](/book/doc/commands/) folder. The file name should be the same as the command type, but white space should be replaced with underscore (_). The file should not containt level one headings (#). The content of the file will be automatically merged into the object type documentation by Github Actions.
+Additional command description can be added by adding markdown files in the [/book/doc/commands/](/book/doc/commands/) folder. The file name should be the same as the command type, but white space should be replaced with underscore (_). The file should not containt level one headings (#). The content of the file will be automatically merged into the object type documentation by Github Actions.
 
 ### Additional object description
 Additional object description can be added by adding markdown files in the [](/book/doc/objects/) folder. The file name should be the same as the object type and should not containt level one headings (#). The content of the file will be automatically merged into the object type documentation by Github Actions.
