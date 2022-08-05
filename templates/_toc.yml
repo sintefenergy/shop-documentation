@@ -57,5 +57,5 @@ parts:
 - caption: Publications
   maxdepth: 2
   chapters:
-  - file: references
-  - file: bibliography
+  - file: references/references
+  - file: references/bibliography
