@@ -23,6 +23,9 @@ from IPython.core.display import HTML
 
 init_notebook_mode(all_interactive=True, connected=True)
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv').reset_index()
+for index, row in table.iterrows():
+  table.at[index, "Object type"] = f"""<a href="objects/{row['Object type'].replace('_', '-')}.html">{row['Object type']}</a>"""
+  table.at[index, "Attribute name"] = f"""<a href="objects/{row['Object type'].replace('_', '-')}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
 itables.show(
   table,
   dom='tlip',

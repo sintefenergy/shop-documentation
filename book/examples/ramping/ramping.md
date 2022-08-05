@@ -33,18 +33,18 @@ The standard ramping functionality in SHOP enables the user to set an upper limi
 
 |Object type|Variable|Direction|Ramping attribute|Unit|Global penalty|Object penalty|
 |-|-|-|-|-|-|-|
-|[](reservoir)|volume|up|[](reservoir:volume_ramping_up)|Mm$^3$/h|volume_ramping_penalty_cost||
-|[](reservoir)|volume|down|[](reservoir:volume_ramping_down)|Mm$^3$/h|volume_ramping_penalty_cost||
-|[](reservoir)|level|up|[](reservoir:level_ramping_up)|m/h|level_ramping_penalty_cost||
-|[](reservoir)|level|down|[](reservoir:level_ramping_down)|m/h|level_ramping_penalty_cost||
-|[](plant)|production|up|[](plant:production_ramping_up)|MW/h|production_ramp_penalty_cost||
-|[](plant)|production|down|[](plant:production_ramping_down)|MW/h|production_ramp_penalty_cost||
-|[](plant)|discharge|up|[](plant:discharge_ramping_up)|m3s/h|production_ramp_penalty_cost||
-|[](plant)|discharge|down|[](plant:discharge_ramping_down)|m3s/h|production_ramp_penalty_cost||
-|[](gate)|discharge|up|[](gate:discharge_ramping_up)|m3s/h|gate_ramp_penalty_cost|ramp_penalty_cost|
-|[](gate)|discharge|down|[](gate:discharge_ramping_down)|m3s/h|gate_ramp_penalty_cost|ramp_penalty_cost|
-|[](contract)|outtake|up|[](contract:ramping_up)|MW/h||ramping_penalty_cost_up|
-|[](contract)|outtake|down|[](contract:ramping_down)|MW/h||ramping_penalty_cost_down|
+|[](reservoir)|volume|up|[](reservoir:volume_ramping_up)|Mm$^3$/h|[](global_settings:volume_ramp_penalty_cost)||
+|[](reservoir)|volume|down|[](reservoir:volume_ramping_down)|Mm$^3$/h|[](global_settings:volume_ramp_penalty_cost)||
+|[](reservoir)|level|up|[](reservoir:level_ramping_up)|m/h|[](global_settings:level_ramp_penalty_cost)||
+|[](reservoir)|level|down|[](reservoir:level_ramping_down)|m/h|[](global_settings:level_ramp_penalty_cost)||
+|[](plant)|production|up|[](plant:production_ramping_up)|MW/h|[](global_settings:production_ramp_penalty_cost)||
+|[](plant)|production|down|[](plant:production_ramping_down)|MW/h|[](global_settings:production_ramp_penalty_cost)||
+|[](plant)|discharge|up|[](plant:discharge_ramping_up)|m3s/h|[](global_settings:production_ramp_penalty_cost)||
+|[](plant)|discharge|down|[](plant:discharge_ramping_down)|m3s/h|[](global_settings:production_ramp_penalty_cost)||
+|[](gate)|discharge|up|[](gate:discharge_ramping_up)|m3s/h|[](global_settings:gate_ramp_penalty_cost)|[](gate:ramp_penalty_cost)|
+|[](gate)|discharge|down|[](gate:discharge_ramping_down)|m3s/h|[](global_settings:gate_ramp_penalty_cost)|[](gate:ramp_penalty_cost)|
+|[](contract)|outtake|up|ramping_up|MW/h||ramping_penalty_cost_up|
+|[](contract)|outtake|down|ramping_down|MW/h||ramping_penalty_cost_down|
 
 As seen from the units, max ramping is specified per hour. If the timestep length is different than one hour, the max ramping value will be scaled accordingly by the model to keep the limit per hour constant.
 
