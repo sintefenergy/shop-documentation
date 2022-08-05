@@ -22,17 +22,18 @@ kernelspec:
 
 +++
 
-## YAML types <a name="Yaml_types"></a>
+## YAML types
 In order to simplify descriptions of the SHOP YAML standard, we start off with defining a set of terms for referring to different YAML constructs.
 
 +++
 
-### Map <a name="Map"></a>
+(yaml:map)=
+### Map
 Maps are one of the most common components for structuring data stored in YAML. They often appear in the upper levels of the documents and serve the purpose of dividing the data into smaller named subgroups/divisions. We will refer to them as “Maps”, but you should note that they are also often referred to as Dictionaries. Essentially, maps consist of a set of "key" and "value" pairs. Each key is said to "refer to" or "contain" a value. In this standard, keys will **always** be “strings”, i.e. one or more characters/words stringed together. Values, on the other hand, can contain a single scalar, a string or another structuring component like Map or List
 
 +++
 
-#### Map example <a name="Map_example"></a>
+#### Map example
 The following example is extracted from a real SHOP YAML case and contains three distict examples of YAML Maps. The upper level is a Map containing the keys "Reservoir1" and "Reservoir2". Each key contains additional Maps with the keys "start_head", "max_vol", "lrl", "hrl" and "vol_head". Furthermore, the keys "vol_head" contains Maps with the keys "ref", "x" and "y". 
 
 Note that the key and value is separated by a “:”. The value may be written just after “: ”, which is the case for keys like "start_head", "max_vol" and "ref". For more complex values, it is common to add line breaks and indentation, as you can see keys like "Reservoir1", "vol_head" and "x".
@@ -70,12 +71,13 @@ Note that the key and value is separated by a “:”. The value may be written 
 
 +++
 
-### List <a name="List"></a>
+(yaml:list)=
+### List
 Lists are another common construct that can be used for structuring. Each value of a list, like the values of maps, can contain a scalar, a string or another structuring component like a Map or a List
 
 +++
 
-### List example <a name="List_example"></a>
+### List example
 The following example is extracted from a real SHOP YAML case and contains two distict examples of YAML Lists. The value of the "connections" key is a List of Maps and the value of the "commands" key is a List of strings.
 
 Note that each element of the list is preceded by a “-” and for every new element, a line break is added. Also note that despite only having a single value, the value of "commands" is still formatted as a list. It is common to keep the List format when the list happens to have a single value, in order to simplify reading/loading the YAML.
@@ -97,12 +99,12 @@ Note that each element of the list is preceded by a “-” and for every new el
 
 +++
 
-### Scalar <a name="Scalar"></a>
+### Scalar
 Scalars contain a single numeric value. In this standard, we deal with two different types of scalars, “integers” and “doubles”
 
 +++
 
-#### Integer <a name="Integer"></a>
+#### Integer
 Some attributes expect integer values, that is, numbers without any fractional parts.
 
 **NOTE**: Numbers written with decimal points are typically not accepted as integers even if the fractional part is 0
@@ -114,7 +116,7 @@ Some attributes expect integer values, that is, numbers without any fraction
 
 +++
 
-#### Double <a name="Double"></a>
+#### Double
 Some attributes expect double values, that is, numbers with fractional parts. Unlike the converse for integers, it is common to accept numbers written without decimal points as doubles.
 
 All the numerical values in the following YAML will be interpreted as doubles by SHOP because they refer to attributes that only deal with double values. Note that the values with ".0" fractional parts have been encoded as integers.
@@ -138,7 +140,7 @@ All the numerical values in the following YAML will be interpreted as doubles by
 
 +++
 
-### String <a name="String"></a>
+### String
 Strings are a common data type in programming and are essentially strings of characters/words. In YAML, strings can be written with or without quotes. Both “ and ‘ can be used as quotation marks, but you need to close the quote with the same quotation mark it was opened with.
 
 **Note** that it is common to omit quotation unless they are needed to avoid ambiguity, which is the case for the vast majority of string. String representations of numbers is an example of a class of strings that do need quotation to retain their string nature
@@ -160,7 +162,8 @@ Strings are a common data type in programming and are essentially strings of cha
 
 +++
 
-#### Timestamp <a name="Timestamp"></a>
+(yaml:timestamp)=
+#### Timestamp
 A typical SHOP YAML case will typically contain many strings representing timestamps. Timestamps are used when setting optimization start and end time and the time index of every time series (TODO). Shop expects the format “YYYY-mm-dd HH-MM-ss”.
 
     time:
@@ -172,7 +175,7 @@ A typical SHOP YAML case will typically contain many strings representing timest
 
 +++
 
-## SHOP YAML case <a name="Shop_yaml"></a>
+## SHOP YAML case
 SHOP YAML case consist of four different types of content.
 
 YAML case :
@@ -190,18 +193,18 @@ There are currently two different ways of defining a YAML case :
 
 +++
 
-## time <a name="Time"></a>
-The "time" part contains the optimization time definition. The upper level is a [Map](#Map) with the mandatory keys “starttime”, “endtime” and “timeunit”.
+## time
+The "time" part contains the optimization time definition. The upper level is a [Map](yaml:map) with the mandatory keys “starttime”, “endtime” and “timeunit”.
 
-“starttime” and “endtime” both expect [timestamp strings](#Timestamp).
+“starttime” and “endtime” both expect [timestamp strings](yaml:timestamp).
 
 “timeunit” can be either “minute” or “hour”.
 
-The upper level map of this can also have the optional key “timeresolution”. If present, "timeresolution" contains a [Txy](#Txy) specifying the time resolution throughout the optimization time.
+The upper level map of this can also have the optional key “timeresolution”. If present, "timeresolution" contains a [Txy](yaml:txy) specifying the time resolution throughout the optimization time.
 
 +++
 
-### time example <a name="Time_example"></a>
+### time example
 
     time:
       starttime: 2018-02-27 00:00:00
@@ -212,7 +215,8 @@ The upper level map of this can also have the optional key “timeresolution”.
 
 +++
 
-### model <a name="Model"></a>
+(yaml:model)=
+### model
 The "model" part defines all objects and attributes defined/set in the SHOP model as well as the values of the defined attributes. The upper three levels of this part are nested [Maps](#Map).
 
 The uppermost level, referred to as the “object type level”, is a map with keys for each object type present in the case.
@@ -225,7 +229,7 @@ At the fourth level, the structure and content is defined by the attribute typ
 
 +++
 
-### model example <a name="Model_example"></a>
+### model example
 The following example is based on a real SHOP YAML case where some attributes and objects have been omitted to give a better overview:
 
     model:
@@ -291,8 +295,9 @@ The following example is based on a real SHOP YAML case where some attributes an
 
 +++
 
-### connections <a name="Connections"></a>
-The "connections" part contains information about how the objects in the case are connected. This content is made up of a [List](#List) of [Maps](#Map), where each map is a fully describes what SHOP needs to recreate the connection.
+(yaml:connections)=
+### connections
+The "connections" part contains information about how the objects in the case are connected. This content is made up of a [List](yaml:list) of [Maps](yaml:map), where each map is a fully describes what SHOP needs to recreate the connection.
 
 The full connection format is quite verbose, however, you can often omit specific information. See the table below for details
 
@@ -305,7 +310,7 @@ The full connection format is quite verbose, however, you can often omit specifi
 
 +++
 
-#### connections example <a name="Connections_example"></a>
+#### connections example
 The following example is constructed to illustrate the most relevant use-cases.
 
     connections:
@@ -332,12 +337,13 @@ The following example is constructed to illustrate the most relevant use-cases.
 
 +++
 
-### commands <a name="Commands"></a>
-The "commands" part contains all SHOP commands executed in the case. The upper level of this file is a [List](#List) of strings. The command format is identical to the one used in the SHOP executable (TODO).
+(yaml:commands)=
+### commands
+The "commands" part contains all SHOP commands executed in the case. The upper level of this file is a [List](yaml:list) of strings. The command format is identical to the one used in the SHOP executable (TODO).
 
 +++
 
-#### commands example <a name="Commands_example"></a>
+#### commands example
 
     commands:
       - start sim 1 
@@ -346,13 +352,14 @@ The "commands" part contains all SHOP commands executed in the case. The upper
 
 +++
 
-## SHOP attribute type formats <a name="Shop_attribute"></a>
+## SHOP attribute type formats
 Each SHOP attribute has a designated "type". The type is determined by how the attribute is used and specifies what kind of data is stored within the attribute. This section describes the format of the different SHOP attribute types when stored in YAML.
 
 +++
 
-### int <a name="Int_shop"></a>
-Represented by a single [Integer](#Integer). Remember to rafrain from adding a decimal point.
+(yaml:int)=
+### int
+Represented by a single [integer](datatype:int). Remember to rafrain from adding a decimal point.
 
     plant:
       Plant1:
@@ -361,8 +368,9 @@ Represented by a single [Integer](#Integer). Remember to rafrain from adding a d
 
 +++
 
-### double <a name="Double_shop"></a>
-Represented by a single [Double](#Double).
+(yaml:double)=
+### double
+Represented by a single [double](datatype:double).
 
     reservoir:
       Reservoir1:
@@ -370,8 +378,9 @@ Represented by a single [Double](#Double).
 
 +++
 
-### string <a name="String"></a>
-Represented by a single [String](#String).
+(yaml:string)=
+### string
+Represented by a single [string](datatype:string).
 
     market:
       Market1:
@@ -379,8 +388,9 @@ Represented by a single [String](#String).
 
 +++
 
-### int_array <a name="Int_array"></a>
-Represented by a [List](#List) of [Integers](#Int_shop). Remember to rafrain from adding a decimal points.
+(yaml:int_array)=
+### int_array
+Represented by a [List](yaml:list) of [Integers](yaml:int). Remember to rafrain from adding a decimal points.
 
     plant:
       Plant1:
@@ -390,8 +400,9 @@ Represented by a [List](#List) of [Integers](#Int_shop). Remember to rafrain fro
 
 +++
 
-### double_array <a name="Double_array"></a>
-Represented by a [List](#List) of [Doubles](#Double_shop).
+(yaml:double_array)=
+### double_array
+Represented by a [List](yaml:list) of [Doubles](yaml:double).
 
     plant:
       Plant1:
@@ -400,12 +411,13 @@ Represented by a [List](#List) of [Doubles](#Double_shop).
 
 +++
 
-### xy <a name="Xy"></a>
-Represented by a [Map](#Map) with the mandatory keys "x", "y" and "ref".
+(yaml:xy)=
+### xy
+Represented by a [Map](yaml:map) with the mandatory keys "x", "y" and "ref".
 
-Keys "x" and "y" both contain [double_arrays](#Double_array).
+Keys "x" and "y" both contain [double_arrays](yaml:double_array).
 
-"ref" contains a [Double](#Double_shop).
+"ref" contains a [Double](yaml:double).
 
 
     reservoir:
@@ -423,8 +435,9 @@ Keys "x" and "y" both contain [double_arrays](#Double_array).
 
 +++
 
-### xy_array <a name="Xy_array"></a>
-Represented by a [List](#List) of [Xy](#Xy).
+(yaml:xy_array)=
+### xy_array
+Represented by a [List](yaml:list) of [Xy](yaml:xy).
 
     plant:
       Plant1:
@@ -450,10 +463,11 @@ Represented by a [List](#List) of [Xy](#Xy).
 
 +++
 
-### txy <a name="Txy"></a>
-Represented by a [Map](#Map) of [Doubles](#Double_shop). The keys are [Timestamps](#Timestamp) and make out the time index
+(yaml:txy)
+### txy
+Represented by a [Map](yaml:map) of [Doubles](yaml:double). The keys are [Timestamps](yaml:timestamp) and make out the time index
 
-**Note**: A different format is required for multi-scenario txy, [txy(stochastic)](#Txy_stochastic)
+**Note**: A different format is required for multi-scenario txy, [txy(stochastic)](yaml:stxy)
 
     reservoir:
       Reservoir1:
@@ -463,14 +477,15 @@ Represented by a [Map](#Map) of [Doubles](#Double_shop). The keys are [Timesta
 
 +++
 
-### txy(stochastic) <a name="Txy_stochastic"></a>
-Represented by a [Map](#Map) of [strings](#String). The first key and value make out a "header".
+(yaml:stxy)=
+### txy(stochastic)
+Represented by a [Map](yaml:map) of [strings](yaml:string). The first key and value make out a "header".
 
 The first key is "         Scenario#". The first value is not really important, but for the sake of clarity in the file you might want to use it to enumerate the scenarios. E.g. " 1 2 3 4 5 6" if there are six scenarios.
 
-The remaining keys are all [Timestamps](#Timestamp).
+The remaining keys are all [Timestamps](yaml:timestamp).
 
-The remaining values are [strings](#String) that can be split on whitespace and cast to double in order to get one value for each scenario.
+The remaining values are [strings](yaml:string) that can be split on whitespace and cast to double in order to get one value for each scenario.
 
     market:
       Market1:

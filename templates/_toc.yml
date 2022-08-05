@@ -14,6 +14,7 @@ parts:
     - file: examples/yaml_standard/yaml_standard
     - file: examples/pyshop/pyshop
     - file: examples/basic/basic
+  - file: datatypes
 - caption: Commands, objects and attributes
   maxdepth: 2
   chapters:

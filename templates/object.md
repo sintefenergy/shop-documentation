@@ -66,6 +66,7 @@ table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/
 object_attributes = table[table["Object type"] == "{{ object.Object_type }}"].reset_index().iloc[:, 1:]
 for index, row in object_attributes.iterrows():
   object_attributes.at[index, "Attribute name"] = f"""<a href="{row['Object type'].replace('_', '-')}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
+  object_attributes.at[index, "Data type"] = f"""<a href="../datatypes.html#{row['Data type'].replace('_', '-')}">{row['Data type']}</a>"""
 itables.show(object_attributes,
   dom='tlip',
   search={'regex': True, "caseInsensitive": True},

@@ -26,6 +26,7 @@ table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/
 for index, row in table.iterrows():
   table.at[index, "Object type"] = f"""<a href="objects/{row['Object type'].replace('_', '-')}.html">{row['Object type']}</a>"""
   table.at[index, "Attribute name"] = f"""<a href="objects/{row['Object type'].replace('_', '-')}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
+  table.at[index, "Data type"] = f"""<a href="datatypes.html#{row['Data type'].replace('_', '-')}">{row['Data type']}</a>"""
 itables.show(
   table,
   dom='tlip',

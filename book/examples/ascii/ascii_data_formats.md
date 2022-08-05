@@ -13,9 +13,6 @@ kernelspec:
 
 (ascii-data)=
 # ASCII data formats
-
-+++
-
 The listed formats and following data layouts are accepted by the ASCII interpreter in SHOP. Comments can be inserted if the first character on the line is #.
 
 ```{contents}
@@ -32,9 +29,7 @@ To identify the data layout of the following lines, the ASCII interpreter in SHO
 |Second object_name|Name identifying the second object, if data is given as a relation between two objects|
 |Third object_name|Name identifying the third object, if data is given as a relation between three objects|
 
-+++
-
-## Single value <a name="Single_value"></a>
+## Single value
 
 A single value can be input to SHOP by preceding it with a line identifying the **object_type**, **attribute** and **object_name** that it refers to. Below is an example of setting a single value for gate "Gate1".
 
@@ -43,11 +38,10 @@ A single value can be input to SHOP by preceding it with a line identifying the 
     #value 
      0 
 
-All attributes in the <a href="https://shop.sintef.energy/shop-object-attributes/" target="_parent">reference table</a> with datatype **int**, **double** and **string** can generally be input using the ASCII Single value-format described here. Exceptions from this rule are listed in the [exception table].
+All attributes in the [attribute table](attribute-table) with datatype **int**, **double** and **string** can generally be input using the ASCII Single value-format described here. Exceptions from this rule are listed in the [exception table].
 
-+++
-
-## XY-curve <a name="XY-curve"></a>
+(ascii:xy)=
+## XY-curve
 
 The structure is used to store a single XY function that consists of the elements given in the table below.
 
@@ -74,11 +68,10 @@ The **Id** and **Number** fields are not used by SHOP. We simply set these value
      21.10  890.00
      30.36  898.00
 
-All attributes in the <a href="https://shop.sintef.energy/shop-object-attributes/" target="_parent">reference table</a> with datatype XY can generally be input using the ASCII XY-format described here. XYN functions can be input by repeating XY formats with different reference. Exceptions from this rule are listed in the [exception table].
+All attributes in the [attribute table](attribute-table) with datatype XY can generally be input using the ASCII XY-format described here. XYN functions can be input by repeating XY formats with different reference. Exceptions from this rule are listed in the [exception table].
 
-+++
-
-## TXY-series <a name="TXY-series"></a>
+(ascii:txy)=
+## TXY-series
 This data structure is used for the time-dependent values. The structure consists of the elements listed in the table below.
 
 |Name|Comment|
@@ -105,11 +98,9 @@ The **Id** and **Number** fields are not used by SHOP. The **Start_time** is the
      2021010112 300.00
      2021010118 NaN
 
-All attributes in the <a href="https://shop.sintef.energy/shop-object-attributes/" target="_parent">reference table</a> with datatype TXY can generally be input using the ASCII TXY-format described here. Exceptions from this rule are listed in the [exception table].
+All attributes in the [attribute table](attribute-table) with datatype TXY can generally be input using the ASCII TXY-format described here. Exceptions from this rule are listed in the [exception table].
 
-+++
-
-## OPTIMIZATION time <a name="Optimization_time"></a>
+## OPTIMIZATION time
 
 The duration of the optimization period is defined by the **Start_time** and the **End_time**. The Start_time is the first point in time that is included in the optimization horizon, and the End_time is the first point in time that is after the optimization horizon. In the example below the optimization period will be one week.
 
@@ -118,9 +109,7 @@ The duration of the optimization period is defined by the **Start_time** and the
     #Start_time End_time
      2021010100 2021010800
 
-+++
-
-## OPTIMIZATION time_resolution <a name="Optimization_time_resolution"></a>
+## OPTIMIZATION time_resolution
 
 SHOP accepts both fixed and time-dependent resolution in the optimization period. The time_resolution uses the standard **TXY** format, but must be given *directly after the OPTIMIZATION time, and before any other data* is input to SHOP. In the example below the time resolution is 1 hour for the first day, and 3 hours for the remaining days. 
 
@@ -132,9 +121,7 @@ SHOP accepts both fixed and time-dependent resolution in the optimization period
      2021010100 1
      2021010200 3
 
-+++
-
-## CONNECT <a name="Connect"></a>
+## CONNECT
 
 Connection of the different components is done using the object_type CONNECT. In addition there is used a number of identification words which tells what type of elements to connect. The general syntax is defined on the following line.
 
@@ -145,9 +132,7 @@ In the example below the plant Plant1 is connected as output from Reservoir1.
     #Object_type Attribute       Object_name Second_object_name
     CONNECT      RESERVOIR/PLANT Reservoir1  Plant1
 
-+++
-
-## MARKET <a name="Market"></a>
+## MARKET
 
 The market is described as an XY-table that contains options for buying and selling electricity. The **x-value** is the trading volume in MW and **y-value** is the price per MWH. SHOP does not need to know which monetary unit is used, it is the users responsibility to use the monetary unit consistently for all values input to SHOP. SHOP designates monetary units by KRONER or NOK, but this does not mean that Norwegian Kroner has to be used as the actual unit.
 
@@ -197,9 +182,7 @@ The market structure can be divided into an **area** description. One market for
      500.00  165.112
 
 
-+++
-
-## RESERVOIR attributes <a name="Reservoir_attributes"></a>
+## RESERVOIR attributes
 
 Using an ASCII input file the reservoir structure for attributes is shown below.
 
@@ -208,9 +191,7 @@ Using an ASCII input file the reservoir structure for attributes is shown below.
     #Id Water_course Type Maxvol Lrl    Hrl
      0  0            0    300.00 400.00 450.00
 
-+++
-
-## PLANT attributes <a name="Plant_attributes"></a>
+## PLANT attributes
 
 Using an ASCII input file the plant structure for attributes is shown below.
 
@@ -225,9 +206,7 @@ Using an ASCII input file the plant structure for attributes is shown below.
     #penstock_loss
      0.00001 0.000011
 
-+++
-
-## GENERATOR attributes <a name="Generator_attributes"></a>
+## GENERATOR attributes
 
 Using an ASCII input file the generator structure for attributes can have two formats. The first format must be used if the **type** of generator is given as **0 or 1**, while the second format must be used if the type of generator is given as **pelton**. The generator is identified by the name of the plant and the following number of the unit. In the example below attributes are set for generator 1 and generator 2 in Plant1. The first generator is not a pelton unit, while the second one is.
 
@@ -245,9 +224,7 @@ Using an ASCII input file the generator structure for attributes can have two fo
     #id type   penstock start_cost no_needle_comb
      0  pelton 2        2100.0     3
 
-+++
-
-## NEEDLE_COMB attributes <a name="Needle_comb_attributes"></a>
+## NEEDLE_COMB attributes
 
 Using an ASCII input file the needle_comb structure for attributes is shown below. In the example attributes are set for needle combination 1 of generator 1 in Plant1. The needle combination number is given as the third object name, while the generator number is given as the second object name.
 
@@ -256,9 +233,7 @@ Using an ASCII input file the needle_comb structure for attributes is shown belo
     #id type nom_prod min_prod max_prod
      0  0    120      70       120
 
-+++
-
-## PUMP attributes <a name="Pump_attributes"></a>
+## PUMP attributes
 
 Using an ASCII input file the pump structure for attributes is shown below. The pump is identified by the name of the plant and the following number of the unit. In the example below attributes are set for pump 1 in Plant1.
 
@@ -267,9 +242,7 @@ Using an ASCII input file the pump structure for attributes is shown below. The 
     #id type penstock nomprod start_cost minprod maxprod
      0  0    1        45.000  5000.0     80      100
 
-+++
-
-## GATE attributes <a name="Gate_attributes"></a>
+## GATE attributes
 
 Using an ASCII input file the gate structure for attributes is shown below.
 
@@ -278,9 +251,7 @@ Using an ASCII input file the gate structure for attributes is shown below.
     #Id water_course type time_delay num_parallel_gates gate_slack
      1  1            0    0          1                  0
 
-+++
-
-## TUNNEL attributes <a name="Tunnel_attributes"></a>
+## TUNNEL attributes
 
 Using an ASCII input file the tunnel structure for attributes is shown below.
 
@@ -289,9 +260,7 @@ Using an ASCII input file the tunnel structure for attributes is shown below.
     #loss_factor start_height end_height diameter length
      0.00016     90           90         3        2022
 
-+++
-
-## JUNCTION attributes <a name="Junction_attributes"></a>
+## JUNCTION attributes
 
 Using an ASCII input file the junction structure for attributes is shown below. The tunnel losses are given first for tunnel1 and on the next line for tunnel2.
 
@@ -303,9 +272,7 @@ Using an ASCII input file the junction structure for attributes is shown below. 
      0.0004
      0.0002
 
-+++
-
-## JUNCTION_GATE attributes <a name="Junction_gate_attributes"></a>
+## JUNCTION_GATE attributes
 
 Using an ASCII input file the junction_gate structure for attributes is shown below. The tunnel losses are given first for tunnel1 and on the next line for tunnel2.
 
@@ -317,9 +284,7 @@ Using an ASCII input file the junction_gate structure for attributes is shown be
      0.0004
      0.0002
 
-+++
-
-## CREEK_INTAKE attributes <a name="Creek_intake_attributes"></a>
+## CREEK_INTAKE attributes
 
 Using an ASCII input file the creek_intake structure for attributes is shown below.
 
@@ -328,9 +293,7 @@ Using an ASCII input file the creek_intake structure for attributes is shown bel
     #Id main_tunnel_loss tunnel_loss creek_level cap_mode
      0  0.0005           0.0001      456.2       0
 
-+++
-
-## PRESSURE_POINT attributes <a name="Pressure_point_attributes"></a>
+## PRESSURE_POINT attributes
 
 Using an ASCII input file the pressure_point structure for attributes is shown below.
 
@@ -339,9 +302,7 @@ Using an ASCII input file the pressure_point structure for attributes is shown b
     #id loss_factor
      0  0.001
 
-+++
-
-## CONTRACT definition <a name="Contract_definition"></a>
+## CONTRACT definition
 
 Using an ASCII input file the definition of contracts is shown below. It is similar to the **MARKET** format, but using the **definition** keyword and without the connection to a production area.
 
@@ -377,9 +338,7 @@ Using an ASCII input file the definition of contracts is shown below. It is simi
      400 190
      575 220
 
-+++
-
-## PLANT_OUTLET <a name="Plant_outlet"></a>
+## PLANT_OUTLET
 
 Using an ASCII input file the plant_outlet structure is shown below. In contrast to other objects, the **name** of the plant_outlet is given at the second position of the line, normally used for attributes.
 
@@ -391,9 +350,7 @@ Using an ASCII input file the plant_outlet structure is shown below. In contrast
      0.001             2            Plant1 Plant2
      0.002             3            Plant1 Plant2 Plant3
 
-+++
-
-## STARTRES <a name="Startres"></a>
+## STARTRES
 
 Using an ASCII input file the startres structure is shown below. In contrast to other objects, the position normally used for the attribute name is here used for the **number of upcoming lines** with start reservoir data. The **unit** can either be METER or MM3 and must be the same for all reservoirs in one STARTRES definition.
 
@@ -403,9 +360,7 @@ Using an ASCII input file the startres structure is shown below. In contrast to 
      Reservoir1  872.62
      Reservoir2  694.20
 
-+++
-
-## SHOP_WATER_VALUES <a name="Shop_water_values"></a>
+## SHOP_WATER_VALUES
 
 Using an ASCII input file the SHOP_WATER_VALUES structure for sending cut data in to SHOP is shown below. The module numbers are connected to SHOP reservoirs by the **NAMELIST** or **NAMELIST_ICC** data format, which must be read before the SHOP_WATER_VALUES.
 
@@ -462,9 +417,7 @@ The following example sets 11 cuts for one watercourse with 3 reservoirs.
     7811 7810 7814 7815 7906 7818 7903 7911 7813 7812 7809
     -1
 
-+++
-
-## NAMELIST <a name="Namelist"></a>
+## NAMELIST
 
 Using an ASCII input file there are two formats for connecting module numbers in the **SHOP_WATER_VALUE** and **SHOP_EXT_WATER_VALUE** data to reservoir names in SHOP, **NAMELIST** and **NAMELIST_ICC**. The general structure of the **NAMELIST** format is shown below.
 
@@ -484,9 +437,7 @@ In the following example, Reservoir1 corresponds to module 8001 in the SHOP_WATE
     Reservoir4 8003
     -1
 
-+++
-
-## NAMELIST_ICC <a name="Namelist_icc"></a>
+## NAMELIST_ICC
 
 Using an ASCII input file there are two formats for connecting module numbers in the **SHOP_WATER_VALUE** and **SHOP_EXT_WATER_VALUE** data to reservoir names in SHOP, **NAMELIST** and **NAMELIST_ICC**. The general structure of the **NAMELIST_ICC** format is shown below.
 
@@ -519,9 +470,7 @@ The same example provided for the **NAMELIST** format is repeated here in the **
     -1
 
 
-+++
-
-## SHOP_EXT_WATER_VALUES <a name="Shop_ext_water_values"></a>
+## SHOP_EXT_WATER_VALUES
 
 Using an ASCII input file the SHOP_EXT_WATER_VALUES structure for sending price- and inflow-dependent cut data in to SHOP is shown below. The module numbers and inflow series are connected to SHOP reservoirs by the **NAMELIST** or **NAMELIST_ICC** data format and the order of modules and inflow series on the cut file is defined by the **CUTORDER** data format. Both NAMELIST or NAMELIST_ICC and CUTORDER data must be read before the SHOP_EXT_WATER_VALUES.
 
@@ -542,9 +491,7 @@ The example below shows cuts for two price levels, three modules and three inflo
      15.9  1518310.1    3    44.2       4.1      44.2       0.007    59.4       1.1       3        0.0           0.0           0.0
      15.9  1518738.0    3    84.7       0.2      59.8       0.08     100.7      0.8       3        0.0           0.0           0.0
 
-+++
-
-## CUTORDER <a name="Cutorder"></a>
+## CUTORDER
 
 Using an ASCII input file the CUTORDER format is used for defining the order of modules and inflow series in the **SHOP_EXT_WATER_VALUE** data. The NAMELIST or NAMELIST_ICC format must be read first to connect module numbers with reservoir names in SHOP.
 
@@ -562,9 +509,7 @@ The example below shows that cut coefficients are given for modules 8001, 8002 a
        3     8003   2   2
        0     8000   3   3
 
-+++
-
-## LOSE_SPILL <a name="Lose_spill"></a>
+## LOSE_SPILL
 
 Using an ASCII input file the lose spill structure is shown below. If the spill is directed somewhere by a spill gate, this connection is ignored, and the spill is lost. In the example Reservoir1 and Reservoir2 will both lose their spill.
 
@@ -574,9 +519,7 @@ Using an ASCII input file the lose spill structure is shown below. If the spill 
      Reservoir_1
      Reservoir_2
 
-+++
-
-## INITIAL_STATE <a name="Initial_state"></a>
+## INITIAL_STATE
 
 Using an ASCII input file the initial state structure is shown below. After INITIAL_STATE follows the number of aggregates /pumps with an initial state. The next line contains the plant name, generator or pump object type, the generator- or pump number and finally the initial state.
 
@@ -587,9 +530,7 @@ Using an ASCII input file the initial state structure is shown below. After INIT
      Plant1     GENERATOR         2           1
      Plant2     PUMP              1           1
 
-+++
-
-## MULTI_OBJECT_DATA <a name="Multi_object_data"></a>
+## MULTI_OBJECT_DATA
 
 Using an ASCII input file the multi object data structure is shown below. MULTI_OBJECT_DATA marks the start tag of a multi object constraint, and /MULTI_OBJECT_DATA defines the closing of the multi object data. A multi object constraint contains sections defined by specified start and end tags. The multi object must contain an object list section and a data value section, and may contain one interval and penalty cost section.
 
