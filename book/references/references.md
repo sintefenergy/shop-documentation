@@ -47,7 +47,7 @@ for index, row in table.iterrows():
   author_string = ""
   for i,r in enumerate(author_list):
     if r in author_links:
-      a = f"""<a href="{author_links[r]}">{r}</a>"""
+      a = f"""<a href="{author_links[r]}" target="_blank">{r}</a>"""
     else:
       a = r
     if i == len(author_list) - 1:
