@@ -19,7 +19,7 @@ bib_table = bib_table[['ID', 'author', 'title', 'journal', 'year', 'url', 'doi',
 
 # Render object pages
 object_template = env.get_template("object.md")
-with open(f"book/objects/cross-references.yaml") as examples:
+with open(f"book/doc/objects/cross-references.yaml") as examples:
     example_list = yaml.load(examples, Loader=yaml.FullLoader)
     for index, row in object_table.iterrows():
         object_type = row["Object_type"]
@@ -79,7 +79,7 @@ command_template = env.get_template("command.md")
 command_table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/commands_v14.csv')
 command_table.columns = [c.replace(' ', '_') for c in command_table.columns]
 
-with open(f"book/commands/cross-references.yaml") as commands:
+with open(f"book/doc/commands/cross-references.yaml") as commands:
     command_list = yaml.load(commands, Loader=yaml.FullLoader)
     for index, row in command_table.iterrows():
         command_name = row["Command"]
