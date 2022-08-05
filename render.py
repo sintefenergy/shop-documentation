@@ -71,6 +71,7 @@ with open(f"book/doc/objects/cross-references.yaml") as examples:
         # Render file
         content = object_template.render(kwargs)
         filename = f"book/objects/{row['Object_type']}.md"
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
         with open(filename, "w") as object_file:
             object_file.write(content)
             print(f"... wrote {filename}")
@@ -108,6 +109,7 @@ with open(f"book/doc/commands/cross-references.yaml") as commands:
         # Render file
         content = command_template.render(kwargs)
         filename = f"book/commands/{command_key}.md"
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
         with open(filename, "w", encoding='utf8') as object_file:
             object_file.write(content)
             print(f"... wrote {filename}")
