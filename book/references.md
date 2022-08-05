@@ -95,7 +95,7 @@ $('tbody').on('click', 'td.dt-control', function () {
         tr.removeClass('shown');
     } else {
         // Open this row
-        row.child(row.data()[7]).show();
+        row.child("<div align='left'>".concat(row.data()[7], "</div>")).show();
         tr.addClass('shown');
     }
 });
