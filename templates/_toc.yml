@@ -14,18 +14,18 @@ parts:
     - file: examples/yaml_standard/yaml_standard
     - file: examples/pyshop/pyshop
     - file: examples/basic/basic
-- caption: Command, object and attribute tables
+- caption: Commands, objects and attributes
   maxdepth: 2
   chapters:
-  - file: object-table
-    sections:
-      {%- for object_type in object_types %}
-      - file: objects/{{ object_type }}
-      {%- endfor %}
   - file: command-table
     sections:
       {%- for command_type in command_types %}
       - file: commands/{{ command_type }}
+      {%- endfor %}
+  - file: object-table
+    sections:
+      {%- for object_type in object_types %}
+      - file: objects/{{ object_type }}
       {%- endfor %}
   - file: attribute-table
 - caption: Examples and tutorials

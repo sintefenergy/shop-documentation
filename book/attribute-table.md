@@ -11,7 +11,7 @@ kernelspec:
 ---
 
 (attribute-table)=
-# Attribute table
+# Attributes
 
 ```{code-cell} ipython3
 :tags: ['remove-input', 'full-width']
