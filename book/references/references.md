@@ -36,11 +36,11 @@ with open('author-links.yml', encoding='utf8') as f:
   author_links = yaml.load(f, Loader=yaml.FullLoader)
 for index, row in table.iterrows():
   if not pd.isnull(row["url"]):
-    table.at[index, "url"] = f'<a href="{row["url"]}">Url</a>'
+    table.at[index, "url"] = f'<a href="{row["url"]}" target="_blank">Url</a>'
   else:
     table.at[index, "url"] = ""
   if not pd.isnull(row["doi"]):
-    table.at[index, "doi"] = f'<a href="https://doi.org/{row["doi"]}">Doi</a>'
+    table.at[index, "doi"] = f'<a href="https://doi.org/{row["doi"]}" target="_blank">Doi</a>'
   else:
     table.at[index, "doi"] = ""
   author_list = [r.strip() for  r in row["author"].split(" and ")]
