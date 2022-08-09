@@ -1,8 +1,8 @@
 .vscode
 book/_build/
 book/_toc.yml
-book/objects/*.md
-book/commands/*.md
+book/objects/
+book/commands/
 *.log
 *.xml
 *.json
