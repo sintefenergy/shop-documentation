@@ -50,7 +50,7 @@ for index, row in table.iterrows():
       a = f"""<a href="{author_links[r]}" target="_blank">{r}</a>"""
     else:
       a = r
-    if i == len(author_list) - 1:
+    if i == len(author_list) - 1 and len(author_list) > 1:
       author_string += f", and {a}"
     elif i > 0:
       author_string += f", {a}"
