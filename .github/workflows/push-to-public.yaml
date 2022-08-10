@@ -12,6 +12,7 @@ jobs:
         with:
           # path: private
           token: ${{ secrets.GH_TOKEN_PER }}
+          fetch-depth: 0
       # - name: Checkout public
       #   uses: actions/checkout@v3
       #   with:
