@@ -1,4 +1,4 @@
-  name: Publish book to public repo
+name: Publish book to public repo
 
 on:
   workflow_dispatch:
@@ -25,4 +25,5 @@ jobs:
           email: 'per.aaslid@sintef.no'
           actor: 'peraaslid'
           token: '${{ secrets.GH_TOKEN_PER }}'
-      - run: git push public_remote pubcic_branch:main --force
+      - name: Push code to public repo
+        run: git push public_remote pubcic_branch:main --force
