@@ -31,6 +31,8 @@ jobs:
       - name: Push code to public repo
         run: |
           # cd $GITHUB_WORKSPACE/doc
+          git config --global user.email "per.aaslid@sintef.no"
+          git config --global user.name "Per Aaslid"
           git checkout -b public_branch
           rm .gitignore
           mv .publicgitignore .gitignore
