@@ -12,7 +12,7 @@ jobs:
       - run: |
           git checkout -b public_branch
           rm .gitignore
-          mv .publicignore .gitignore
+          mv .publicgitignore .gitignore
           python ./render.py
           git add -A
           git rm -r --cached .
