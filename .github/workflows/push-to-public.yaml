@@ -30,4 +30,4 @@ jobs:
           git rm -r --cached .
           git commit -m "Update doc"
           git remote add public_remote https://github.com/sintef-energy/shop-documentation.git
-          git push public_remote pubcic_branch:main --force
+          git push public_remote public_branch:main_test --force
