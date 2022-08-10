@@ -1,0 +1,11 @@
+/*
+!/book
+/book/_build
+/book/doc
+*.log
+*.xml
+*.json
+__pycache__
+*.lp
+*.html
+*.log.*
