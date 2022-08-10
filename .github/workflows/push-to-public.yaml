@@ -7,21 +7,30 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout private
         uses: actions/checkout@v3
+        with:
+          path: private
+      - name: Checkout public
+        uses: actions/checkout@v3
+        with:
+          repository: sintef-energy/shop-documentation
+          token: ${{ secrets.GH_TOKEN_PER }}
+          path: public
       - name: Install Python packages
         run: |
           python -m pip install --upgrade pip
           python -m pip install pandas pyyaml Jinja2 bibtexparser
-      - uses: oleksiyrudenko/gha-git-credentials@v2.1
-        with:
-          global: true
-          name: 'Per Aaslid'
-          email: 'per.aaslid@sintef.no'
-          actor: 'peraaslid'
-          token: '${{ secrets.GH_TOKEN_PER }}'
+      # - uses: oleksiyrudenko/gha-git-credentials@v2.1
+      #   with:
+      #     global: true
+      #     name: 'Per Aaslid'
+      #     email: 'per.aaslid@sintef.no'
+      #     actor: 'peraaslid'
+      #     token: '${{ secrets.GH_TOKEN_PER }}'
       - name: Push code to public repo
         run: |
+          cd doc
           git checkout -b public_branch
           rm .gitignore
           mv .publicgitignore .gitignore
