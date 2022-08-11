@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: Checkout private
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GH_TOKEN_PER }}
-          fetch-depth: 0
+        # with:
+        #   token: ${{ secrets.GH_TOKEN_PER }}
+        #   fetch-depth: 0
       - name: Install Python packages
         run: |
           python -m pip install --upgrade pip
@@ -26,5 +26,5 @@ jobs:
           python render.py
           git add -A
           git commit -m "Update doc"
-          git remote add public_remote https://github.com/sintef-energy/shop-documentation.git
+          git remote add public_remote https://${{ secrets.GH_TOKEN_PER }}@github.com/sintef-energy/shop-documentation.git
           git push public_remote master:main --force
