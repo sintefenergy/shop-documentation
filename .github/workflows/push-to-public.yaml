@@ -16,31 +16,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pandas pyyaml Jinja2 bibtexparser
-
       - name: Push code to public repo
         run: |
           rm -rf .git
           git init
           git config --global user.email "per.aaslid@sintef.no"
           git config --global user.name "Per Aaslid"
-          # git checkout -b public_branch
-          # rm .gitignore
           mv -f .publicgitignore .gitignore
           python render.py
-          git rm -r --cached .
           git add -A
           git commit -m "Update doc"
           git remote add public_remote https://github.com/sintef-energy/shop-documentation.git
-          git push public_remote main_test3 --force
-
-          # git config --global user.email "per.aaslid@sintef.no"
-          # git config --global user.name "Per Aaslid"
-          # # git checkout -b public_branch
-          # # rm .gitignore
-          # mv -f .publicgitignore .gitignore
-          # python render.py
-          # git rm -r --cached .
-          # git add -A
-          # git commit -m "Update doc"
-          # git remote add public_remote https://github.com/sintef-energy/shop-documentation.git
-          # git push public_remote public_branch:main_test3 --force
+          git push public_remote master:main --force
