@@ -1,8 +1,8 @@
-.vscode
-book/_build/
-book/_toc.yml
-book/objects/
-book/commands/
+/*
+!/book
+!.gitignore
+/book/_build
+/book/doc
 *.log
 *.xml
 *.json

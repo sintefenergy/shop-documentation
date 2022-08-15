@@ -1,0 +1,197 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Introduction
+  maxdepth: 2
+  chapters:
+  - file: examples/interaction/interaction
+    sections:
+    - file: examples/ascii/ascii_example
+    - file: examples/ascii/ascii_data_formats
+    - file: examples/yaml_standard/yaml_standard
+    - file: examples/pyshop/pyshop
+    - file: examples/basic/basic
+  - file: datatypes
+- caption: Commands, objects and attributes
+  maxdepth: 2
+  chapters:
+  - file: command-table
+    sections:
+      - file: commands/set_newgate
+      - file: commands/set_password
+      - file: commands/print_model
+      - file: commands/log_file
+      - file: commands/read_model
+      - file: commands/add_model
+      - file: commands/start_sim
+      - file: commands/start_shopsim
+      - file: commands/save_optres_for_shopsim
+      - file: commands/set_method
+      - file: commands/set_ramping
+      - file: commands/penalty_cost
+      - file: commands/penalty_flag
+      - file: commands/set_mipgap
+      - file: commands/set_nseg
+      - file: commands/set_mip_nseg
+      - file: commands/set_dyn_seg
+      - file: commands/set_nodelog
+      - file: commands/set_max_num_threads
+      - file: commands/set_parallel_mode
+      - file: commands/set_headopt_feedback
+      - file: commands/set_code
+      - file: commands/set_timelimit
+      - file: commands/set_dyn_flex_mip
+      - file: commands/set_universal_mip
+      - file: commands/set_merge
+      - file: commands/save_xmlseries
+      - file: commands/save_series
+      - file: commands/return_simres
+      - file: commands/set_com_dec_period
+      - file: commands/return_scenario_result_table
+      - file: commands/set_time_delay_unit
+      - file: commands/set_power_head_optimization
+      - file: commands/set_pump_head_optimization
+      - file: commands/set_bypass_loss
+      - file: commands/set_reserve_slack_cost
+      - file: commands/set_fcr_n_band
+      - file: commands/set_fcr_d_band
+      - file: commands/set_fcr_n_equality_flag
+      - file: commands/print_bid_matrix
+      - file: commands/set_linear_startup
+      - file: commands/set_bid_aggregation_level
+      - file: commands/set_delay_valuation
+      - file: commands/set_reserve_ramping_cost
+      - file: commands/set_solver
+      - file: commands/set_safe_mode
+      - file: commands/set_gen_turn_off_limit
+      - file: commands/print_bp_curves
+      - file: commands/set_prod_from_ref_prod
+      - file: commands/save_tunnelloss
+      - file: commands/set_startup_cost_printout
+      - file: commands/print_pqcurves
+      - file: commands/set_reserve_min_capacity
+      - file: commands/set_ownership_scaling
+      - file: commands/set_stop_cost_from_start_cost
+      - file: commands/set_simple_pq_recovery
+      - file: commands/set_plant_uploading
+      - file: commands/save_xmlshopsimseries
+      - file: commands/set_sim_schedule_correction
+      - file: commands/save_case
+      - file: commands/set_xml_system_name
+      - file: commands/set_xmllog
+      - file: commands/expand_window
+      - file: commands/ignore_data
+      - file: commands/quit
+      - file: commands/data
+      - file: commands/set_mix_cut_vv
+      - file: commands/set_tuning
+      - file: commands/set_epsilon
+      - file: commands/read_optbasis
+      - file: commands/save_optbasis
+      - file: commands/set_optbasis
+      - file: commands/set_presim
+      - file: commands/set_inteps
+      - file: commands/individual_penalty
+      - file: commands/individual_endpenalty
+      - file: commands/set_extra_file
+      - file: commands/set_universal_affinity
+      - file: commands/set_gravity
+      - file: commands/save_shopsimseries
+      - file: commands/return_shopsimres
+      - file: commands/set_reserve_schedule_penalty_cost
+      - file: commands/set_reserve_penalty_cost
+      - file: commands/set_duals_from_mip
+      - file: commands/save_pq_curves
+      - file: commands/reset_ownership
+      - file: commands/set_overflow_cut_description
+      - file: commands/set_initial_reservoir
+      - file: commands/set_plant_unbalance_recommit
+      - file: commands/set_mip_progress_log
+      - file: commands/print_yaml
+      - file: commands/set_droop_discretization_limit
+      - file: commands/set_build_original_pq_curves_by_turb_eff
+      - file: commands/set_pump_turn_off_limit
+      - file: commands/set_universal_overflow_mip
+      - file: commands/reset_lp_model
+      - file: commands/set_droop_cost_exponent
+      - file: commands/set_droop_ref_value
+      - file: commands/set_rr_up_schedule_slack_flag
+      - file: commands/set_lp_row
+      - file: commands/set_lp_var
+      - file: commands/print_bp_bid_matrix
+      - file: commands/set_ramp_scale_factor
+      - file: commands/set_recommit
+      - file: commands/set_rsv_hard_limit_penalty_cost
+      - file: commands/read_yaml
+  - file: object-table
+    sections:
+      - file: objects/reservoir
+      - file: objects/plant
+      - file: objects/generator
+      - file: objects/needle_combination
+      - file: objects/pump
+      - file: objects/gate
+      - file: objects/thermal
+      - file: objects/junction
+      - file: objects/junction_gate
+      - file: objects/creek_intake
+      - file: objects/contract
+      - file: objects/network
+      - file: objects/market
+      - file: objects/global_settings
+      - file: objects/reserve_group
+      - file: objects/commit_group
+      - file: objects/discharge_group
+      - file: objects/production_group
+      - file: objects/volume_constraint
+      - file: objects/scenario
+      - file: objects/objective
+      - file: objects/bid_group
+      - file: objects/cut_group
+      - file: objects/inflow_series
+      - file: objects/unit_combination
+      - file: objects/tunnel
+      - file: objects/interlock_constraint
+      - file: objects/lp_model
+      - file: objects/river
+      - file: objects/busbar
+      - file: objects/ac_line
+      - file: objects/dc_line
+      - file: objects/gen_reserve_capability
+      - file: objects/pump_reserve_capability
+      - file: objects/plant_reserve_capability
+      - file: objects/needle_comb_reserve_capability
+  - file: attribute-table
+- caption: Examples and tutorials
+  maxdepth: 2
+  chapters:
+  - file: examples/water_values/water_values
+  - file: examples/water_values/individual_water_values
+  - file: examples/cuts/cuts
+  - file: examples/basic_pump/basic_pump
+  - file: examples/reserve_capacity/reserve_capacity
+  - file: examples/reserve_capacity/reserve_cap
+  - file: examples/discrete_droop/discrete_droop
+  - file: water-route
+    sections:
+      - file: examples/tunnel/tunnel
+      # - file: examples/tunnel/simple_tunnel
+      # - file: examples/tunnel/advanced_tunnel
+  - file: examples/ramping/ramping
+  - file: examples/best_profit/best_profit
+    sections:
+      - file: examples/best_profit/best_profit_basic
+  - file: examples/simulation/simulation
+    sections:
+      - file: examples/simulation/water_budgeting
+  - file: examples/maintenance/run_maintenance
+  - file: power-flow
+  - file: examples/multi_price_bid_matrix/multi_price_bid_matrix
+- caption: Publications
+  maxdepth: 2
+  chapters:
+  - file: references/references
+  - file: references/bibliography
