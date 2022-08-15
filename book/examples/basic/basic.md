@@ -11,12 +11,7 @@ kernelspec:
   name: python3
 ---
 
-+++ {"Collapsed": "false"}
-
 # Basic example
-
-+++ {"Collapsed": "false"}
-
 This example contains the most commonly used objects, attributes, functions and commands for a basic SHOP model, in addition to examples of how to review and plot input data and results. 
 
 It is not dependent on any other data sources such as ASCII files or spreadsheets, as all input data remain intact in the notebook (or Python code) itself, and is fully dependent on the API and pyshop for interacting with SHOP.
@@ -27,12 +22,7 @@ We will show how to import all necessary packages, settings and data, create a S
 
 While the model in this example is quite simple, it can serve as a good reference when designing your own models. It illustrates an intuitive way of designing models in PyShop by incrementally initializing new objects like reservoirs, plants, generators and markets, setting their key attributes before connecting them together into the a desired topology. The model is then optimized, before the results are retrieved and presented through plots.
 
-+++ {"Collapsed": "false"}
-
 ## Imports and settings
-
-+++ {"Collapsed": "false"}
-
 The first thing we do is to import the needed packages. You can import whichever packages you like, however we use the following ones for this example:
 
 * Pandas for structuring our data into dataframes
@@ -52,8 +42,6 @@ from plotly.subplots import make_subplots
 from pyshop import ShopSession
 ```
 
-+++ {"Collapsed": "false"}
-
 Additionally, we set Cufflinks and Plotly to an offline state, only usable in this notebook/environment, without any cloud connectivity:
 
 ```{code-cell} ipython3
@@ -62,11 +50,7 @@ Additionally, we set Cufflinks and Plotly to an offline state, only usable in th
 cf.go_offline()
 ```
 
-+++ {"Collapsed": "false"}
-
 ## Instancing SHOP
-
-+++ {"Collapsed": "false"}
 
 In order to have SHOP receive our inputs, run the model we create and give us results, we need to create an active, running SHOP session.
 
@@ -79,8 +63,6 @@ You may create multiple SHOP sessions simultaneously if needed.
 shop = ShopSession()
 ```
 
-+++ {"Collapsed": "false"}
-
 We can also check the current versions of SHOP and its solvers.
 
 ```{code-cell} ipython3
@@ -90,11 +72,7 @@ We can also check the current versions of SHOP and its solvers.
 shop.shop_api.GetVersionString()
 ```
 
-+++ {"Collapsed": "false"}
-
 ## Setting time resolutions for the model
-
-+++ {"Collapsed": "false"}
 
 We set the time resolution for the model ourselves, as we generate all input as we go. The start and end time are important, in addition to the resolution of the time steps.
 
@@ -111,19 +89,11 @@ endtime = pd.Timestamp('2018-01-26')
 shop.set_time_resolution(starttime=starttime, endtime=endtime, timeunit="hour", timeresolution=pd.Series(index=[starttime],data=[1]))
 ```
 
-+++ {"Collapsed": "false"}
-
 ## Adding topology parameters
-
-+++ {"Collapsed": "false"}
 
 In this example we define the entire topology and generate all its parameters via Python and the API. Below are simple examples on how to define the most common topology objects needed in order to run SHOP.
 
-+++ {"Collapsed": "false"}
-
 ### Reservoirs
-
-+++ {"Collapsed": "false"}
 
 First, we start of by creating our reservoir objects. It is possible to just execute the function, or we can instance them. The latter is preferred, as the syntax for adding attributes to objects become shorter, in addition to it being handy.
 
@@ -136,8 +106,6 @@ rsv2 = shop.model.reservoir.add_object('Reservoir2')
 # Alternatively, only the right hand side can be executed, however it is often nice to refer to instances later on
 ```
 
-+++ {"Collapsed": "false"}
-
 We can then verify that all reservoir objects are correctly added to the model instance:
 
 ```{code-cell} ipython3
@@ -145,8 +113,6 @@ We can then verify that all reservoir objects are correctly added to the model i
 
 shop.model.reservoir.get_object_names()
 ```
-
-+++ {"Collapsed": "false"}
 
 Next, it is time to set the different parameters to the newly created objects, either via the instance, or directly through the function. Below are examples of both.
 
@@ -166,8 +132,6 @@ shop.model.reservoir.Reservoir1.hrl.set(905)
 shop.model.reservoir.Reservoir2.hrl.set(679)
 ```
 
-+++ {"Collapsed": "false"}
-
 We can then verify that these values have been stored correctly onto the object. We can either make a call to the instance, or execute the function directly.
 
 ```{code-cell} ipython3
@@ -186,9 +150,7 @@ print("LRL of Reservoir 1: ",shop.model.reservoir.Reservoir1.lrl.get())
 print("LRL of Reservoir 2: ",shop.model.reservoir.Reservoir2.lrl.get())
 ```
 
-+++ {"Collapsed": "false"}
-
-We continue the process of setting all relevant attributes to the reservoir objects.
+We continue the process of setting all relevant attributes to the [](reservoir) objects.
 !!!Ref. til I/O.
 
 ```{code-cell} ipython3
@@ -214,8 +176,6 @@ rsv2.flow_descr.set(pd.Series([0, 132], index=[679, 680], name=0))
 rsv2.inflow.set(pd.Series([60], [starttime]))
 ```
 
-+++ {"Collapsed": "false"}
-
 In order to let the model know which initial conditions are set, i.e. the initial start reservoir levels, we need to define them.
 
 ```{code-cell} ipython3
@@ -225,8 +185,6 @@ In order to let the model know which initial conditions are set, i.e. the initia
 rsv1.start_head.set(900)
 rsv2.start_head.set(670)
 ```
-
-+++ {"Collapsed": "false"}
 
 We also define the endpoint descriptions (water values) for the reservoirs. The model needs these in order to compare the value of the water remaining in the reservoirs at the end of the period compared to the value of selling the water in the market given the market price.
 
@@ -239,8 +197,6 @@ rsv1.energy_value_input.set(30)
 rsv2.energy_value_input.set(10)
 ```
 
-+++ {"Collapsed": "false"}
-
 Now let's review some of the input graphically. Data such as time series, XY-curves and DataFrames can be plotted with a single line of code using Cufflinks (.iplot).
 
 ```{code-cell} ipython3
@@ -249,8 +205,6 @@ Now let's review some of the input graphically. Data such as time series, XY-cur
 # Plotting the volume/head relation of Reservoir1
 rsv1.vol_head.get().iplot(title="Volume/head relation of Reservoir1", xaxis_title="Mm3", yaxis_title="masl", color="blue")
 ```
-
-+++ {"Collapsed": "false"}
 
 Or they can be plotted in any style and design imaginable using your favorite plotting tools and packages.
 
@@ -276,13 +230,9 @@ fig.update_layout(title="<b>Reservoir volume and height in Reservoir2 </b>", xax
 fig.show()
 ```
 
-+++ {"Collapsed": "false"}
-
 ### Plants
 
-+++ {"Collapsed": "false"}
-
-The next objects to add to our model are the plant objects. We instance them the same way as we instanced the reservoir objects.
+The next objects to add to our model are the [](plant) objects. We instance them the same way as we instanced the [](reservoir) objects.
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -293,8 +243,6 @@ plant2 = shop.model.plant.add_object('Plant2')
 # Alternatively, only the right hand side can be executed, however it is often nice to refer to instances later on
 ```
 
-+++ {"Collapsed": "false"}
-
 Next we verify that our objects are correctly added to the shop instance.
 
 ```{code-cell} ipython3
@@ -303,9 +251,7 @@ Next we verify that our objects are correctly added to the shop instance.
 shop.model.plant.get_object_names()
 ```
 
-+++ {"Collapsed": "false"}
-
-The plant objects need attributes as well.
+The [](plant) objects need attributes as well.
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -323,13 +269,9 @@ plant1.penstock_loss.set([0.001])
 plant2.penstock_loss.set([0.0001,0.0002])
 ```
 
-+++ {"Collapsed": "false"}
-
 ### Generators
 
-+++ {"Collapsed": "false"}
-
-A plant needs at least one generator. We add two generators to plant 1, and four generators to plant 2
+A [](plant) needs at least one [](generator). We add two generators to plant 1, and four generators to plant 2
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -344,9 +286,7 @@ p2g3 = shop.model.generator.add_object('Plant2_Generator3')
 p2g4 = shop.model.generator.add_object('Plant2_Generator4')
 ```
 
-+++ {"Collapsed": "false"}
-
-The connection between the generator and its plant must be set before defining the generator's parameters, whereas other connections in the model can be set after its objects and parameters have been set.
+The connection between the [](generator) and its [](plant) must be set before defining the generator's parameters, whereas other connections in the model can be set after its objects and parameters have been set.
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -361,9 +301,7 @@ p2g3.connect_to(plant2)
 p2g4.connect_to(plant2)
 ```
 
-+++ {"Collapsed": "false"}
-
-We control the generator objects in the model after adding and connecting them.
+We control the [](generator) objects in the model after adding and connecting them.
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -371,9 +309,7 @@ We control the generator objects in the model after adding and connecting them.
 shop.model.generator.get_object_names()
 ```
 
-+++ {"Collapsed": "false"}
-
-Then we move on to the generator attributes. Certain generators are identical, so in order to preserve consistency, we make use of the .get()-function, so that if we change parameters on one of the duplicate generators, all of them will receive the change(s).
+Then we move on to the [](generator) attributes. Certain generators are identical, so in order to preserve consistency, we make use of the .get()-function, so that if we change parameters on one of the duplicate generators, all of them will receive the change(s).
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -455,9 +391,7 @@ p2g3.turb_eff_curves.set(p2g2.turb_eff_curves.get())
 p2g4.turb_eff_curves.set(p2g2.turb_eff_curves.get())
 ```
 
-+++ {"Collapsed": "false"}
-
-Now we can plot some of the generator data, to ensure that we have the correct data.
+Now we can plot some of the [](generator) data, to ensure that we have the correct data.
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -502,11 +436,7 @@ fig.update_layout(title="<b>Turbine efficiency curves of G1 and G2 in Plant2</b>
 fig.show()
 ```
 
-+++ {"Collapsed": "false"}
-
 ### Gates
-
-+++ {"Collapsed": "false"}
 
 Water routes such as spillways, bypasses and gates between objects, can be defined and applied with certain attributes as well.
 
@@ -526,9 +456,7 @@ s_rsv2_ocean = shop.model.gate.add_object('s_Reservoir2_Ocean')
 b_rsv2_ocean = shop.model.gate.add_object('b_Reservoir2_Ocean')
 ```
 
-+++ {"Collapsed": "false"}
-
-And we do a quick control of the content on gate objects afterwards.
+And we do a quick control of the content on [](gate) objects afterwards.
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -536,11 +464,7 @@ And we do a quick control of the content on gate objects afterwards.
 shop.model.gate.get_object_names()
 ```
 
-+++ {"Collapsed": "false"}
-
 ## Connecting the topology objects
-
-+++ {"Collapsed": "false"}
 
 After adding the objects and defining parameters to them, we need to connect them together in order for the model to know which parts that can interact with each other. This means for instance that we need to connect a certain reservoir to a certain plant. In this example, *Reservoir1* should connect to *Plant1*, Plant1 should then further be connected to *Reservoir2*, whereas Reservoir2 again connects to *Plant2*. Additionally, we need to correcrtly connect the gates, spillways and bypasses. We always connect objects from the top to the bottom, starting with the uppermost object relative to elevation. Note that it is necessary to specify the keyword argument "connection_type" when connecting a bypass or spill gate to the upper reservoir, but it is not needed when the bypass or spill gate is connected to the downstream reservoir. 
 
@@ -575,8 +499,6 @@ rsv2.connect_to(b_rsv2_ocean,connection_type="bypass")
 rsv2.connect_to(s_rsv2_ocean,connection_type="spill")
 ```
 
-+++ {"Collapsed": "false"}
-
 We can then verify if the topology is correctly set up, by graphing out the topology tree.
 
 ```{code-cell} ipython3
@@ -587,13 +509,9 @@ dot = shop.model.build_connection_tree()
 display(dot)
 ```
 
-+++ {"Collapsed": "false"}
-
 ## Adding a market and a load
 
-+++ {"Collapsed": "false"}
-
-Lastly, we need to add a market and/or a load for the model to optimize against, with certain parameters. This gives SHOP the solution space it needs to make its decisions on where and when to produce or not, while maximizing profit and fulfilling load requirements.
+Lastly, we need to add a [](market) and/or a load for the model to optimize against, with certain parameters. This gives SHOP the solution space it needs to make its decisions on where and when to produce or not, while maximizing profit and fulfilling load requirements.
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -621,9 +539,7 @@ da.max_sale.set(pd.Series([9999], [starttime]))
 da.load.set(pd.Series([0], [starttime]))
 ```
 
-+++ {"Collapsed": "false"}
-
-Now we can compare the market price to the (constant) evalutation value of the water in the reservoirs. Endpoint descriptions are usually more complex, depending on reservoir levels and/or other reservoirs. 
+Now we can compare the [](market) price to the (constant) evalutation value of the water in the reservoirs. Endpoint descriptions are usually more complex, depending on reservoir levels and/or other reservoirs. 
 
 ```{code-cell} ipython3
 :Collapsed: 'false'
@@ -653,11 +569,7 @@ fig.update_layout(title="<b>Market price and water value of reservoirs</b>", xax
 fig.show()
 ```
 
-+++ {"Collapsed": "false"}
-
 ## Running SHOP
-
-+++ {"Collapsed": "false"}
 
 Once the model is fully defined, we can prepare for a call to the optimizer. It is possible to define certain criteria depending on the solver used, if not, default values will be effective. 
 
@@ -679,11 +591,7 @@ shop.set_code(['incremental'], [])
 shop.start_sim([], ['3'])
 ```
 
-+++ {"Collapsed": "false"}
-
 ## Results
-
-+++ {"Collapsed": "false"}
 
 After the optimization has completed, we can review the result from SHOP by plotting the graphs we want. 
 
@@ -791,8 +699,6 @@ fig.add_trace(go.Scatter(x=water_storage_rsv2.index, y=water_storage_rsv2.values
 fig.update_layout(title="<b>Reservoir trajectories </b>", xaxis_title="<b>Time</b> (Hour)", yaxis_title="<b>Volume</b> (Mm<sup>3</sup>)")
 fig.show()
 ```
-
-+++ {"Collapsed": "false"}
 
 Lastly, we can inspect individual values describing our model run.
 
