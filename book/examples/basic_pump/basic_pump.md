@@ -11,19 +11,6 @@ kernelspec:
   name: python3
 ---
 
-+++ {"Collapsed": "false"}
-
-<style>
-th {
-  font-size: 14px
-}
-td {
-  font-size: 14px
-}
-</style>
-
-+++ {"Collapsed": "false"}
-
 (basic-pump-example)=
 # Basic pump example
 
@@ -36,15 +23,9 @@ This example is available in the following formats:
 - ASCII
     - [basic_pump.ascii](basic-pump-ascii)
 
-+++
-
 ## Introduction
 
-+++
-
-This example imports a basic model and adds a simple binary pump. By varying the sale price in the market, we see that the watercourse pumps water to the upper reservoir when the price is lower than its water value.
-
-+++
+This example imports a basic model and adds a simple binary [](pump). By varying the sale price in the [](market), we see that the watercourse pumps water to the upper [](reservoir) when the price is lower than its water value.
 
 ## Imports
 
@@ -81,8 +62,6 @@ display(shop.model.build_connection_tree())
 
 ## Add pumping capabilites
 
-+++
-
 Pumps can be added as pump objects, and need to be connected to a plant. We then apply attributes to the pump object. Whereas you in the old ASCII format don't need to specify a maximum and minimum production for a binary pump, you need to explicitly add those attributes in addition to the nominal production in pyshop.
 
 ```{code-cell} ipython3
@@ -104,8 +83,6 @@ run_model(shop)
 ```
 
 ## Plots and results
-
-+++
 
 We observe that the pump is used in the first six hours of the period, where the market price is lower than the water value in the upper reservoir. 
 
@@ -158,11 +135,7 @@ fig.update_layout(title="<b>Reservoir trajectories </b>", xaxis_title="<b>Time</
 fig.show()
 ```
 
-+++ {"Collapsed": "false"}
-
 # File contents
-
-+++ {"Collapsed": "false"}
 
 (basic-pump-py)=
 ## basic_pump.py <a name="tunnel_model.py"></a>
@@ -174,8 +147,6 @@ fig.show()
 with open('basic_pump.py', 'r') as f:
     print(f.read())
 ```
-
-+++ {"Collapsed": "false"}
 
 (basic-pump-yaml)=
 ## basic_pump.yaml <a name="tunnel_model.yaml"></a>
@@ -189,8 +160,6 @@ shop.dump_yaml(file_path='basic_pump.yaml',input_only=True)
 with open('basic_pump.yaml', 'r') as f:
     print(f.read())
 ```
-
-+++ {"Collapsed": "false"}
 
 (basic-pump-ascii)=
 ## basic_pump.ascii <a name="tunnel_model.ascii"></a>
