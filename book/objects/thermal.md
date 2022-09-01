@@ -28,7 +28,9 @@ A general thermal power generating unit with a fixed linear or quadratic fuel co
 
 
 
-
+## Examples
+  - [](power-flow-example)
+  
 
 
 
