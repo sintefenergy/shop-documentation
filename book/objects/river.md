@@ -156,7 +156,7 @@ Describes the piece-wise constant cost curve for the highest achieved flow rate 
 
 (river:time_delay_curve)=
 ### time_delay_curve
-Function for modelling wave-shaped time delay. X-values are the time since discharge and Y-values are the amount of water arriving at the end of the river at that time. (xUnit: HOUR, yUnit: M3/S)
+Function for modelling wave-shaped time delay. X-values are the time since discharge and Y-values are the amount of water arriving at the end of the river at that time. Separate curves can be given in for different reference flows, in this case the time delay will be interpolated between the curves based on the flow in the past SHOP iteration. (xUnit: HOUR, yUnit: M3/S)
 
 
 (river:past_upstream_flow)=
@@ -347,5 +347,15 @@ The incurred cost for breaking the flow_schedule constraints on the river (xUnit
 (river:physical_flow)=
 ### physical_flow
 The physical flow into the top of the river based on the post-calculated reservoir head values. If the river flow is not dependent on the upstream reservoir head, the physical_flow will be identical to the regular flow attribute. (xUnit: NO_UNIT, yUnit: M3/S)
+
+
+(river:initial_downstream_flow)=
+### initial_downstream_flow
+The calculated initial flow that will flow out from the end of the river. This is calulated based on the time delay in the river and the past_upstream_flow and distributed_past_upstream_flow attribute. (xUnit: NO_UNIT, yUnit: M3/S)
+
+
+(river:distributed_past_upstream_flow)=
+### distributed_past_upstream_flow
+The past upstream flow of upstream river objects that have been distributed down to this river. (xUnit: HOUR, yUnit: M3/S)
 
 

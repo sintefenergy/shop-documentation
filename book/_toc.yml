@@ -126,6 +126,7 @@ parts:
       - file: commands/set_recommit
       - file: commands/set_rsv_hard_limit_penalty_cost
       - file: commands/read_yaml
+      - file: commands/print_mc_curves
   - file: object-table
     sections:
       - file: objects/reservoir

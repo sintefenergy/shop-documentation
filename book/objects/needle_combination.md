@@ -134,6 +134,11 @@ Temporary minimum production allowed for the needle combination when delivering 
 Temporary maximum production allowed for the needle combination when delivering FCR (xUnit: NO_UNIT, yUnit: MW)
 
 
+(needle_combination:production_cost)=
+### production_cost
+Production cost depending on the production of the needle combination (xUnit: MW, yUnit: NOK/MW)
+
+
 (needle_combination:original_pq_curves)=
 ### original_pq_curves
 Original PQ-curve for the needle combination that includes non-convex regions (xUnit: M3/S, yUnit: MW)

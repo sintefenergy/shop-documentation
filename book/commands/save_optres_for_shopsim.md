@@ -16,7 +16,7 @@ Save the SHOP optimization results to the specified file for future use in a sim
 
 |   |   |
 |---|---|
-|Options|nan|
+|Options|/m3s|
 |License|SHOP_SIMULATION|
 |Release version|13.0.0.a|
 
