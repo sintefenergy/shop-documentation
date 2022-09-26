@@ -179,7 +179,7 @@ parts:
   - file: water-route
     sections:
       - file: examples/tunnel/tunnel
-      # - file: examples/tunnel/simple_tunnel
+      - file: examples/tunnel/simple_tunnel
       # - file: examples/tunnel/advanced_tunnel
   - file: examples/ramping/ramping
   - file: examples/best_profit/best_profit

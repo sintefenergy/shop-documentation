@@ -16,12 +16,12 @@ kernelspec:
 
 This example is available in the following formats:
 
-- pyshop
-    - [basic_pump.py](basic-pump-py)
 - YAML
     - [basic_pump.yaml](basic-pump-yaml)
 - ASCII
     - [basic_pump.ascii](basic-pump-ascii)
+
+pySHOP code for adding pump is provided below, while the initial model is available in [basic_pump.py](basic-pump-py).
 
 ## Introduction
 
