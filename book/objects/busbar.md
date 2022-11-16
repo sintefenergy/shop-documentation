@@ -16,8 +16,8 @@ A node in the electricity grid that production, consumption, market and transmis
 
 |   |   |
 |---|---|
-|Input connections|<a href="generator.html">generator</a>, <a href="pump.html">pump</a>, <a href="thermal.html">thermal</a>, <a href="market.html">market</a>, <a href="ac_line.html">ac_line</a>, <a href="dc_line.html">dc_line</a>|
-|Output connections|<a href="market.html">market</a>, <a href="generator.html">generator</a>, <a href="pump.html">pump</a>, <a href="thermal.html">thermal</a>, <a href="ac_line.html">ac_line</a>, <a href="dc_line.html">dc_line</a>|
+|Input connections|<a href="generator.html">generator</a>, <a href="pump.html">pump</a>, <a href="thermal.html">thermal</a>, <a href="contract.html">contract</a>, <a href="market.html">market</a>, <a href="ac_line.html">ac_line</a>, <a href="dc_line.html">dc_line</a>|
+|Output connections|<a href="market.html">market</a>, <a href="generator.html">generator</a>, <a href="pump.html">pump</a>, <a href="thermal.html">thermal</a>, <a href="ac_line.html">ac_line</a>, <a href="dc_line.html">dc_line</a>, <a href="contract.html">contract</a>|
 |License|SHOP_OPEN|
 |Release version|14.3.4.0|
 
@@ -47,7 +47,7 @@ from IPython.core.display import HTML
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
 object_attributes = table[table["Object type"] == "busbar"].reset_index().iloc[:, 1:]
 for index, row in object_attributes.iterrows():
-  object_attributes.at[index, "Attribute name"] = f"""<a href="{row['Object type'].replace('_', '-')}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
+  object_attributes.at[index, "Attribute name"] = f"""<a href="{row['Object type']}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
   object_attributes.at[index, "Data type"] = f"""<a href="../datatypes.html#{row['Data type'].replace('_', '-')}">{row['Data type']}</a>"""
 itables.show(object_attributes,
   dom='tlip',

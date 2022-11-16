@@ -55,7 +55,7 @@ from IPython.core.display import HTML
 table = pd.read_csv('https://shop.sintef.energy/wp-content/uploads/sites/1/2021/11/attributes_v14.csv')
 object_attributes = table[table["Object type"] == "generator"].reset_index().iloc[:, 1:]
 for index, row in object_attributes.iterrows():
-  object_attributes.at[index, "Attribute name"] = f"""<a href="{row['Object type'].replace('_', '-')}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
+  object_attributes.at[index, "Attribute name"] = f"""<a href="{row['Object type']}.html#{row['Attribute name'].replace('_', '-')}">{row['Attribute name']}</a>"""
   object_attributes.at[index, "Data type"] = f"""<a href="../datatypes.html#{row['Data type'].replace('_', '-')}">{row['Data type']}</a>"""
 itables.show(object_attributes,
   dom='tlip',
@@ -738,12 +738,12 @@ Resulting unit droop when it is modelled as a variable in the optimization model
 
 (generator:best_profit_q)=
 ### best_profit_q
-Optimal discharge for the generator given a certain production level of the plant (xUnit: MW, yUnit: NOK/MW)
+Optimal discharge for the generator given a certain production level of the plant (xUnit: MW, yUnit: M3/S)
 
 
 (generator:best_profit_p)=
 ### best_profit_p
-Optimal production for the generator given a certain production level of the plant (xUnit: MW, yUnit: NOK/MW)
+Optimal production for the generator given a certain production level of the plant (xUnit: MW, yUnit: MW)
 
 
 (generator:best_profit_dq_dp)=
@@ -753,7 +753,7 @@ Ratio between discharge and production for the generator given a certain product
 
 (generator:best_profit_needle_comb)=
 ### best_profit_needle_comb
-Optimal needle combination for the generator given a certain production level of the plant (xUnit: MW, yUnit: M3/S)
+Optimal needle combination for the generator given a certain production level of the plant (xUnit: MW, yUnit: NO_UNIT)
 
 
 (generator:startup_cost_mip_objective)=
