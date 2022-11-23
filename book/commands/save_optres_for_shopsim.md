@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (save_optres_for_shopsim)=
 # save optres_for_shopsim
 Save the SHOP optimization results to the specified file for future use in a simulation.

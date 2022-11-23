@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_fcr_n_equality_flag)=
 # set fcr_n_equality_flag
 Turn on or off (default) the building of constraints to force the fcr_n delivery for all units to by symmetric

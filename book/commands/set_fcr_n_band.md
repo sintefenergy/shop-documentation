@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_fcr_n_band)=
 # set fcr_n_band
 The size of the frequency range in either direction where FCR-N is activated. Default value is 0.1 Hz (49.9 to 50.1 Hz)

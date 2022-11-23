@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_mipgap)=
 # set mipgap
 Set the MIP gap that will be used by the solver to decide when a MIP problem is sufficiently close to optimum. An absolute MIP gap is the absolute value difference of the best integer and relaxed solution, while a relative MIP gap is the relative objective value difference and should be a number between 0 and 1

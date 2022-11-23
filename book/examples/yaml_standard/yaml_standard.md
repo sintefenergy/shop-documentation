@@ -436,7 +436,7 @@ Represented by a [List](yaml:list) of [Xy](yaml:xy).
               - 98
               - 92
 
-(yaml:txy)
+(yaml:txy)=
 ### txy
 Represented by a [Map](yaml:map) of [Doubles](yaml:double). The keys are [Timestamps](yaml:timestamp) and make out the time index
 

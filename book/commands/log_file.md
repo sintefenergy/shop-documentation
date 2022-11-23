@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (log_file)=
 # log file
 Change the name of the default log file created by shop from "shop.log" to the specified name. If the /lp option is given, the default solver log file name ("cplex.log") is changed instead.

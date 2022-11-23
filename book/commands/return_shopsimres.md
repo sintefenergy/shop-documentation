@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (return_shopsimres)=
 # return shopsimres
 Write simplified SHOP simulation results to the specified file in a text file format, the "/generator" option will only write unit results in the file

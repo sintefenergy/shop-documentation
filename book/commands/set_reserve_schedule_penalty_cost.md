@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_reserve_schedule_penalty_cost)=
 # set reserve_schedule_penalty_cost
 Command to set the penalty cost for breaking the unit reserve schedule constraints. Default value is 10000 NOK/MW

@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_mip_nseg)=
 # set mip_nseg
 Set the number of PQ curve segments to be used above, below, or above and below the last production level in full iterations if plant specific values are not given. Default value is 3 segments up and down.

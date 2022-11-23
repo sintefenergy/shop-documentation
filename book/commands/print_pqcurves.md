@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (print_pqcurves)=
 # print pqcurves
 Print out the PQ curves constructed by SHOP to the specified file name in xml format. The different options will write either the original PQ curves based on the input data, the PQ curves after convexification, the finalized PQ curves used in the optimization, or all of the mentioned cases. If a file name is not specified, a default file name starting with "pq_curves_" and ending with the current iteration number will be used.

@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_parallel_mode)=
 # set parallel_mode
 Choose the parallel mode CPLEX uses when solving a problem in parallel. Default behaviour is to ensure deterministic result behaviour, the opportunistic setting lets CPLEX fully utilize the parallel processing without guaranteed reporoducability, and the automatic setting lets CPLEX decide based on the problem

@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (print_bid_matrix)=
 # print bid_matrix
 Print out the bid matrix for each bid_group in the system when using the SHARM bidding functionality. If the option "/system" or "/plant" is used, the bid matrices on system or plant level will be printed out instead

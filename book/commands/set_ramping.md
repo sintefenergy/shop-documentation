@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_ramping)=
 # set ramping
 Turn on or off all ramping constraints related to the plant, reservoir, and gate objects. For contract and multi-object ramping constraints, the /request option can be used to only add ramping constraints if they were violated in the previous iteration.

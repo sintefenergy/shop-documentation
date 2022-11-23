@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_reserve_ramping_cost)=
 # set reserve_ramping_cost
 Set the cost for ramping on the reserve capacity delivered if unit specific costs are not provided. Default value is 0 NOK/MW

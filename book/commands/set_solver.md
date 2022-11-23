@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_solver)=
 # set solver
 Choose the optimization solver that will be used to solve the SHOP model. The CPLEX solver is the default option for running SHOP.

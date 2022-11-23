@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_xml_system_name)=
 # set xml_system_name
 Turn on or off (default) the insertion of the system name defined in the extra data files into the result xml file created by the "save xmlseries" command. Only has an effect when running through the SIM interface with extra data files.

@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_dyn_flex_mip)=
 # set dyn_flex_mip
 Set the number of time steps used for dynamic flexible MIP, which aggregates unit commitment decisions in neighbouring time intervals. Default value of -1 turns off the dynamic flexible MIP functionality

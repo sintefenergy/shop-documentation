@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_timelimit)=
 # set timelimit
 Set the number of seconds that can be used to solve a single iteration in SHOP. Default is 900 sec.

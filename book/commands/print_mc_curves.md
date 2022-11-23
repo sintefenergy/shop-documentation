@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (print_mc_curves)=
 # print mc_curves
 Prints out marginal cost curves to file. The first input string is the file name, while the two integer input values specify the start and end time intervals (zero indexed) for the marginal cost calculations. Similar curves are produced by the "print bp_curves" command if the option "/mc_format" is used.

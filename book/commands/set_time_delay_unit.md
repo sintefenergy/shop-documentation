@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_time_delay_unit)=
 # set time_delay_unit
 Set the time unit used to specify the time delay of discharge from gates, plants, etc. Can be either "HOUR", "MINUTE", or "TIME_STEP_LENGTH", where the last option is default and uses the time unit of the optimization run

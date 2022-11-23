@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_code)=
 # set code
 Set the iteration mode that will be used in the next iterations of SHOP. Full iterations decide unit commitment and should be performed first. Switching to incremental iterations after some full iterations will refine the solution for the final unit commitment decisions

@@ -37,12 +37,12 @@ The standard ramping functionality in SHOP enables the user to set an upper limi
 |[](reservoir)|volume|down|[](reservoir:volume_ramping_down)|Mm$^3$/h|[](global_settings:volume_ramp_penalty_cost)||
 |[](reservoir)|level|up|[](reservoir:level_ramping_up)|m/h|[](global_settings:level_ramp_penalty_cost)||
 |[](reservoir)|level|down|[](reservoir:level_ramping_down)|m/h|[](global_settings:level_ramp_penalty_cost)||
-|[](plant)|production|up|[](plant:production_ramping_up)|MW/h|[](global_settings:production_ramp_penalty_cost)||
-|[](plant)|production|down|[](plant:production_ramping_down)|MW/h|[](global_settings:production_ramp_penalty_cost)||
+|[](plant)|production|up|[](plant:power_ramping_up)|MW/h|[](global_settings:production_ramp_penalty_cost)||
+|[](plant)|production|down|[](plant:power_ramping_down)|MW/h|[](global_settings:production_ramp_penalty_cost)||
 |[](plant)|discharge|up|[](plant:discharge_ramping_up)|m3s/h|[](global_settings:production_ramp_penalty_cost)||
 |[](plant)|discharge|down|[](plant:discharge_ramping_down)|m3s/h|[](global_settings:production_ramp_penalty_cost)||
-|[](gate)|discharge|up|[](gate:discharge_ramping_up)|m3s/h|[](global_settings:gate_ramp_penalty_cost)|[](gate:ramp_penalty_cost)|
-|[](gate)|discharge|down|[](gate:discharge_ramping_down)|m3s/h|[](global_settings:gate_ramp_penalty_cost)|[](gate:ramp_penalty_cost)|
+|[](gate)|discharge|up|[](gate:ramping_up)|m3s/h|[](global_settings:gate_ramp_penalty_cost)|[](gate:ramp_penalty_cost)|
+|[](gate)|discharge|down|[](gate:ramping_down)|m3s/h|[](global_settings:gate_ramp_penalty_cost)|[](gate:ramp_penalty_cost)|
 |[](contract)|outtake|up|ramping_up|MW/h||ramping_penalty_cost_up|
 |[](contract)|outtake|down|ramping_down|MW/h||ramping_penalty_cost_down|
 

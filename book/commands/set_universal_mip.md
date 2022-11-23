@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_universal_mip)=
 # set universal_mip
 Turn on or off all binary variables related to unit commitment and reserve capacity procurement. If the default option of not_set is used, the mip_flag on each plant will decide when binary varaible requirements are used

@@ -7,7 +7,7 @@ SHOP attributes, both inputs and outputs, uses the following datatypes:
 ```
 (datatype:int)=
 ## int
-An integer, a number without decimals. For example, it is used to denote number of generators through [](generator:num_gen) attribute.
+An integer, a number without decimals. For example, it is used to denote number of generators on a plant through the [](plant:num_gen) attribute.
 - [Yaml example](yaml:int)
 - [pyshop example](pyshop:scalar)
 

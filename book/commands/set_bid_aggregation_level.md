@@ -1,15 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: 'Python 3'
-  name: python3
----
-
 (set_bid_aggregation_level)=
 # set bid_aggregation_level
 Set the bid aggregation level of the SHARM bidding functionality. Add all plants to the same bid group ("/system") or create individual bid groups for each plant ("/plant"). If the default option "/not_set" is used, the plants are placed in bid groups according to the bid_group attribute on the plant
