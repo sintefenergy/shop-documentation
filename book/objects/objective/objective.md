@@ -181,7 +181,7 @@ The sum of the simulated value of power bought from the market minus the value o
 
 (objective:load_value)=
 ### load_value
-The load obligation value by multiplying the load with the market sale price (xUnit: NOK, yUnit: NOK)
+The load obligation value by multiplying the load with the load price. If the load price is not given, the sale price is used. (xUnit: NOK, yUnit: NOK)
 
 
 (objective:reserve_sale_buy)=
@@ -191,7 +191,7 @@ Reserve trade value (xUnit: NOK, yUnit: NOK)
 
 (objective:reserve_oblig_value)=
 ### reserve_oblig_value
-THe reserve obligation value by multiplying the reserve obligation with the market sale price (xUnit: NOK, yUnit: NOK)
+THe reserve obligation value by multiplying the reserve obligation with the reserve obligation price. If the reserve obligation price is not given, the reserve sale price is used. (xUnit: NOK, yUnit: NOK)
 
 
 (objective:contract_value)=

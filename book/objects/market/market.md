@@ -129,6 +129,11 @@ The maximum power that can be bought from the market (xUnit: NO_UNIT, yUnit: MW)
 The maximum power that can be sold to the market (xUnit: NO_UNIT, yUnit: MW)
 
 
+(market:load_price)=
+### load_price
+Price for load obligation to this market. If load_price is not given, sale_price is used to calculate the load value. (xUnit: NO_UNIT, yUnit: NOK/MWH)
+
+
 (market:buy_price)=
 ### buy_price
 Price for buying power from this market (xUnit: NO_UNIT, yUnit: NOK/MWH)

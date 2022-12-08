@@ -139,6 +139,11 @@ Highest Regulation Level (meter above sea level) of the reservoir (xUnit: METER,
 The volume (Mm3) and water level (meter above sea level) relation of the reservoir (xUnit: MM3, yUnit: METER)
 
 
+(reservoir:head_area)=
+### head_area
+The water level (meter above sea level) and surface area (Km2) relation of the reservoir (xUnit: METER, yUnit: KM2)
+
+
 (reservoir:elevation_adjustment)=
 ### elevation_adjustment
 Adjustment for the lowest regulation level (lrl), highest regulation level (hrl), and the volume (Mm3) and water level (meter above sea level) relation of the reservoir (xUnit: NO_UNIT, yUnit: METER)
@@ -339,6 +344,11 @@ A piece-wise constant increasing cost which is applied to the highest reservoir 
 A piece-wise constant increasing cost curve which is used to penalize the reservoir volume level in each hour of the optimzation (xUnit: MM3, yUnit: NOK/MM3)
 
 
+(reservoir:evaporation_rate)=
+### evaporation_rate
+Evaporation rate of water from the reservoir (xUnit: NO_UNIT, yUnit: METER/HOUR)
+
+
 (reservoir:storage)=
 ### storage
 Resulting reservoir volume (xUnit: NO_UNIT, yUnit: MM3)
@@ -352,6 +362,11 @@ Simulated reservoir volume (xUnit: NO_UNIT, yUnit: MM3)
 (reservoir:head)=
 ### head
 Resulting reservoir water level (meter above sea level) (xUnit: NO_UNIT, yUnit: METER)
+
+
+(reservoir:area)=
+### area
+Resulting reservoir surface area (km2) (xUnit: NO_UNIT, yUnit: KM2)
 
 
 (reservoir:sim_head)=
